@@ -1,0 +1,49 @@
+work flow
+
+
+- forgot password
+
+--- send forgot password template
+--- user email - either reset password and user password
+
+
+>>>>>>> reset password
+>>>>>>> recover password
+
+
+
+
+-- register user
+
+-- send welcome email with user details 
+-- send newsleter parts - latest users, latest matches
+
+
+>>> get latest users who are ok with having their details publically available
+>>> get matches that are ok with haiving their details publically available.
+
+
+-- newsletter
+-- latest users
+
+
+-- perfect match
+- latest users
+-- perfect matches+charts etc..
+
+
+
+
+
+
+are you a mummies boy?
+are you a daddies girl?
+
+are you comitted for a relationship?
+are you ready for marriage?
+are you ready for kids?
+
+
+260
+2000
+

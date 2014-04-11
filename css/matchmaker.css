@@ -1,0 +1,175 @@
+
+	.shell{
+		width: 970px;
+		height: 400px;
+		overflow:hidden;
+	}
+	
+	
+
+
+	
+	
+
+	/*responsive attributes*/
+	@media (max-width:768px) {
+
+		 
+	}
+
+
+	@media (max-width:480px) {
+	
+		.shell{
+			width: 100%;
+		}
+	
+		.shell .user,
+		.shell .user-image {
+			width: 60px;
+			height: 60px;
+		}
+
+		.shell .user.open {
+			width: 178px;
+			height: 450px;
+			background: red;
+			overflow: hidden;
+		}
+		
+
+		.shell .user.open .user-image {
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+
+
+
+	@media (min-width:320px) {
+		/* smartphones, iPhone, portrait 480x320 phones */ 
+		
+	}
+
+	@media (min-width:481px) {
+		/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+
+		.shell .user,
+		.shell .user-image {
+			width: 120px;
+			height: 120px;
+		}	
+
+		.shell .user-profile-link {
+			font-size: 12px;
+		}
+	
+		.shell .user.open .user-image {
+			width: 130px;
+			height: 130px;
+		}
+
+		.shell .user-details {
+			width: 330px;
+		}
+
+		.shell .user-title {
+			font-size: 24px;
+		}
+
+		.shell .user-description {
+			width: 170px;
+			line-height: 18px;
+			font-size: 11px;
+		}
+		
+		.shell{
+			width: 720px;
+		}
+		.shell .user-bar {
+			left: 105px;
+			width: 368px;
+		}
+		.shell .user.open {
+			width: 478px;
+			height: 350px;
+		}
+		
+	}
+
+	@media (min-width:641px) {
+		/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+		
+	}
+
+	@media (min-width:768px) {
+		/* tablet, portrait iPad */
+		
+	}
+
+
+	@media (min-width:961px) {
+		/* tablet, landscape iPad, lo-res laptops ands desktops */
+
+		.shell .user-description {
+			width: 270px;
+			line-height: 19px;
+			font-size: 13px;
+		}
+
+
+		.shell .user-details {
+			width: 480px;
+		}
+
+		.shell .user.open .user-image {
+			width: 200px;
+			height: 200px;
+		}
+
+		.shell{
+			width: 960px;
+		}
+		.shell .user-bar{
+			width: 480px;
+			left: 232px;
+		}
+		.shell .user.open {
+			width: 718px;
+		}	
+		
+		
+	}
+
+	@media (min-width:1025px) {
+		/* big landscape tablets, laptops, and desktops */
+		.shell .user-details {
+			width: 600px;
+		}
+		.shell{
+			width: 1080px;
+		}
+		.shell .user-bar{
+			width: 600px;
+		}
+		.shell .user.open {
+			width: 838px;
+		}	
+	}
+
+	@media (min-width:1281px) {
+		/* hi-res laptops and desktops */
+	
+		.shell{
+			width: 1200px;
+		}
+		.shell .user-bar{
+			width: 720px;
+		}
+		.shell .user.open {
+			width: 958px;
+		}
+	
+	}	

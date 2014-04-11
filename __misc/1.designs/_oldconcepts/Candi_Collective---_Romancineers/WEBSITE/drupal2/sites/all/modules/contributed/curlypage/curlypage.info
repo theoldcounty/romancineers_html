@@ -1,0 +1,13 @@
+; $Id: curlypage.info,v 1.2 2009/11/16 21:25:09 manfer Exp $
+name = Curlypage
+description = Add a peel away ad (magic corner, peelad) to your website.
+core = 6.x
+files[] = curlypage.module
+files[] = curlypage.admin.inc
+files[] = curlypage.install
+; Information added by drupal.org packaging script on 2010-01-05
+version = "6.x-2.3"
+core = "6.x"
+project = "curlypage"
+datestamp = "1262735104"
+

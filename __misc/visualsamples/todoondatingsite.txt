@@ -1,0 +1,15 @@
+- hook google maps into registration location
+- integrate adding charts
+
+
+
+
+- editting charts efficiently
+
+_ redoing overlay with custom?
+- closing overlay when finished
+- light overlay notification message if wrong
+
+
+
+-- send forgot password email out

@@ -1,0 +1,126 @@
+/* $Id: CHANGELOG.txt,v 1.1.2.38 2010/01/13 17:51:08 magnity Exp $ */
+
+Version 6.x-1.30:
+- Bug #678250 by Magnity | gnuwings: Fixed Warning on create/edit task.
+- Feature #676042 by alberto56 | Magnity: Added Add classes to themed task rows to allow further color customization.
+- Bug #527870 by Magnity | com2: Fixed Tasks drag to re-order without task edit permission. (again)
+- Bug #663164 by Magnity | dbt102: Fixed stormproject is an undefined function. (again)
+- Task #595278 by Magnity: Changed Remove old Storm Teammember table.
+- Bug #673722 by Magnity: Fixed Hierarchical Project tasks view is not obeying permissions correctly.
+- Bug #666656 by com2: Fixed Country field has no 'don't care' like the other filter options and is not saved.
+- Bug #671588 by Magnity: Fixed Team members array always has 0:Null appended.
+- Feature #671256 by alberto56: Added Invoicing tracked time: a better calculation of the hourly rate.
+
+Version 6.x-1.29:
+- Bug #670606 by Magnity | com2: Fixed 'Default Items per Page' setting fails in tickets and timetracking list.
+- Task #663930 by Magnity: Changed Removal of blank .js files.
+- Bug #663166 by jurgenhaas: Fixed stormteam_access_sql() fails.
+- Bug #660122 by jurgenhaas: Fixed Link to create a new subtask doesn't work.
+- Feature #595276 by Magnity | jurgenhaas: Added Assign to fields for tasks and tickets.
+
+Version 6.x-1.28:
+- Task #660724 by Magnity: Changed Make node dependencies consistent.
+- Bug #527870 by Magnity | homoludens: Fixed Tasks drag to re-order without task edit permission.
+- Task #652212 by Magnity: Changed Storm Attribute to rely on 'Storm: access administration pages' permission.
+- Bug #654510 by jurgenhaas, Magnity | FrankT: Fixed Translatability.
+- Bug #654042 by alberto56 | Magnity: Fixed storm_taxation() doesn't distinguish between zero and not set.
+- Feature #629892 by amv101 | Magnity: Added enable / disable icons.
+- Feature #652034 by VladSavitsky | Magnity: Added Let using comma in floats to set Duration.
+- by Magnity: Improved install.txt
+- Feature #643440 by jalama | Magnity: Added Allow setting default for billable checkbox.
+- Bug #642814 by dbt102: Fixed error msg.
+- Bug #637498 by Magnity: Fixed Errors on disabling some modules.
+- Bug #622732 by alberto56: Fixed It's possible to create a task whose internal logic is not respected.
+- Bug #637558 by Magnity: Fixed Workflow is creating duplicate nodes with Tickets.
+
+Version 6.x-1.27:
+- Task #637748 by Magnity: Changed Help text for tcpdf download.
+- Bug #638002 by recrit | Magnity: Fixed Storminvoice item ordering.
+- Bug #617212 by Magnity | deggertsen: Fixed Unable to view projects in views without organization permissions.
+- Bug #628792 by Magnity | billshankley: Fixed Project titles visible for non-assigned teams.
+- Bug #586418 by kieran_delaney: Fixed Attributes Filter by Active/Default not working.
+- Bug #623376 by Magnity: Fixed Currency default being ignored on Create Organisation, Project, Task and Ticket pages.
+- Bug #597050 by homoludens, Magnity | jurgenhaas: Fixed Changing project-organization relationship causes problem
+- Bug #618658: Total durations not adding up
+- Bug #620420: Fatal error when trying to edit an invoice
+- Bug #617624: Amounts not showing on invoices
+
+Version 6.x-1.26:
+- Bug #617624: Fatal error on viewing invoices
+
+Version 6.x-1.25:
+- Storm invoice items become a field of Storm invoices (Security Advisory)
+- Feature #529024: RTL support
+- Task #600680: Spanish translation
+- Task #380008: Storm Team module replaced Storm Teammember module.
+- Bug #377680: Support for node preview (part)
+- Task #588014: Simplification to implementation of hook_form
+- Feature #577914: Permissions for person linked to own user account
+- Fixed bugs in handling of translatable strings
+- Feature #560832: Record invoice status on timetracking
+- Feature #346131: Online timer (note change to duration -> billing_duration setting)
+- Bug #343818: Title field gets displayed below body (field ordering when CCK enabled)
+- Bug #526900: Formatting error using Chrome / Safari browsers
+- Task #555250: Move admin settings to /admin/settings/storm/...
+- Bug #556224: Theming calls not handled properly
+- Feature #433294: Add filter status when lists are filtered
+- Feature #547800: Add default length of lists
+- Task #542030: Show all providers in expense providers autocomplete
+
+Version 6.x-1.24:
+- Bug 547040: Unknown column 'sin.organization_nid'
+- Feature #539838: Additional views functionality
+- Feature #301301: Timetracker -> Invoice
+- Bug #535120: Multiple php errors when viewing expense report
+- Feature #311855: Compound tax
+- Feature #468294: Integration of Popups API
+- Feature #530080: Additional views functionality
+- Bug #526926: Tasks filter by project returned empty list
+- Feature #527768: Additional links on node view, refactor of links code.
+- Feature #297775: Gantt charts
+(added as experimental feature - some refinement is still needed)
+- Bug #340954: Fixed use of revisions in some modules
+- Bug #477602: Add warning about remaining nodes on module disabling
+- Bug #510056: Domain key shown instead of domain value in ticket display
+- Feature #450360: Email invoicing
+- Bug #469004: Teammember list does not show persons assigned
+- Bug #377972: SQL warning when combined with i18n module
+- Bug #500876: Fixed error when filering views by Storm Attributes values
+
+Version 6.x-1.23:
+- Feature #334396: Adding create ticket link to task node view (plus style changes on links on right hand side of node views)
+- Task #436922: Storm Invoice Items module removed (functionality now within Storm Invoice)
+- Bug #495512: Ticket list filter reset does not reset category
+- Bug #300933: For new installations, Storm Expenses default to not promoted to front page
+- Bug #495070: Dashboard does not pay attention to permissions
+- Bug #478022: Add workaround to avoid SQL error with some menu modules
+- Feature #329401: Display invoice items on view invoice page
+- Feature #325363: Ticket - more fields visible on node view
+- Bug #469002: Teammember - assigned person not remembered after save
+- Bug #450778: Invoice - allow editting of invoice amount fields
+- Task #456164: Added variable for location of tcpdf library plus check of existance. Defaults now to sites/all/libraries.
+- Bug #460472: Knowledgebase topics not displayed, plus similar bug for organization countries
+- Bug #433300: Can't cancel attribute creation - removed code
+- Feature #348777: Organization Phone Number
+- Feature #320801: Exposed Storm fields to views
+- Bug #436382: Wysiwyg doesn't show up on timetracking
+- Bug #454412: Knowledge Base - allow filtering by non-default attributes
+- Task #436922: Removed add_js on init from Storm Invoice Items.
+- Task #436922: Storm Invoice Items permissions moved to Storm Invoice
+- Improved module descriptions
+- Bug #450648: Documentation updated to mention conflict with node access modules
+
+Version 6.x-1.22:
+- Bug #433300: Can't cancel attribute creation - disabled function (temporary fix)
+- Bug #343818: Title field displayed below body when CCK enabled
+- Bug #432148: PHP warning due to invalid argument supplied
+- Documentation updated and extended
+- Code style changes as per Drupal Coding Standards
+- CVS headers added to all files
+
+Version 6.x-1.21:
+- Active and default settings for attributes
+- Addition of documentation
+- Bug fixes
+
+[Changelog begins at version 6.x-1.20]

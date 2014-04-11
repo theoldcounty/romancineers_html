@@ -1,0 +1,8 @@
+/* $Id: storminvoice-nodeview.css,v 1.1.2.1 2009/09/10 17:52:56 magnity Exp $ */
+
+/* Ensures that on viewing an invoice, the table is shown below the other fields */
+div.storminvoiceitems {
+  clear: both;
+  float: left;
+  width: 100%;
+}

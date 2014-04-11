@@ -1,0 +1,59 @@
+
+
+- hibernate framework
+
+object relational mapping
+
+
+inside we have objects - tables are also called relations - map the framework with relations
+
+relations are two dimensionals
+
+- frontend is object orientated
+
+
+- object relational mapping
+define mapping and objects
+
+
+- 20 design patterns
+- gamma 4 patterns - 4 people
+
+design patterns are there to solve existing problems
+
+- work out the problem for himself
+
+singleton pattern
+one object of a class - controller - never want two objects of the controller class - only one object will be enough
+
+using the spring - implemented the singleton pattern
+
+
+- factory pattern - consider a factory - call that factory to give us the resources we want
+
+- mostly used design patterns - declaration, proxy,
+
+- mongodb - nosql
+don't have to write sql to store or retrieve data from
+
+
+tools on hybris, fatwire,
+
+evaluate on programming concepts
+object relational modelling
+
+scala - programming language - java runs on jvm. 
+
+compiled program can only work on that platform
+
+converted into byte code
+
+java virtual machine
+
+seperate jvm for linux, window
+
+groovy, 
+
+grails is a framework
+
+ 

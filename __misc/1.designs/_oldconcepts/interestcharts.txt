@@ -1,0 +1,36 @@
+-- film genres
+--- comedy, action, science fiction, horror, drama, romance
+
+
+-- for restaurants food
+--- italian, chinese, indian, american, english
+
+
+-- for ice cream
+--- chocolate, strawberry, vanila, banoffe
+
+-- for cafe
+--- latte, hot chocolate, tea, carmalete
+
+-- for pub
+---- beer, vodka, cocktail
+
+
+-- for zoo
+--- lions, tigers, bears, penguins, sheep, pigs
+
+
+-- amusement park
+--- rollercoaster, tea cups, ghost house
+
+
+
+----------------------------------------
+
+-- goji berry mix
+-- easter bunny
+-- pie
+
+
+too angular
+

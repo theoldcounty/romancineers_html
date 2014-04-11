@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="user_relationship_views.info" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="user_relationship_views.module" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="user_relationship_views.views.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="user_relationship_views.views_default.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="views_handler_field_user_relationships_name.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="views_handler_field_user_relationships_oneway.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="views_handler_field_user_relationships_requestee.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="views_handler_field_user_relationships_requester.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="views_handler_field_user_relationships_status.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="views_handler_field_user_relationships_status_link.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="views_handler_filter_user_relationships_status.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+<file name="views_handler_filter_user_relationships_type.inc" server="94.136.62.229/httpdocs/" local="129119637600000000" remote="129119637600000000" />
+</dwsync>

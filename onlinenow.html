@@ -1,0 +1,243 @@
+		  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<div id="holder">
+			<div id="chart"></div>
+		</div>
+		
+		<ul class="testers">
+			<li><a href="#">toggle</a></li>
+		</ul>	
+
+
+<script>
+
+var onlineChart = {
+    init: function(){
+        var that = this;
+                 
+        var w = 960;
+        var h = 500;
+         this.nodes = [];
+        var node;
+        
+        this.vis = d3.select("body").append("svg")
+            .attr("width", w)
+            .attr("height", h);
+        
+        this.force = d3.layout.force()
+            .nodes(this.nodes)
+            .links([])
+            .size([w, h]);
+        
+        this.force.on("tick", function(e) {
+          that.vis.selectAll("path")
+              .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+        });
+        
+        setInterval(function(){
+              that.update();        
+        }, 3000);
+    },
+    update: function(){
+        var that = this;
+            //var nodes = [];
+          
+            //set nodes
+            that.setNodes();
+        
+          // Restart the layout.
+          that.force.start();
+        
+        var users = that.vis.selectAll("path")
+              .data(that.nodes);
+        
+        // Enter
+        users
+            .enter().append("path")
+            .attr("id", function(d){
+                return d.id;
+            })
+            .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+            .attr("d", d3.svg.symbol()
+                  .size(function(d) { return d.size; })
+                  .type(function(d) { return d.type; }))
+            .style("fill", "steelblue")
+            .style("stroke", "white")
+            .style("stroke-width", "1.5px")
+            .call(that.force.drag);
+        
+        // Update
+        users
+        .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+        .transition()
+        .duration(500);        
+        
+        // Exit
+        users.exit()
+        .transition()
+        .duration(750)
+        .attr("transform", function(d) { return "translate(-100,100)"; })
+        .remove();
+
+        
+    },
+    setNodes: function(){
+            var that = this;
+        
+        this.getRawData();
+        
+        /*
+          // Add a new random shape.
+          that.nodes.push({
+            type: d3.svg.symbolTypes[~~(Math.random() * d3.svg.symbolTypes.length)],
+            size: Math.random() * 300 + 100
+          }); 
+        
+         that.nodes.push({
+            type: d3.svg.symbolTypes[~~(Math.random() * d3.svg.symbolTypes.length)],
+            size: Math.random() * 300 + 100
+          }); */
+        
+        
+            
+        
+    },
+    produceNodes: function(slice){
+        var that = this;
+        
+        console.log("slice", slice);
+
+        
+        function pluckById(inArr, id)
+        {
+            var exists = false;
+            for (i = 0; i < inArr.length; i++ )
+            {
+                if (inArr[i].id == id)
+                {
+                    return (exists === true) ? true : inArr[i];
+                }
+            }
+        } 
+        
+        function getIndex(inArr, id)
+        {
+            var index = 0;
+            for (i = 0; i < inArr.length; i++ )
+            {
+                if (inArr[i].id == id)
+                {
+                    return i;
+                }
+            }
+        }           
+        
+        var localArray = new Array();
+        $.each(slice, function( index, value ) {
+            var localUser = {
+                "id": value.id,
+                "name": value.userName,
+                "type": d3.svg.symbolTypes[~~(Math.random() * d3.svg.symbolTypes.length)],
+                "size": Math.random() * 300 + 100
+            }
+
+            //console.log();
+            localArray.push(localUser);
+            
+            if(!pluckById(that.nodes, value.id)){
+                that.nodes.push(localUser);                
+            }
+            
+        });
+        
+        
+        
+         $.each(that.nodes, function( index, value ) {
+             
+             if(value != undefined){
+                 if(!pluckById(localArray, value.id)){
+      
+                    var index = getIndex(that.nodes, value.id);
+                    
+                    if (index > -1) {
+                        that.nodes.splice(index, 1);
+                    }                
+                 }
+             }
+         })
+        
+        //that.nodes = localArray;
+        
+    },
+    getRawData: function(){
+            
+            var dataCharts = [
+                {
+                    "data": [
+                        {
+                            "id": "j234Bobby",
+                            "userName": "Bobby"
+                        },
+                        {
+                            "id": "dfsx4Eugene",
+                            "userName": "Eugene"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "id": "j234Bobby",
+                            "userName": "Bobby"
+                        },
+                        {
+                            "id": "dfsx4Eugene",
+                            "userName": "Eugene"
+                        },
+                        {
+                            "id": "dfjhjsfCandy",
+                            "userName": "Candy"
+                        },
+                        {
+                            "id": "sdfChelsea",
+                            "userName": "Chelsea"
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "id": "klnkldsf",
+                            "userName": "Kilburn"
+                        },
+                        {
+                            "id": "24fd",
+                            "userName": "Jackel"
+                        },
+                        {
+                            "id": "546546dfg",
+                            "userName": "Penolope"
+                        },
+                        {
+                            "id": "823423hdsfdsfd",
+                            "userName": "Catch The Pigeon"
+                        }
+                    ]
+                }      
+            ]; 
+        
+ 
+            function getRandomInt (min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            
+            this.produceNodes(dataCharts[getRandomInt(0,2)].data);
+        
+        //
+    }
+}
+
+
+onlineChart.init();
+
+</script>

@@ -1,0 +1,13 @@
+
+	.piechart{
+	}
+
+	.piechart path {
+		stroke: #cccccc;
+		stroke-width: 1px;
+		opacity:0.8;
+	}
+
+	.piechart text{
+		font-size:11px;    
+	}

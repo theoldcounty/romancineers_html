@@ -1,0 +1,71 @@
+
+*graphics in the header/footer will be themed around two unlikely characters going out on a date. 
+
+
+* Rock star(9) taking the goth girl(1) out to an opera
+* computer nerd(6) taking the beauty queen(5) out to a night club.
+* fashion queen(2) + dating jock(8) out bowling
+* couch potatoe guy(3) taking out cheerleader(7) out to cinema
+* class clown(4) and cheerleader(7) out to dinner
+* out to prom
+
+
+
+1.goth girl
+2.superficial fashion girl
+3.couch potato guy
+4.a class clown
+5.beauty queen
+6.a nerd 
+7.a cheerleader
+8.a jock
+9.rock star
+
+
+9,1,6,5,3,7,8,4
+
+- goth girl (christina ricci)
+http://images.google.co.uk/images?hl=en&client=firefox-a&rls=org.mozilla:en-GB:official&um=1&q=christina+ricci+goth&sa=N&start=198&ndsp=18
+
+
+
+- a superficial fashion plate (Jamie Pressly) -the sluty girl - http://images.google.co.uk/images?q=Jaime%20Pressly&oe=utf-8&rls=org.mozilla:en-GB:official&client=firefox-a&um=1&ie=UTF-8&sa=N&hl=en&tab=wi
+
+
+
+- couch potato guy
+http://images.google.co.uk/images?hl=en&tbs=isch:1&q=Jorge+Garcia&sa=N&start=18&ndsp=18
+
+
+- a class clown (Judd Nelson)
+http://images.google.co.uk/images?q=Judd%20Nelson&oe=utf-8&rls=org.mozilla:en-GB:official&client=firefox-a&um=1&ie=UTF-8&sa=N&hl=en&tab=wi
+
+
+- beauty queen (beyonce)
+http://images.google.co.uk/images?um=1&hl=en&client=firefox-a&rls=org.mozilla%3Aen-GB%3Aofficial&tbs=isch%3A1&sa=1&q=beyonce&btnG=Search&aq=f&oq=&start=0
+
+
+
+- a nerd - computer dude (Andre)
+http://www.youtube.com/watch?v=KVYEDdZiJCk
+http://www.blacknerdcomedy.com/standup/
+
+
+
+
+- a cheerleader (Hayden Panettiere) - sporty
+http://images.google.co.uk/images?hl=en&tab=wi&q=Hayden%20Panettiere
+
+
+
+
+- a jock (Chris Evans)
+http://images.google.co.uk/images?hl=en&tab=wi&q=chris%20evans%20actor
+
+
+
+
+- rock star guy (Trent Reznor)
+http://images.google.co.uk/images?hl=en&q=Trent%20Reznor&oq=&um=1&ie=UTF-8&sa=N&tab=wi
+
+

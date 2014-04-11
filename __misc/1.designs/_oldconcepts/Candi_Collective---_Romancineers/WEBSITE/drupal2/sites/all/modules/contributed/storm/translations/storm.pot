@@ -1,0 +1,2558 @@
+# LANGUAGE translation of Storm (6.x-1.24)
+# Copyright (c) 2009
+# Generated from files:
+#  stormexpense.admin.inc,v 1.2.4.9 2009/07/29 01:17:39 magnity
+#  stormexpense.theme.inc,v 1.1.4.12 2009/08/04 22:46:01 magnity
+#  stormexpense.module,v 1.4.4.30 2009/07/31 15:41:29 magnity
+#  stormknowledgebase.admin.inc,v 1.2.4.9 2009/05/07 23:14:20 magnity
+#  stormnote.admin.inc,v 1.4.4.9 2009/04/16 19:23:35 magnity
+#  stormnote.theme.inc,v 1.1.4.3 2009/02/15 09:03:33 robertogerola
+#  stormproject.admin.inc,v 1.9.4.16 2009/04/16 19:20:13 magnity
+#  stormproject.module,v 1.8.4.36 2009/07/27 09:34:02 magnity
+#  stormtask.admin.inc,v 1.8.4.22 2009/08/20 23:21:03 magnity
+#  stormtask.module,v 1.6.4.42 2009/08/04 23:00:18 magnity
+#  stormteammember.theme.inc,v 1.1.2.3 2009/07/01 11:15:09 magnity
+#  stormticket.admin.inc,v 1.8.4.16 2009/06/20 14:33:35 magnity
+#  stormticket.module,v 1.5.4.29 2009/07/15 17:27:20 magnity
+#  stormtimetracking.admin.inc,v 1.9.4.12 2009/02/19 08:00:19 robertogerola
+#  stormtimetracking.theme.inc,v 1.5.4.9 2009/08/04 22:45:22 magnity
+#  stormtimetracking.module,v 1.10.4.35 2009/07/30 18:13:32 magnity
+#  storminvoice.admin.inc,v 1.2.4.21 2009/08/20 23:45:42 magnity
+#  storminvoice.theme.inc,v 1.2.4.35 2009/08/20 23:45:42 magnity
+#  stormproject.theme.inc,v 1.2.4.12 2009/07/24 21:58:17 magnity
+#  stormticket.theme.inc,v 1.5.4.10 2009/07/24 22:05:33 magnity
+#  stormorganization.module,v 1.11.4.31 2009/07/30 18:15:38 magnity
+#  stormperson.module,v 1.7.4.24 2009/06/07 14:55:32 magnity
+#  storm.module,v 1.10.4.34 2009/07/30 22:38:20 magnity
+#  stormattribute.admin.inc,v 1.5.4.12 2009/05/10 20:18:29 magnity
+#  stormteammember.admin.inc,v 1.1.2.9 2009/07/01 11:15:09 magnity
+#  stormorganization.admin.inc,v 1.7.4.12 2009/05/31 18:18:40 magnity
+#  storminvoice.module,v 1.4.4.59 2009/08/20 23:45:42 magnity
+#  stormknowledgebase.theme.inc,v 1.1.4.6 2009/07/05 16:41:45 magnity
+#  stormtask.theme.inc,v 1.3.4.15 2009/07/24 22:03:59 magnity
+#  stormorganization.theme.inc,v 1.2.4.15 2009/07/25 21:58:24 magnity
+#  stormnote.module,v 1.6.4.18 2009/07/10 20:13:07 magnity
+#  stormperson.admin.inc,v 1.5.4.10 2009/04/16 19:21:38 magnity
+#  stormperson.theme.inc,v 1.3.4.4 2009/02/15 09:03:34 robertogerola
+#  storminvoice.auto_add.inc,v 1.1.2.3 2009/07/22 00:05:15 magnity
+#  stormattribute.module,v 1.4.4.12 2009/07/15 17:45:36 magnity
+#  stormknowledgebase.module,v 1.3.4.20 2009/07/26 00:57:19 magnity
+#  stormtask.views.inc,v 1.1.2.4 2009/08/12 17:58:31 magnity
+#  storm.info,v 1.3.4.2 2009/07/29 22:42:24 magnity
+#  stormattribute.info,v 1.3.4.2 2009/08/20 23:57:22 magnity
+#  stormexpense.info,v 1.3.4.1 2009/05/06 19:03:36 magnity
+#  storminvoice.info,v 1.3.4.1 2009/05/06 18:53:05 magnity
+#  stormknowledgebase.info,v 1.3.4.2 2009/08/20 23:57:06 magnity
+#  stormnote.info,v 1.3.4.1 2009/05/06 19:05:25 magnity
+#  stormorganization.info,v 1.3.4.1 2009/05/06 19:06:02 magnity
+#  stormperson.info,v 1.3.4.2 2009/05/06 19:08:03 magnity
+#  stormproject.info,v 1.4.4.1 2009/05/06 19:08:57 magnity
+#  stormtask.info,v 1.4.4.1 2009/05/06 19:09:48 magnity
+#  stormteammember.info,v 1.1.2.3 2009/05/06 19:11:26 magnity
+#  stormticket.info,v 1.4.4.1 2009/05/06 19:12:11 magnity
+#  stormtimetracking.info,v 1.4.4.1 2009/05/06 19:12:44 magnity
+#  stormteammember.module,v 1.1.2.3 2009/06/07 15:02:19 magnity
+#  stormexpense.views.inc,v 1.1.2.2 2009/07/25 00:46:18 magnity
+#  storminvoice.views.inc,v 1.1.2.3 2009/07/25 00:55:01 magnity
+#  stormknowledgebase.views.inc,v 1.1.2.4 2009/08/12 17:50:58 magnity
+#  stormnote.views.inc,v 1.1.2.3 2009/07/25 00:57:50 magnity
+#  stormorganization.views.inc,v 1.1.4.6 2009/08/12 17:51:17 magnity
+#  stormperson.views.inc,v 1.1.2.2 2009/07/25 01:06:30 magnity
+#  stormproject.views.inc,v 1.1.2.4 2009/08/12 17:56:20 magnity
+#  stormticket.views.inc,v 1.1.2.5 2009/08/12 17:37:44 magnity
+#  stormtimetracking.views.inc,v 1.1.2.3 2009/07/25 00:42:13 magnity
+#  stormexpense.install,v 1.1.4.6 2009/07/28 03:04:47 magnity
+#  storminvoice.install,v 1.1.4.20 2009/08/03 16:56:16 magnity
+#  stormknowledgebase.install,v 1.1.4.3 2009/07/10 14:56:02 magnity
+#  stormnote.install,v 1.1.4.2 2009/07/10 14:54:19 magnity
+#  stormorganization.install,v 1.4.4.5 2009/07/10 14:52:17 magnity
+#  stormperson.install,v 1.2.4.2 2009/07/10 14:49:34 magnity
+#  stormproject.install,v 1.2.4.7 2009/07/10 14:48:36 magnity
+#  stormtask.install,v 1.2.4.4 2009/07/10 14:47:34 magnity
+#  stormticket.install,v 1.2.4.4 2009/07/10 20:00:45 magnity
+#  stormtimetracking.install,v 1.2.4.4 2009/07/10 14:46:28 magnity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Storm (6.x-1.24)\n"
+"POT-Creation-Date: 2009-10-23 11:24+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: LANGUAGE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: stormexpense/stormexpense.admin.inc:74,310; stormexpense/stormexpense.theme.inc:221,241,262,285; stormexpense/stormexpense.module:210; stormknowledgebase/stormknowledgebase.admin.inc:22; stormnote/stormnote.admin.inc:65,198; stormnote/stormnote.theme.inc:54; stormproject/stormproject.admin.inc:34; stormproject/stormproject.module:206; stormtask/stormtask.admin.inc:27,429; stormtask/stormtask.module:305; stormteammember/stormteammember.theme.inc:81,103,126,150; stormticket/stormticket.admin.inc:59; stormticket/stormticket.module:208; stormtimetracking/stormtimetracking.admin.inc:74; stormtimetracking/stormtimetracking.theme.inc:131,151,172,195; stormtimetracking/stormtimetracking.module:212
+msgid "Title"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:261; storminvoice/storminvoice.theme.inc:304; stormproject/stormproject.admin.inc:38,214; stormproject/stormproject.theme.inc:67; stormproject/stormproject.module:296; stormtask/stormtask.admin.inc:33,344,437,652; stormtask/stormtask.module:469; stormticket/stormticket.admin.inc:68,306; stormticket/stormticket.theme.inc:83; stormticket/stormticket.module:348
+msgid "Status"
+msgstr ""
+
+#: stormorganization/stormorganization.module:254; stormperson/stormperson.module:304
+msgid "Prefix"
+msgstr ""
+
+#: storm.module:590; stormattribute/stormattribute.admin.inc:347,467; stormteammember/stormteammember.admin.inc:579,621
+msgid "Delete"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:24,206,430
+msgid "Value"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:343
+msgid "Item"
+msgstr ""
+
+#: stormorganization/stormorganization.admin.inc:175
+msgid "yes"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:347; stormteammember/stormteammember.admin.inc:585,621
+msgid "Cancel"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:172; stormexpense/stormexpense.module:211; storminvoice/storminvoice.admin.inc:52; storminvoice/storminvoice.theme.inc:244,361,523,524,702,703; storminvoice/storminvoice.module:160,167; stormknowledgebase/stormknowledgebase.theme.inc:56; stormnote/stormnote.theme.inc:82; stormperson/stormperson.module:226; stormproject/stormproject.theme.inc:81; stormproject/stormproject.module:207; stormtask/stormtask.theme.inc:115; stormtask/stormtask.module:306; stormticket/stormticket.theme.inc:97; stormticket/stormticket.module:209; stormtimetracking/stormtimetracking.theme.inc:76; stormtimetracking/stormtimetracking.module:213
+msgid "Description"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:385; stormorganization/stormorganization.theme.inc:122; stormorganization/stormorganization.module:340; stormtimetracking/stormtimetracking.admin.inc:384
+msgid "Language"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:474,475,656,657; stormorganization/stormorganization.theme.inc:109; stormorganization/stormorganization.module:328
+msgid "Currency"
+msgstr ""
+
+#: stormproject/stormproject.admin.inc:42,221; stormproject/stormproject.theme.inc:74; stormproject/stormproject.module:304; stormtask/stormtask.admin.inc:36,351,441,659; stormtask/stormtask.module:477; stormticket/stormticket.admin.inc:72,313; stormticket/stormticket.theme.inc:90; stormticket/stormticket.module:356
+msgid "Priority"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:220,227
+msgid "Yes"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:220,227
+msgid "No"
+msgstr ""
+
+#: stormproject/stormproject.module:167,176,220,225,516; stormtask/stormtask.admin.inc:12; stormtask/stormtask.module:326
+msgid "Projects"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:70,246; stormexpense/stormexpense.theme.inc:103,220,240,260; stormexpense/stormexpense.module:356; storminvoice/storminvoice.admin.inc:48,235; storminvoice/storminvoice.theme.inc:258; storminvoice/storminvoice.module:397; stormnote/stormnote.admin.inc:57,168; stormnote/stormnote.theme.inc:68; stormnote/stormnote.module:282; stormproject/stormproject.module:203; stormtask/stormtask.admin.inc:425,632; stormtask/stormtask.theme.inc:101; stormtask/stormtask.module:407; stormteammember/stormteammember.admin.inc:79,195,501; stormteammember/stormteammember.theme.inc:50,80,102,124; stormticket/stormticket.admin.inc:55,268; stormticket/stormticket.theme.inc:62; stormticket/stormticket.module:314; stormtimetracking/stormtimetracking.admin.inc:70,252; stormtimetracking/stormtimetracking.theme.inc:62,130,150,170; stormtimetracking/stormtimetracking.module:354
+msgid "Project"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:262; stormtimetracking/stormtimetracking.admin.inc:318
+msgid "all"
+msgstr ""
+
+#: storm.module:577
+msgid "Edit"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:78; stormexpense/stormexpense.theme.inc:131,222,242,263,286; stormexpense/stormexpense.module:400; storminvoice/storminvoice.theme.inc:477,478,660,661; stormteammember/stormteammember.theme.inc:83,105,128,152; stormticket/stormticket.admin.inc:63; stormtimetracking/stormtimetracking.admin.inc:78; stormtimetracking/stormtimetracking.theme.inc:132,152,173,196; stormtimetracking/stormtimetracking.module:397
+msgid "Date"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:195
+msgid "Search"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:252; stormexpense/stormexpense.admin.inc:336; storminvoice/storminvoice.admin.inc:279; stormknowledgebase/stormknowledgebase.admin.inc:110; stormnote/stormnote.admin.inc:215; stormorganization/stormorganization.admin.inc:211; stormperson/stormperson.admin.inc:138; stormproject/stormproject.admin.inc:286; stormtask/stormtask.admin.inc:369,715; stormteammember/stormteammember.admin.inc:268; stormticket/stormticket.admin.inc:369; stormtimetracking/stormtimetracking.admin.inc:335
+msgid "Reset"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:346; stormteammember/stormteammember.admin.inc:620
+msgid "This action cannot be undone."
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:38; storminvoice/storminvoice.theme.inc:237; storminvoice/storminvoice.module:351
+msgid "Number"
+msgstr ""
+
+#: stormorganization/stormorganization.admin.inc:31,136; stormorganization/stormorganization.theme.inc:60; stormorganization/stormorganization.module:275
+msgid "Country"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:34,438; storminvoice/storminvoice.admin.inc:362; stormtask/stormtask.admin.inc:46; stormtask/stormtask.module:427
+msgid "Weight"
+msgstr ""
+
+#: stormtask/stormtask.admin.inc:43
+msgid "Parent"
+msgstr ""
+
+#: stormproject/stormproject.admin.inc:207; stormproject/stormproject.theme.inc:60; stormproject/stormproject.module:288; stormtask/stormtask.admin.inc:30,337,433,645; stormtask/stormtask.module:461; stormticket/stormticket.admin.inc:299; stormticket/stormticket.theme.inc:76; stormticket/stormticket.module:340
+msgid "Category"
+msgstr ""
+
+#: stormorganization/stormorganization.admin.inc:26,143; stormorganization/stormorganization.module:198; stormperson/stormperson.admin.inc:34,120; stormperson/stormperson.module:225
+msgid "Name"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:128,461; stormtask/stormtask.admin.inc:275; stormteammember/stormteammember.admin.inc:573
+msgid "Save"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:31,225,455
+msgid "Default"
+msgstr ""
+
+#: storm.module:564
+msgid "Add"
+msgstr ""
+
+#: stormnote/stormnote.module:155,209,403
+msgid "Notes"
+msgstr ""
+
+#: stormorganization/stormorganization.admin.inc:173
+msgid "-"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:83; stormexpense/stormexpense.theme.inc:47,164,223,243,264,287; storminvoice/storminvoice.admin.inc:60,358; storminvoice/storminvoice.theme.inc:86,138,344,539,540,714,715,760,761; storminvoice/storminvoice.module:469
+msgid "Total"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:297; stormperson/stormperson.module:290; stormtimetracking/stormtimetracking.admin.inc:309
+msgid "User"
+msgstr ""
+
+#: stormorganization/stormorganization.theme.inc:102; stormorganization/stormorganization.module:367; stormperson/stormperson.admin.inc:38; stormperson/stormperson.theme.inc:65; stormperson/stormperson.module:324
+msgid "Email"
+msgstr ""
+
+#: stormorganization/stormorganization.admin.inc:174
+msgid "no"
+msgstr ""
+
+#: storminvoice/storminvoice.auto_add.inc:46
+msgid "Node"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:225,243,255,274; storminvoice/storminvoice.admin.inc:214,232; stormnote/stormnote.admin.inc:147,165,183; stormperson/stormperson.admin.inc:110; stormproject/stormproject.admin.inc:197; stormtask/stormtask.admin.inc:611,629; stormteammember/stormteammember.admin.inc:174,192,204,223,247; stormticket/stormticket.admin.inc:247,265,284; stormtimetracking/stormtimetracking.admin.inc:231,249,261,280
+msgid "All"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:28,218,449; stormorganization/stormorganization.module:242
+msgid "Active"
+msgstr ""
+
+#: stormteammember/stormteammember.theme.inc:170; stormtimetracking/stormtimetracking.theme.inc:213
+msgid "1 hour"
+msgid_plural "@count hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: stormattribute/stormattribute.admin.inc:179,246; stormexpense/stormexpense.admin.inc:330; storminvoice/storminvoice.admin.inc:273; stormknowledgebase/stormknowledgebase.admin.inc:80,104; stormnote/stormnote.admin.inc:129,209; stormorganization/stormorganization.admin.inc:128,205; stormperson/stormperson.admin.inc:91,132; stormproject/stormproject.admin.inc:179,280; stormtask/stormtask.admin.inc:325,363,592,709; stormteammember/stormteammember.admin.inc:153,262; stormticket/stormticket.admin.inc:228,363; stormtimetracking/stormtimetracking.admin.inc:210,329
+msgid "Filter"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:237; stormexpense/stormexpense.admin.inc:342; storminvoice/storminvoice.admin.inc:285; stormknowledgebase/stormknowledgebase.admin.inc:116; stormnote/stormnote.admin.inc:221; stormorganization/stormorganization.admin.inc:217; stormperson/stormperson.admin.inc:144; stormproject/stormproject.admin.inc:271; stormtask/stormtask.admin.inc:721; stormteammember/stormteammember.admin.inc:274; stormticket/stormticket.admin.inc:375; stormtimetracking/stormtimetracking.admin.inc:341
+msgid "Items"
+msgstr ""
+
+#: stormproject/stormproject.module:359; stormtask/stormtask.module:532; stormticket/stormticket.module:419
+msgid "Price"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:16,191,395
+msgid "Domain"
+msgstr ""
+
+#: stormorganization/stormorganization.module:230
+msgid "Customer"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:35,138; stormexpense/stormexpense.module:420; storminvoice/storminvoice.admin.inc:346; storminvoice/storminvoice.theme.inc:74,323,527,528,705,706; storminvoice/storminvoice.module:445,717
+msgid "Amount"
+msgstr ""
+
+#: stormorganization/stormorganization.module:315; stormperson/stormperson.theme.inc:79; stormperson/stormperson.module:344
+msgid "Phone"
+msgstr ""
+
+#: stormorganization/stormorganization.theme.inc:88; stormorganization/stormorganization.module:309
+msgid "Address"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:502,503,684,685
+msgid "Terms"
+msgstr ""
+
+#: storminvoice/storminvoice.auto_add.inc:52; storminvoice/storminvoice.theme.inc:416,442,622,623; storminvoice/storminvoice.module:94,157
+msgid "Invoice"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:446; storminvoice/storminvoice.module:69,305,577,668
+msgid "Invoices"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:572,798,799
+msgid "Payment"
+msgstr ""
+
+#: storm.module:159
+msgid "End"
+msgstr ""
+
+#: stormnote/stormnote.module:182; stormorganization/stormorganization.theme.inc:136; stormorganization/stormorganization.module:199
+msgid "Note"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:367; stormattribute/stormattribute.module:34
+msgid "Attributes"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:317; stormexpense/stormexpense.theme.inc:124; stormexpense/stormexpense.module:406; stormorganization/stormorganization.module:236
+msgid "Provider"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:516
+msgid "Message Subject"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:258; stormexpense/stormexpense.theme.inc:110,261,284; stormexpense/stormexpense.module:368; stormnote/stormnote.admin.inc:61,186; stormnote/stormnote.theme.inc:75; stormnote/stormnote.module:294; stormtask/stormtask.module:302; stormteammember/stormteammember.admin.inc:83,207,513; stormteammember/stormteammember.theme.inc:57,125,149; stormticket/stormticket.admin.inc:287; stormticket/stormticket.theme.inc:69; stormticket/stormticket.module:325; stormtimetracking/stormtimetracking.admin.inc:264; stormtimetracking/stormtimetracking.theme.inc:69,171,194; stormtimetracking/stormtimetracking.module:366
+msgid "Task"
+msgstr ""
+
+#: stormproject/stormproject.module:339; stormtask/stormtask.admin.inc:39; stormtask/stormtask.module:512; stormticket/stormticket.module:399
+msgid "Duration"
+msgstr ""
+
+#: stormorganization/stormorganization.theme.inc:74; stormorganization/stormorganization.module:289
+msgid "City"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:20,199,422
+msgid "Key"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.admin.inc:26,92; stormknowledgebase/stormknowledgebase.theme.inc:49; stormknowledgebase/stormknowledgebase.module:198
+msgid "Topic"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:479
+msgid "Your Email"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:486
+msgid "Your Name"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:493
+msgid "Send To"
+msgstr ""
+
+#: stormperson/stormperson.module:182,191,239,472
+msgid "People"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:266,480,481,664,665; storminvoice/storminvoice.module:405
+msgid "Reference"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:206; stormteammember/stormteammember.theme.inc:66; stormtimetracking/stormtimetracking.theme.inc:116
+msgid "Standard"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:281,498,499,680,681; storminvoice/storminvoice.module:426
+msgid "Due date"
+msgstr ""
+
+#: storm.module:346
+msgid "The specified date is invalid."
+msgstr ""
+
+#: storminvoice/storminvoice.auto_add.inc:90
+msgid "Select"
+msgstr ""
+
+#: storminvoice/storminvoice.module:60; stormtask/stormtask.module:163,173,181,329,332,719
+msgid "Tasks"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:150
+msgid "Task Category"
+msgstr ""
+
+#: stormorganization/stormorganization.theme.inc:81; stormorganization/stormorganization.module:302
+msgid "Zip"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:66,228; stormexpense/stormexpense.theme.inc:96,219; stormexpense/stormexpense.module:337; storminvoice/storminvoice.admin.inc:44,217; storminvoice/storminvoice.theme.inc:251; storminvoice/storminvoice.module:380; stormnote/stormnote.admin.inc:53,150; stormnote/stormnote.theme.inc:61; stormnote/stormnote.module:265; stormorganization/stormorganization.module:195; stormperson/stormperson.admin.inc:30,113; stormperson/stormperson.theme.inc:51; stormperson/stormperson.module:273; stormproject/stormproject.admin.inc:29,195; stormproject/stormproject.theme.inc:54; stormproject/stormproject.module:266; stormtask/stormtask.admin.inc:421,614; stormtask/stormtask.theme.inc:94; stormtask/stormtask.module:388; stormteammember/stormteammember.admin.inc:75,177,483; stormteammember/stormteammember.theme.inc:43,79; stormticket/stormticket.admin.inc:51,250; stormticket/stormticket.theme.inc:55; stormticket/stormticket.module:297; stormtimetracking/stormtimetracking.admin.inc:66,234; stormtimetracking/stormtimetracking.theme.inc:55,129; stormtimetracking/stormtimetracking.module:336
+msgid "Organization"
+msgstr ""
+
+#: storm.module:152
+msgid "Begin"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:522
+msgid "Message Body"
+msgstr ""
+
+#: stormperson/stormperson.module:222; stormteammember/stormteammember.admin.inc:91,250,564; stormteammember/stormteammember.theme.inc:82,104,127,151
+msgid "Person"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:87,373; stormtimetracking/stormtimetracking.admin.inc:87,372
+msgid "Reports"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:397; stormtimetracking/stormtimetracking.admin.inc:396
+msgid "Report"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:262
+msgid "paid"
+msgstr ""
+
+#: storm.module:24
+msgid "Provides a complete project management environment"
+msgstr ""
+
+#: storm.module:48,57,66; storm.info:0; stormattribute/stormattribute.admin.inc:366; stormattribute/stormattribute.info:0; stormexpense/stormexpense.admin.inc:10; stormexpense/stormexpense.module:239; stormexpense/stormexpense.info:0; storminvoice/storminvoice.admin.inc:10,445; storminvoice/storminvoice.module:304,576,667; storminvoice/storminvoice.info:0; stormknowledgebase/stormknowledgebase.admin.inc:10; stormknowledgebase/stormknowledgebase.module:167,208; stormknowledgebase/stormknowledgebase.info:0; stormnote/stormnote.admin.inc:10; stormnote/stormnote.module:208,402; stormnote/stormnote.info:0; stormorganization/stormorganization.admin.inc:10; stormorganization/stormorganization.module:206,458; stormorganization/stormorganization.info:0; stormperson/stormperson.admin.inc:10; stormperson/stormperson.module:238,471; stormperson/stormperson.info:0; stormproject/stormproject.admin.inc:10; stormproject/stormproject.module:219,224,515; stormproject/stormproject.info:0; stormtask/stormtask.admin.inc:11,395; stormtask/stormtask.module:323,718; stormtask/stormtask.info:0; stormteammember/stormteammember.info:0; stormticket/stormticket.admin.inc:10; stormticket/stormticket.module:234,558; stormticket/stormticket.info:0; stormtimetracking/stormtimetracking.admin.inc:10; stormtimetracking/stormtimetracking.module:241,558; stormtimetracking/stormtimetracking.info:0
+msgid "Storm"
+msgstr ""
+
+#: storm.module:122
+msgid "Icons directory"
+msgstr ""
+
+#: storm.module:124
+msgid "The directory that contains the Storm's icons"
+msgstr ""
+
+#: storm.module:130
+msgid "Report header"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:344
+msgid "Are you sure you want to delete the attribute %title?"
+msgstr ""
+
+#: stormattribute/stormattribute.module:13
+msgid "Provides attributes support for Storm"
+msgstr ""
+
+#: stormattribute/stormattribute.module:35,43,52,61,70; stormteammember/stormteammember.module:129
+msgid "Storm Attributes"
+msgstr ""
+
+#: stormattribute/stormattribute.module:42
+msgid "Add a new attribute"
+msgstr ""
+
+#: stormattribute/stormattribute.module:51
+msgid "Edit an attribute"
+msgstr ""
+
+#: stormattribute/stormattribute.module:60
+msgid "Delete an attribute"
+msgstr ""
+
+#: stormattribute/stormattribute.module:69
+msgid "List of attributes"
+msgstr ""
+
+#: stormattribute/stormattribute.module:23
+msgid "Storm attribute: access"
+msgstr ""
+
+#: stormattribute/stormattribute.module:24
+msgid "Storm attribute: add"
+msgstr ""
+
+#: stormattribute/stormattribute.module:25
+msgid "Storm attribute: edit"
+msgstr ""
+
+#: stormattribute/stormattribute.module:26
+msgid "Storm attribute: delete"
+msgstr ""
+
+#: stormattribute/stormattribute.info:0
+msgid "Storm Attribute"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:277; stormexpense/stormexpense.theme.inc:117; stormexpense/stormexpense.module:386; stormteammember/stormteammember.admin.inc:87,226,530; stormticket/stormticket.module:205; stormtimetracking/stormtimetracking.admin.inc:283; stormtimetracking/stormtimetracking.module:383
+msgid "Ticket"
+msgstr ""
+
+#: stormexpense/stormexpense.admin.inc:291; stormtimetracking/stormtimetracking.admin.inc:297
+msgid "Date from"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:207; stormteammember/stormteammember.theme.inc:67; stormtimetracking/stormtimetracking.theme.inc:117
+msgid "For an organization"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:208; stormteammember/stormteammember.theme.inc:68; stormtimetracking/stormtimetracking.theme.inc:118
+msgid "For an org. with tasks"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:209; stormteammember/stormteammember.theme.inc:69; stormtimetracking/stormtimetracking.theme.inc:119
+msgid "For a project"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:235,254,276,298
+msgid "Expenses report"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:255,277,299; stormteammember/stormteammember.theme.inc:119,143,166; stormtimetracking/stormtimetracking.theme.inc:165,187,209
+msgid "Organization : @organization"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:300; stormteammember/stormteammember.theme.inc:167; stormtimetracking/stormtimetracking.theme.inc:210
+msgid "Project : @project"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:303
+msgid "Expenses total : %expenses_total"
+msgstr ""
+
+#: stormexpense/stormexpense.module:13
+msgid "Provides expense support for Storm"
+msgstr ""
+
+#: stormexpense/stormexpense.module:155,164,240
+msgid "Expenses"
+msgstr ""
+
+#: stormexpense/stormexpense.module:156,166
+msgid "Storm expenses"
+msgstr ""
+
+#: stormexpense/stormexpense.module:207
+msgid "Expense"
+msgstr ""
+
+#: stormexpense/stormexpense.module:209
+msgid "An expense for Storm."
+msgstr ""
+
+#: stormexpense/stormexpense.module:22
+msgid "Storm expense: access"
+msgstr ""
+
+#: stormexpense/stormexpense.module:23
+msgid "Storm expense: add"
+msgstr ""
+
+#: stormexpense/stormexpense.module:24
+msgid "Storm expense: delete all"
+msgstr ""
+
+#: stormexpense/stormexpense.module:25
+msgid "Storm expense: delete own"
+msgstr ""
+
+#: stormexpense/stormexpense.module:26
+msgid "Storm expense: delete of user organization"
+msgstr ""
+
+#: stormexpense/stormexpense.module:27
+msgid "Storm expense: edit all"
+msgstr ""
+
+#: stormexpense/stormexpense.module:28
+msgid "Storm expense: edit own"
+msgstr ""
+
+#: stormexpense/stormexpense.module:29
+msgid "Storm expense: edit of user organization"
+msgstr ""
+
+#: stormexpense/stormexpense.module:30
+msgid "Storm expense: view all"
+msgstr ""
+
+#: stormexpense/stormexpense.module:31
+msgid "Storm expense: view own"
+msgstr ""
+
+#: stormexpense/stormexpense.module:32
+msgid "Storm expense: view of user organization"
+msgstr ""
+
+#: stormexpense/stormexpense.info:0
+msgid "Storm Expense"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:56
+msgid "Req. date"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:249
+msgid "Req. date from"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:255
+msgid "Req. date to"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:262
+msgid "to pay"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:262
+msgid "overdue"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:94
+msgid "Total to pay"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:116
+msgid "Total paid"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:274; storminvoice/storminvoice.module:419
+msgid "Request date"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:289; storminvoice/storminvoice.module:433
+msgid "Payment date"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:629
+msgid "Bill To :"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:470,471,652,653
+msgid "Invoice#"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:494,495,676,677
+msgid "Due total"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:580,808,809
+msgid "Paid in full"
+msgstr ""
+
+#: storminvoice/storminvoice.module:24
+msgid "Provides invoice support for Storm"
+msgstr ""
+
+#: storminvoice/storminvoice.module:70
+msgid "Storm invoices"
+msgstr ""
+
+#: storminvoice/storminvoice.module:96,106,114; storminvoice/storminvoice.info:0
+msgid "Storm Invoice"
+msgstr ""
+
+#: storminvoice/storminvoice.module:159
+msgid "An invoice for Storm."
+msgstr ""
+
+#: storminvoice/storminvoice.module:487
+msgid "Total in customer currency"
+msgstr ""
+
+#: storminvoice/storminvoice.module:589
+msgid "Number of days for invoice payment"
+msgstr ""
+
+#: storminvoice/storminvoice.module:591
+msgid "Default number of days for invoice payment"
+msgstr ""
+
+#: storminvoice/storminvoice.module:597,599
+msgid "Modes for invoice payment"
+msgstr ""
+
+#: storminvoice/storminvoice.module:619,621
+msgid "Payment terms"
+msgstr ""
+
+#: storminvoice/storminvoice.module:32
+msgid "Storm invoice: access"
+msgstr ""
+
+#: storminvoice/storminvoice.module:33
+msgid "Storm invoice: add"
+msgstr ""
+
+#: storminvoice/storminvoice.module:34
+msgid "Storm invoice: delete all"
+msgstr ""
+
+#: storminvoice/storminvoice.module:35
+msgid "Storm invoice: delete own"
+msgstr ""
+
+#: storminvoice/storminvoice.module:36
+msgid "Storm invoice: delete of user organization"
+msgstr ""
+
+#: storminvoice/storminvoice.module:37
+msgid "Storm invoice: edit all"
+msgstr ""
+
+#: storminvoice/storminvoice.module:38
+msgid "Storm invoice: edit own"
+msgstr ""
+
+#: storminvoice/storminvoice.module:39
+msgid "Storm invoice: edit of user organization"
+msgstr ""
+
+#: storminvoice/storminvoice.module:40
+msgid "Storm invoice: view all"
+msgstr ""
+
+#: storminvoice/storminvoice.module:41
+msgid "Storm invoice: view own"
+msgstr ""
+
+#: storminvoice/storminvoice.module:42
+msgid "Storm invoice: view of user organization"
+msgstr ""
+
+#: storminvoice/storminvoice.module:164
+msgid "Invoice item"
+msgstr ""
+
+#: storminvoice/storminvoice.module:166
+msgid "An invoice item for Storm."
+msgstr ""
+
+#: storminvoice/storminvoice.module:653
+msgid ""
+"It's impossible to create an item without an invoice. You need to "
+"select an invoice before."
+msgstr ""
+
+#: storminvoice/storminvoice.module:867; stormtask/stormtask.module:712
+msgid "Impossible to assign itself as parent."
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:13
+msgid "Provides knowledgebase support for Storm"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:130,157,168,209
+msgid "Knowledge base"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:131
+msgid "Storm Knowledge base"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:159
+msgid "A knowledge base for Storm."
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:22
+msgid "Storm knowledgebase: access"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:23
+msgid "Storm knowledgebase: add"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:24
+msgid "Storm knowledgebase: delete all"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:25
+msgid "Storm knowledgebase: delete own"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:26
+msgid "Storm knowledgebase: edit all"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:27
+msgid "Storm knowledgebase: edit own"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:28
+msgid "Storm knowledgebase: view all"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.module:29
+msgid "Storm knowledgebase: view own"
+msgstr ""
+
+#: stormnote/stormnote.module:13
+msgid "Provides note support for Storm"
+msgstr ""
+
+#: stormnote/stormnote.module:156
+msgid "Storm notes"
+msgstr ""
+
+#: stormnote/stormnote.module:184
+msgid "A note for Storm."
+msgstr ""
+
+#: stormnote/stormnote.module:22
+msgid "Storm note: access"
+msgstr ""
+
+#: stormnote/stormnote.module:23
+msgid "Storm note: add"
+msgstr ""
+
+#: stormnote/stormnote.module:24
+msgid "Storm note: delete all"
+msgstr ""
+
+#: stormnote/stormnote.module:25
+msgid "Storm note: delete own"
+msgstr ""
+
+#: stormnote/stormnote.module:26
+msgid "Storm note: delete of user organization"
+msgstr ""
+
+#: stormnote/stormnote.module:27
+msgid "Storm note: edit all"
+msgstr ""
+
+#: stormnote/stormnote.module:28
+msgid "Storm note: edit own"
+msgstr ""
+
+#: stormnote/stormnote.module:29
+msgid "Storm note: edit of user organization"
+msgstr ""
+
+#: stormnote/stormnote.module:30
+msgid "Storm note: view all"
+msgstr ""
+
+#: stormnote/stormnote.module:31
+msgid "Storm note: view own"
+msgstr ""
+
+#: stormnote/stormnote.module:32
+msgid "Storm note: view of user organization"
+msgstr ""
+
+#: stormnote/stormnote.info:0
+msgid "Storm Note"
+msgstr ""
+
+#: stormticket/stormticket.module:170,179,235,559
+msgid "Tickets"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:156,165,242,559
+msgid "Timetrackings"
+msgstr ""
+
+#: stormorganization/stormorganization.module:13
+msgid "Provides organization support for Storm"
+msgstr ""
+
+#: stormorganization/stormorganization.module:151,207,459
+msgid "Organizations"
+msgstr ""
+
+#: stormorganization/stormorganization.module:152
+msgid "Storm Organizations"
+msgstr ""
+
+#: stormorganization/stormorganization.module:197
+msgid "An organization for Storm."
+msgstr ""
+
+#: stormorganization/stormorganization.theme.inc:53; stormorganization/stormorganization.module:261; stormperson/stormperson.theme.inc:58; stormperson/stormperson.module:311
+msgid "Fullname"
+msgstr ""
+
+#: stormorganization/stormorganization.theme.inc:67; stormorganization/stormorganization.module:282
+msgid "Province / State"
+msgstr ""
+
+#: stormorganization/stormorganization.theme.inc:95; stormorganization/stormorganization.module:360; stormperson/stormperson.theme.inc:72; stormperson/stormperson.module:331
+msgid "WWW"
+msgstr ""
+
+#: stormorganization/stormorganization.module:483
+msgid "The organization that owns this system"
+msgstr ""
+
+#: stormorganization/stormorganization.module:22
+msgid "Storm organization: access"
+msgstr ""
+
+#: stormorganization/stormorganization.module:23
+msgid "Storm organization: add"
+msgstr ""
+
+#: stormorganization/stormorganization.module:24
+msgid "Storm organization: delete all"
+msgstr ""
+
+#: stormorganization/stormorganization.module:25
+msgid "Storm organization: delete own"
+msgstr ""
+
+#: stormorganization/stormorganization.module:26
+msgid "Storm organization: edit all"
+msgstr ""
+
+#: stormorganization/stormorganization.module:27
+msgid "Storm organization: edit own"
+msgstr ""
+
+#: stormorganization/stormorganization.module:28
+msgid "Storm organization: edit belonged"
+msgstr ""
+
+#: stormorganization/stormorganization.module:29
+msgid "Storm organization: view all"
+msgstr ""
+
+#: stormorganization/stormorganization.module:30
+msgid "Storm organization: view own"
+msgstr ""
+
+#: stormorganization/stormorganization.module:31
+msgid "Storm organization: view belonged"
+msgstr ""
+
+#: stormorganization/stormorganization.module:32
+msgid "Storm organization: associate user"
+msgstr ""
+
+#: stormorganization/stormorganization.module:168; stormorganization/stormorganization.info:0
+msgid "Storm Organization"
+msgstr ""
+
+#: stormperson/stormperson.module:13
+msgid "Provides person support for Storm"
+msgstr ""
+
+#: stormperson/stormperson.module:183
+msgid "Storm people"
+msgstr ""
+
+#: stormperson/stormperson.module:224
+msgid "A person for Storm."
+msgstr ""
+
+#: stormperson/stormperson.theme.inc:86; stormperson/stormperson.module:351
+msgid "IM"
+msgstr ""
+
+#: stormperson/stormperson.module:51
+msgid "Storm person: access"
+msgstr ""
+
+#: stormperson/stormperson.module:52
+msgid "Storm person: add"
+msgstr ""
+
+#: stormperson/stormperson.module:53
+msgid "Storm person: delete all"
+msgstr ""
+
+#: stormperson/stormperson.module:54
+msgid "Storm person: delete own"
+msgstr ""
+
+#: stormperson/stormperson.module:55
+msgid "Storm person: delete of user organization"
+msgstr ""
+
+#: stormperson/stormperson.module:56
+msgid "Storm person: edit all"
+msgstr ""
+
+#: stormperson/stormperson.module:57
+msgid "Storm person: edit own"
+msgstr ""
+
+#: stormperson/stormperson.module:58
+msgid "Storm person: edit of user organization"
+msgstr ""
+
+#: stormperson/stormperson.module:59
+msgid "Storm person: view all"
+msgstr ""
+
+#: stormperson/stormperson.module:60
+msgid "Storm person: view own"
+msgstr ""
+
+#: stormperson/stormperson.module:61
+msgid "Storm person: view of user organization"
+msgstr ""
+
+#: stormperson/stormperson.info:0
+msgid "Storm Person"
+msgstr ""
+
+#: stormproject/stormproject.module:13
+msgid "Provides project support for Storm"
+msgstr ""
+
+#: stormproject/stormproject.module:168
+msgid "Storm Projects"
+msgstr ""
+
+#: stormproject/stormproject.module:205
+msgid "A project for Storm."
+msgstr ""
+
+#: stormproject/stormproject.module:353; stormtask/stormtask.module:526; stormticket/stormticket.module:413
+msgid "Price mode"
+msgstr ""
+
+#: stormproject/stormproject.module:368; stormtask/stormtask.module:541; stormticket/stormticket.module:428
+msgid "Price currency"
+msgstr ""
+
+#: stormproject/stormproject.module:22
+msgid "Storm project: access"
+msgstr ""
+
+#: stormproject/stormproject.module:23
+msgid "Storm project: add"
+msgstr ""
+
+#: stormproject/stormproject.module:24
+msgid "Storm project: delete all"
+msgstr ""
+
+#: stormproject/stormproject.module:25
+msgid "Storm project: delete own"
+msgstr ""
+
+#: stormproject/stormproject.module:26
+msgid "Storm project: delete of user organization"
+msgstr ""
+
+#: stormproject/stormproject.module:27
+msgid "Storm project: edit all"
+msgstr ""
+
+#: stormproject/stormproject.module:28
+msgid "Storm project: edit own"
+msgstr ""
+
+#: stormproject/stormproject.module:29
+msgid "Storm project: edit of user organization"
+msgstr ""
+
+#: stormproject/stormproject.module:30
+msgid "Storm project: view all"
+msgstr ""
+
+#: stormproject/stormproject.module:31
+msgid "Storm project: view own"
+msgstr ""
+
+#: stormproject/stormproject.module:32
+msgid "Storm project: view of user organization"
+msgstr ""
+
+#: stormproject/stormproject.info:0
+msgid "Storm Project"
+msgstr ""
+
+#: stormtask/stormtask.module:13
+msgid "Provides task support for Storm"
+msgstr ""
+
+#: stormtask/stormtask.module:182
+msgid "Storm Tasks"
+msgstr ""
+
+#: stormtask/stormtask.module:304
+msgid "A task for Storm."
+msgstr ""
+
+#: stormtask/stormtask.module:419
+msgid "Parent task"
+msgstr ""
+
+#: stormtask/stormtask.theme.inc:108; stormtask/stormtask.module:439
+msgid "Step no."
+msgstr ""
+
+#: stormtask/stormtask.module:22
+msgid "Storm task: access"
+msgstr ""
+
+#: stormtask/stormtask.module:23
+msgid "Storm task: add"
+msgstr ""
+
+#: stormtask/stormtask.module:24
+msgid "Storm task: delete all"
+msgstr ""
+
+#: stormtask/stormtask.module:25
+msgid "Storm task: delete own"
+msgstr ""
+
+#: stormtask/stormtask.module:26
+msgid "Storm task: delete of user organization"
+msgstr ""
+
+#: stormtask/stormtask.module:27
+msgid "Storm task: edit all"
+msgstr ""
+
+#: stormtask/stormtask.module:28
+msgid "Storm task: edit own"
+msgstr ""
+
+#: stormtask/stormtask.module:29
+msgid "Storm task: edit of user organization"
+msgstr ""
+
+#: stormtask/stormtask.module:30
+msgid "Storm task: view all"
+msgstr ""
+
+#: stormtask/stormtask.module:31
+msgid "Storm task: view own"
+msgstr ""
+
+#: stormtask/stormtask.module:32
+msgid "Storm task: view of user organization"
+msgstr ""
+
+#: stormtask/stormtask.module:190; stormtask/stormtask.info:0
+msgid "Storm Task"
+msgstr ""
+
+#: stormticket/stormticket.module:17
+msgid "Provides ticket support for Storm"
+msgstr ""
+
+#: stormticket/stormticket.module:171
+msgid "Storm Tickets"
+msgstr ""
+
+#: stormticket/stormticket.module:207
+msgid "A ticket for Storm."
+msgstr ""
+
+#: stormticket/stormticket.module:25
+msgid "Storm ticket: access"
+msgstr ""
+
+#: stormticket/stormticket.module:26
+msgid "Storm ticket: add"
+msgstr ""
+
+#: stormticket/stormticket.module:27
+msgid "Storm ticket: delete all"
+msgstr ""
+
+#: stormticket/stormticket.module:28
+msgid "Storm ticket: delete own"
+msgstr ""
+
+#: stormticket/stormticket.module:29
+msgid "Storm ticket: delete of user organization"
+msgstr ""
+
+#: stormticket/stormticket.module:30
+msgid "Storm ticket: edit all"
+msgstr ""
+
+#: stormticket/stormticket.module:31
+msgid "Storm ticket: edit own"
+msgstr ""
+
+#: stormticket/stormticket.module:32
+msgid "Storm ticket: edit of user organization"
+msgstr ""
+
+#: stormticket/stormticket.module:33
+msgid "Storm ticket: view all"
+msgstr ""
+
+#: stormticket/stormticket.module:34
+msgid "Storm ticket: view own"
+msgstr ""
+
+#: stormticket/stormticket.module:35
+msgid "Storm ticket: view of user organization"
+msgstr ""
+
+#: stormticket/stormticket.info:0
+msgid "Storm Ticket"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.admin.inc:83; stormtimetracking/stormtimetracking.module:421
+msgid "Duration (h)"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.admin.inc:303
+msgid "Date to"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.admin.inc:318
+msgid "billable"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.admin.inc:318
+msgid "not billable"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.theme.inc:32
+msgid "Total duration"
+msgstr ""
+
+#: stormteammember/stormteammember.theme.inc:84,106,129,153; stormtimetracking/stormtimetracking.theme.inc:133,153,174,197
+msgid "Duration (hours)"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.theme.inc:145,164,186,208
+msgid "Timetrackings report"
+msgstr ""
+
+#: stormteammember/stormteammember.theme.inc:170; stormtimetracking/stormtimetracking.theme.inc:213
+msgid "Total duration : %total_duration"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:13
+msgid "Provides timetracking support for Storm"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:157,167
+msgid "Storm Timetrackings"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:209
+msgid "Timetracking"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:211
+msgid "A timetracking for Storm."
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:403
+msgid "Time begin"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:411
+msgid "Time end"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:429
+msgid "Billable"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:22
+msgid "Storm timetracking: access"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:23
+msgid "Storm timetracking: add"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:24
+msgid "Storm timetracking: delete all"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:25
+msgid "Storm timetracking: delete own"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:26
+msgid "Storm timetracking: delete of user organization"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:27
+msgid "Storm timetracking: edit all"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:28
+msgid "Storm timetracking: edit own"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:29
+msgid "Storm timetracking: edit of user organization"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:30
+msgid "Storm timetracking: view all"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:31
+msgid "Storm timetracking: view own"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:32
+msgid "Storm timetracking: view of user organization"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:175; stormtimetracking/stormtimetracking.info:0
+msgid "Storm Timetracking"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:448,449
+msgid "Bill to"
+msgstr ""
+
+#: stormteammember/stormteammember.module:102
+msgid "Team members"
+msgstr ""
+
+#: storm.module:49,111
+msgid "Storm Dashboard"
+msgstr ""
+
+#: storm.module:58,67
+msgid "Storm Administration Page"
+msgstr ""
+
+#: storm.module:138
+msgid "Years range in dates"
+msgstr ""
+
+#: storm.module:33
+msgid "Storm: access dashboard"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:161
+msgid "Attributes saved"
+msgstr ""
+
+#: stormattribute/stormattribute.admin.inc:409
+msgid "Parent domain"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:303
+msgid "1"
+msgid_plural "@count"
+msgstr[0] ""
+msgstr[1] ""
+
+#: stormexpense/stormexpense.views.inc:14
+msgid "Expense Organization Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:15
+msgid "Storm Expense Organization Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:31
+msgid "Expense Organization"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:32
+msgid "Storm Expense Organization"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:48
+msgid "Expense Project Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:49
+msgid "Storm Expense Project Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:65
+msgid "Expense Project"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:66
+msgid "Storm Expense Project"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:82
+msgid "Expense Task Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:83
+msgid "Storm Expense Task Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:99
+msgid "Expense Task Step Number"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:100
+msgid "Storm Expense Task Step Number"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:116
+msgid "Expense Task"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:117
+msgid "Storm Expense Task"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:134
+msgid "Expense Ticket Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:135
+msgid "Storm Expense Ticket Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:151
+msgid "Expense Ticket"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:152
+msgid "Storm Expense Ticket"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:168
+msgid "Expense Provider Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:169
+msgid "Storm Expense Provider Node ID"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:185
+msgid "Expense Provider"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:186
+msgid "Storm Expense Provider"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:202
+msgid "Expense Date"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:203
+msgid "Storm Expense Date"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:217
+msgid "Expense Amount"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:234
+msgid "Expense Tax"
+msgstr ""
+
+#: stormexpense/stormexpense.views.inc:251
+msgid "Expense Total"
+msgstr ""
+
+#: stormexpense/stormexpense.module:174
+msgid "Provider autocomplete"
+msgstr ""
+
+#: stormexpense/stormexpense.info:0
+msgid ""
+"Allows recording of expenses based on organizations, projects, tasks "
+"and tickets."
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:434; storminvoice/storminvoice.theme.inc:224
+msgid "Save item ordering"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:620
+msgid "Invoice items saved"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:199
+msgid "Print HTML"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:209
+msgid "Print PDF"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:384
+msgid ""
+"The tcpdf library has not been installed. See the Storm module "
+"README.txt for more details."
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:458,459,642,643; stormorganization/stormorganization.theme.inc:129; stormorganization/stormorganization.module:347
+msgid "Tax ID"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:564,565,791,792
+msgid "Tax exempt art. 7"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:630
+msgid "Bill to :"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:15
+msgid "Invoice Number"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:32
+msgid "Invoice Reference"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:49
+msgid "Invoice Organization Node ID"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:50
+msgid "Storm Invoice organization Node ID"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:66
+msgid "Invoice Organization"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:67
+msgid "Storm Invoice organization"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:83
+msgid "Invoice Project Node ID"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:84
+msgid "Storm Invoice Project Node ID"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:100
+msgid "Invoice Project"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:101
+msgid "Storm Invoice project"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:117
+msgid "Invoice Request Date"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:118
+msgid "Storm Invoice Request Date"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:132
+msgid "Invoice Due Date"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:133
+msgid "Storm Invoice Due Date"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:147
+msgid "Invoice Payment Date"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:148
+msgid "Storm Invoice Payment Date"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:162
+msgid "Invoice Amount"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:179
+msgid "Invoice Tax"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:196
+msgid "Invoice Total"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:213
+msgid "Invoice Total in Customer Currency"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:230
+msgid "Invoice Tax Exempt"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:256
+msgid "Invoiceitem Invoice Node ID"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:273
+msgid "Invoiceitem Weight"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:290
+msgid "Invoiceitem Amount"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:291
+msgid "Storm Invoiceitem Amount"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:307
+msgid "Invoiceitem Tax Percent"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:308
+msgid "Storm Invoiceitem Tax Percent"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:324
+msgid "Invoiceitem Tax"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:325
+msgid "Storm Invoiceitem Tax"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:341
+msgid "Invoiceitem Total"
+msgstr ""
+
+#: storminvoice/storminvoice.views.inc:342
+msgid "Storm Invoiceitem Total"
+msgstr ""
+
+#: storminvoice/storminvoice.module:115
+msgid "Storm Invoice Administration Page"
+msgstr ""
+
+#: storminvoice/storminvoice.module:620
+msgid "Due on receipt"
+msgstr ""
+
+#: storminvoice/storminvoice.module:627
+msgid "Location of tcpdf library"
+msgstr ""
+
+#: storminvoice/storminvoice.module:628
+msgid "sites/all/libraries/tcpdf"
+msgstr ""
+
+#: storminvoice/storminvoice.module:629
+msgid ""
+"The directory that contains the TCPDF library "
+"(sites/all/libraries/tcpdf is recommended)"
+msgstr ""
+
+#: storminvoice/storminvoice.info:0
+msgid "Allows invoices to be created based on organizations and projects."
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.views.inc:14
+msgid "Knowledgebase Topic"
+msgstr ""
+
+#: stormnote/stormnote.views.inc:14
+msgid "Note Organization Node ID"
+msgstr ""
+
+#: stormnote/stormnote.views.inc:31
+msgid "Note Organization Title"
+msgstr ""
+
+#: stormnote/stormnote.views.inc:48
+msgid "Note Project Node ID"
+msgstr ""
+
+#: stormnote/stormnote.views.inc:65
+msgid "Note Project Title"
+msgstr ""
+
+#: stormnote/stormnote.views.inc:82
+msgid "Note Task Node ID"
+msgstr ""
+
+#: stormnote/stormnote.views.inc:99
+msgid "Note Task Step Number"
+msgstr ""
+
+#: stormnote/stormnote.views.inc:116
+msgid "Note Task Title"
+msgstr ""
+
+#: stormnote/stormnote.info:0
+msgid "Allows creation of notes about organizations, projects or tasks."
+msgstr ""
+
+#: stormorganization/stormorganization.admin.inc:180
+msgid "Is customer"
+msgstr ""
+
+#: stormorganization/stormorganization.admin.inc:187
+msgid "Is provider"
+msgstr ""
+
+#: stormorganization/stormorganization.admin.inc:194
+msgid "Is active"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:14
+msgid "Organisation Prefix"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:31
+msgid "Organisation Fullname"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:48
+msgid "Organisation Country"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:65
+msgid "Organisation Language"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:82
+msgid "Organisation Province / State"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:99
+msgid "Organisation City"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:116
+msgid "Organisation Zip"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:133
+msgid "Organisation Address"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:150
+msgid "Organisation Tax ID"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:167
+msgid "Organisation Email"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:184
+msgid "Organisation WWW"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:201
+msgid "Organisation Phone"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:218
+msgid "Organisation Currency"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:238
+msgid "Organisation Is Customer"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:255
+msgid "Organisation Is Provider"
+msgstr ""
+
+#: stormorganization/stormorganization.views.inc:272
+msgid "Organisation Is Active"
+msgstr ""
+
+#: stormorganization/stormorganization.module:169
+msgid "Storm Organization Administration Page"
+msgstr ""
+
+#: stormorganization/stormorganization.module:480,489
+msgid "Host Organization"
+msgstr ""
+
+#: stormorganization/stormorganization.module:490
+msgid "There are no Storm Organizations in the system. "
+msgstr ""
+
+#: stormorganization/stormorganization.module:160
+msgid "Organization autocomplete"
+msgstr ""
+
+#: stormorganization/stormorganization.info:0
+msgid "Allows storing of organizations for use within Storm"
+msgstr ""
+
+#: stormperson/stormperson.views.inc:14
+msgid "Person Organization NID"
+msgstr ""
+
+#: stormperson/stormperson.views.inc:31
+msgid "Person Organization Title"
+msgstr ""
+
+#: stormperson/stormperson.views.inc:48
+msgid "Person Prefix"
+msgstr ""
+
+#: stormperson/stormperson.views.inc:65
+msgid "Person Fullname"
+msgstr ""
+
+#: stormperson/stormperson.views.inc:82
+msgid "Person Email"
+msgstr ""
+
+#: stormperson/stormperson.views.inc:99
+msgid "Person WWW"
+msgstr ""
+
+#: stormperson/stormperson.views.inc:116
+msgid "Person Phone"
+msgstr ""
+
+#: stormperson/stormperson.views.inc:133
+msgid "Person IM"
+msgstr ""
+
+#: stormperson/stormperson.views.inc:150
+msgid "Person Drupal User ID"
+msgstr ""
+
+#: stormperson/stormperson.info:0
+msgid ""
+"Allows storage of people within organizations, and linking of these to "
+"Drupal user accounts."
+msgstr ""
+
+#: stormproject/stormproject.admin.inc:234; stormtask/stormtask.admin.inc:672; stormticket/stormticket.admin.inc:326
+msgid "Date begin from"
+msgstr ""
+
+#: stormproject/stormproject.admin.inc:241; stormtask/stormtask.admin.inc:679; stormticket/stormticket.admin.inc:333
+msgid "Date begin to"
+msgstr ""
+
+#: stormproject/stormproject.admin.inc:253; stormtask/stormtask.admin.inc:691; stormticket/stormticket.admin.inc:345
+msgid "Date end from"
+msgstr ""
+
+#: stormproject/stormproject.admin.inc:260; stormtask/stormtask.admin.inc:698; stormticket/stormticket.admin.inc:352
+msgid "Date end to"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:14
+msgid "Project Node ID"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:31
+msgid "Project Organization Title"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:48
+msgid "Project Status"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:65
+msgid "Project Category"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:82
+msgid "Project Priority"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:99
+msgid "Project Price Mode"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:116
+msgid "Project Price"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:133
+msgid "Project Currency"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:150
+msgid "Project Date Begin"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:165
+msgid "Project Date End"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:180
+msgid "Project Duration Unit"
+msgstr ""
+
+#: stormproject/stormproject.views.inc:197
+msgid "Project Duration"
+msgstr ""
+
+#: stormproject/stormproject.module:317,399; stormtask/stormtask.module:490,578; stormticket/stormticket.module:377
+msgid "Date begin"
+msgstr ""
+
+#: stormproject/stormproject.module:324,406; stormtask/stormtask.module:497,585; stormticket/stormticket.module:384
+msgid "Date end"
+msgstr ""
+
+#: stormproject/stormproject.module:332; stormtask/stormtask.module:505; stormticket/stormticket.module:392
+msgid "Duration unit"
+msgstr ""
+
+#: stormproject/stormproject.info:0
+msgid "Allows recording of projects based on Storm Organizations"
+msgstr ""
+
+#: stormtask/stormtask.admin.inc:296
+msgid "Tasks saved"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:14
+msgid "Task Step Number"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:31
+msgid "Task Organization Node ID"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:48
+msgid "Task Organization Title"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:65
+msgid "Task Project Node ID"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:82
+msgid "Task Project Title"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:99
+msgid "Task Parent Task Node ID"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:116
+msgid "Task Weight"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:133
+msgid "Task Status"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:167
+msgid "Task Priority"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:184
+msgid "Task Price Mode"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:201
+msgid "Task Price"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:218
+msgid "Task Currency"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:235
+msgid "Task Date Begin"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:250
+msgid "Task Date End"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:265
+msgid "Task Duration Unit"
+msgstr ""
+
+#: stormtask/stormtask.views.inc:282
+msgid "Task Duration"
+msgstr ""
+
+#: stormtask/stormtask.info:0
+msgid "Allows recording of tasks for Storm Organizations and Projects"
+msgstr ""
+
+#: stormteammember/stormteammember.admin.inc:544
+msgid "Person organization"
+msgstr ""
+
+#: stormteammember/stormteammember.admin.inc:618
+msgid "Are you sure you want to delete the team member %title?"
+msgstr ""
+
+#: stormteammember/stormteammember.theme.inc:97,118,142,165
+msgid "teammembers report"
+msgstr ""
+
+#: stormteammember/stormteammember.module:13
+msgid "Provides team member support for Storm"
+msgstr ""
+
+#: stormteammember/stormteammember.module:103,111,120
+msgid "Storm team members"
+msgstr ""
+
+#: stormteammember/stormteammember.module:110
+msgid "Add a new team member"
+msgstr ""
+
+#: stormteammember/stormteammember.module:119
+msgid "Edit a team member"
+msgstr ""
+
+#: stormteammember/stormteammember.module:128
+msgid "Delete a team member"
+msgstr ""
+
+#: stormteammember/stormteammember.module:22
+msgid "Storm teammember: access"
+msgstr ""
+
+#: stormteammember/stormteammember.module:23
+msgid "Storm teammember: add"
+msgstr ""
+
+#: stormteammember/stormteammember.module:24
+msgid "Storm teammember: delete all"
+msgstr ""
+
+#: stormteammember/stormteammember.module:25
+msgid "Storm teammember: delete of user organization"
+msgstr ""
+
+#: stormteammember/stormteammember.module:26
+msgid "Storm teammember: edit all"
+msgstr ""
+
+#: stormteammember/stormteammember.module:27
+msgid "Storm teammember: edit of user organization"
+msgstr ""
+
+#: stormteammember/stormteammember.module:28
+msgid "Storm teammember: view all"
+msgstr ""
+
+#: stormteammember/stormteammember.module:29
+msgid "Storm teammember: view of user organization"
+msgstr ""
+
+#: stormteammember/stormteammember.info:0
+msgid "Storm Team member"
+msgstr ""
+
+#: stormteammember/stormteammember.info:0
+msgid "Allows adding persons to teams for specific projects, tasks or tickets"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:14
+msgid "Ticket Status"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:31
+msgid "Ticket Category"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:32
+msgid "Storm Ticket category"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:48
+msgid "Ticket Priority"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:49
+msgid "Storm Ticket priority"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:65
+msgid "Ticket Date Begin"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:66
+msgid "Storm Ticket begin date"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:80
+msgid "Ticket Date End"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:81
+msgid "Storm Ticket end date"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:112
+msgid "Ticket Organization"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:113
+msgid "Storm Ticket organization"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:146
+msgid "Ticket Project"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:147
+msgid "Storm Ticket project"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:180
+msgid "Ticket Task"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:181
+msgid "Storm Task title"
+msgstr ""
+
+#: stormticket/stormticket.info:0
+msgid "Allows creation of tickets for Storm Projects and Tasks"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:14
+msgid "Timetracking Organization Node ID"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:31
+msgid "Timetracking Organization Title"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:48
+msgid "Timetracking Project Node ID"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:65
+msgid "Timetracking Project Title"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:82
+msgid "Timetracking Task Node ID"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:99
+msgid "Timetracking Task Step Number"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:116
+msgid "Timetracking Task Title"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:133
+msgid "Timetracking Ticket Node ID"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:150
+msgid "Timetracking Ticket Title"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:167
+msgid "Timetracking Tracking Date"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:182
+msgid "Timetracking Time Begin"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:193
+msgid "Timetracking Time End"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:204
+msgid "Timetracking Duration"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.views.inc:215
+msgid "Timetracking Billable"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.info:0
+msgid "Allows recording of times worked based on project, task and/or ticket"
+msgstr ""
+
+#: storm.module:132
+msgid "The header that will appear on Storm reports"
+msgstr ""
+
+#: storm.module:166
+msgid "Taxation defaults"
+msgstr ""
+
+#: storm.module:174
+msgid "Tax 1: Application"
+msgstr ""
+
+#: storm.module:176
+msgid "The method of application to use for Tax 1"
+msgstr ""
+
+#: storm.module:178,214; stormexpense/stormexpense.module:436,454; storminvoice/storminvoice.module:732,756
+msgid "Apply to item amount"
+msgstr ""
+
+#: storm.module:179,215; stormexpense/stormexpense.module:437,455; storminvoice/storminvoice.module:733,757
+msgid "Do not apply tax"
+msgstr ""
+
+#: storm.module:192
+msgid "Tax 1: Name"
+msgstr ""
+
+#: storm.module:194
+msgid "The name to use for Tax 1"
+msgstr ""
+
+#: storm.module:200
+msgid "Tax 1: Default percentage"
+msgstr ""
+
+#: storm.module:202
+msgid "Default percentage for Tax 1"
+msgstr ""
+
+#: storm.module:209
+msgid "Tax 2: Application"
+msgstr ""
+
+#: storm.module:211
+msgid "The method of application to use for Tax 2"
+msgstr ""
+
+#: storm.module:213; stormexpense/stormexpense.module:453; storminvoice/storminvoice.module:755
+msgid "Apply to total of item amount plus previous tax"
+msgstr ""
+
+#: storm.module:228
+msgid "Tax 2: Name"
+msgstr ""
+
+#: storm.module:230
+msgid "The name to use for Tax 2"
+msgstr ""
+
+#: storm.module:236
+msgid "Tax 2: Default percentage"
+msgstr ""
+
+#: storm.module:238
+msgid "Default percentage for Tax 2"
+msgstr ""
+
+#: storm.module:245
+msgid "Display tax edit fields"
+msgstr ""
+
+#: storm.module:247
+msgid ""
+"If disabled, all tax fields will use the default values and you will "
+"not be able to override them for any nodes until this setting is "
+"enabled again."
+msgstr ""
+
+#: storm.module:253
+msgid "Display tax 2 edit fields"
+msgstr ""
+
+#: storm.module:255
+msgid ""
+"If disabled, tax 2 fields will use the default values and you will not "
+"be able to override them for any nodes until this setting is enabled "
+"again. This setting will be ignored unless the general \"Display tax "
+"edit fields\" setting is enabled above."
+msgstr ""
+
+#: storm.module:518,535
+msgid "Error during tax calculations (Storm Module)"
+msgstr ""
+
+#: storm.module:34
+msgid "Storm: access administration pages"
+msgstr ""
+
+#: storm.info:0
+msgid ""
+"Project Management Application (base module - utility for other Storm "
+"modules)."
+msgstr ""
+
+#: stormattribute/stormattribute.info:0
+msgid ""
+"Provides attributes (allowed field values) for use within Storm "
+"modules"
+msgstr ""
+
+#: stormexpense/stormexpense.theme.inc:187; stormtimetracking/stormtimetracking.theme.inc:92
+msgid "Invoice this item:"
+msgstr ""
+
+#: stormexpense/stormexpense.module:434; storminvoice/storminvoice.module:730
+msgid "Tax 1 Application"
+msgstr ""
+
+#: stormexpense/stormexpense.module:444; storminvoice/storminvoice.module:740
+msgid "Tax 1 Percentage"
+msgstr ""
+
+#: stormexpense/stormexpense.module:451; storminvoice/storminvoice.module:753
+msgid "Tax 2 Application"
+msgstr ""
+
+#: stormexpense/stormexpense.module:462; storminvoice/storminvoice.module:764
+msgid "Tax 2 Percentage"
+msgstr ""
+
+#: stormexpense/stormexpense.module:477; storminvoice/storminvoice.module:783
+msgid ""
+"Totals will be calculated automatically according to your tax "
+"selections."
+msgstr ""
+
+#: stormexpense/stormexpense.module:588; stormtimetracking/stormtimetracking.module:583
+msgid "This function should only be called from within Storm Invoice"
+msgstr ""
+
+#: stormexpense/stormexpense.install:14
+msgid ""
+"Warning: Nodes of type \"Expense\" have not been deleted on disabling "
+"Storm Expense. Please note that they will now have reduced "
+"functionality, and will not be protected by Storm Expense access "
+"controls."
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:350; storminvoice/storminvoice.theme.inc:78,330
+msgid "Tax 1"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:354; storminvoice/storminvoice.theme.inc:82,337
+msgid "Tax 2"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:497
+msgid "Enter multiple addresses and separate them with commas."
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:503
+msgid "Send me a copy"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:505
+msgid "Leave this box checked if you want to receive a copy as Bcc."
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:510
+msgid "You are going to email the following invoice"
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:518
+msgid "Enter subject for email."
+msgstr ""
+
+#: storminvoice/storminvoice.admin.inc:537
+msgid "Send Invoice"
+msgstr ""
+
+#: storminvoice/storminvoice.auto_add.inc:31
+msgid "This type of node cannot be automatically added to an invoice"
+msgstr ""
+
+#: storminvoice/storminvoice.auto_add.inc:55
+msgid "Please choose the invoice that you would like to add to"
+msgstr ""
+
+#: storminvoice/storminvoice.theme.inc:213,216
+msgid "Send PDF via e-mail"
+msgstr ""
+
+#: storminvoice/storminvoice.module:104
+msgid "Send Invoice by Email"
+msgstr ""
+
+#: storminvoice/storminvoice.module:604
+msgid "Cover note subject"
+msgstr ""
+
+#: storminvoice/storminvoice.module:606
+msgid "Default subject for cover note"
+msgstr ""
+
+#: storminvoice/storminvoice.module:612
+msgid "Cover note for invoice"
+msgstr ""
+
+#: storminvoice/storminvoice.module:614
+msgid "Default cover note for pdf invoice sent by email"
+msgstr ""
+
+#: storminvoice/storminvoice.install:15
+msgid ""
+"Warning: Nodes of type \"Invoice\" and \"Invoice item\" have not been "
+"deleted on disabling Storm Invoice. Please note that they will now "
+"have reduced functionality, and will not be protected by Storm Invoice "
+"access controls."
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.install:14
+msgid ""
+"Warning: Nodes of type \"Knowledgebase\" have not been deleted on "
+"disabling Storm Knowledgebase. Please note that they will now have "
+"reduced functionality, and will not be protected by Storm "
+"Knowledgebase access controls."
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.info:0
+msgid "Storm Knowledge Base"
+msgstr ""
+
+#: stormknowledgebase/stormknowledgebase.info:0
+msgid "Provides means of storing and categorising knowledge."
+msgstr ""
+
+#: stormnote/stormnote.install:14
+msgid ""
+"Warning: Nodes of type \"Note\" have not been deleted on disabling "
+"Storm Note. Please note that they will now have reduced functionality, "
+"and will not be protected by Storm Note access controls."
+msgstr ""
+
+#: stormorganization/stormorganization.install:14
+msgid ""
+"Warning: Nodes of type \"Organization\" have not been deleted on "
+"disabling Storm Organization. Please note that they will now have "
+"reduced functionality, and will not be protected by Storm Organization "
+"access controls."
+msgstr ""
+
+#: stormperson/stormperson.install:14
+msgid ""
+"Warning: Nodes of type \"Person\" have not been deleted on disabling "
+"Storm Person. Please note that they will now have reduced "
+"functionality, and will not be protected by Storm Person access "
+"controls."
+msgstr ""
+
+#: stormproject/stormproject.install:14
+msgid ""
+"Warning: Nodes of type \"Project\" have not been deleted on disabling "
+"Storm Project. Please note that they will now have reduced "
+"functionality, and will not be protected by Storm Project access "
+"controls."
+msgstr ""
+
+#: stormtask/stormtask.module:191
+msgid "Storm Task Administration Page"
+msgstr ""
+
+#: stormtask/stormtask.module:207
+msgid "Enable Gantt Charts (experimental feature)"
+msgstr ""
+
+#: stormtask/stormtask.module:224
+msgid "Chart display options"
+msgstr ""
+
+#: stormtask/stormtask.module:227
+msgid "Show Start Date"
+msgstr ""
+
+#: stormtask/stormtask.module:228
+msgid "Show End Date"
+msgstr ""
+
+#: stormtask/stormtask.module:229
+msgid "Show Duration"
+msgstr ""
+
+#: stormtask/stormtask.module:231
+msgid "Choose display options for gantt chart."
+msgstr ""
+
+#: stormtask/stormtask.module:237
+msgid "Gantt chart default color"
+msgstr ""
+
+#: stormtask/stormtask.module:239
+msgid "Enter default color for gantt chart bars."
+msgstr ""
+
+#: stormtask/stormtask.module:244
+msgid "Gantt chart \"completed\" color"
+msgstr ""
+
+#: stormtask/stormtask.module:246
+msgid "Enter \"completed\" color for gantt chart bars."
+msgstr ""
+
+#: stormtask/stormtask.module:251
+msgid "Gantt chart \"in progress\" color"
+msgstr ""
+
+#: stormtask/stormtask.module:253
+msgid "Enter \"in progress\" color for gantt chart bars."
+msgstr ""
+
+#: stormtask/stormtask.module:258
+msgid "Gantt chart \"on hold\" color"
+msgstr ""
+
+#: stormtask/stormtask.module:260
+msgid "Enter \"on hold\" color for gantt chart bars."
+msgstr ""
+
+#: stormtask/stormtask.module:265
+msgid "Gantt chart \"overdue\" color"
+msgstr ""
+
+#: stormtask/stormtask.module:267
+msgid "Enter \"overdue\" color for gantt chart bars."
+msgstr ""
+
+#: stormtask/stormtask.module:276
+msgid "The file %file does not exist."
+msgstr ""
+
+#: stormtask/stormtask.install:14
+msgid ""
+"Warning: Nodes of type \"Task\" have not been deleted on disabling "
+"Storm Task. Please note that they will now have reduced functionality, "
+"and will not be protected by Storm Task access controls."
+msgstr ""
+
+#: stormticket/stormticket.views.inc:95
+msgid "Ticket Organization NID"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:129
+msgid "Ticket Project NID"
+msgstr ""
+
+#: stormticket/stormticket.views.inc:163
+msgid "Ticket Task NID"
+msgstr ""
+
+#: stormticket/stormticket.install:14
+msgid ""
+"Warning: Nodes of type \"Ticket\" have not been deleted on disabling "
+"Storm Ticket. Please note that they will now have reduced "
+"functionality, and will not be protected by Storm Ticket access "
+"controls."
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.theme.inc:100
+msgid "(This item has been marked unbillable so should not be invoiced.)"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:176
+msgid "Storm Timetracking Administration Page"
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:571
+msgid ""
+"Always automatically recalculate timetracking durations on saving "
+"timetracking."
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.module:573
+msgid ""
+"Unchecking this box will allow you to manually override timetracking "
+"durations."
+msgstr ""
+
+#: stormtimetracking/stormtimetracking.install:14
+msgid ""
+"Warning: Nodes of type \"Timetracking\" have not been deleted on "
+"disabling Storm Timetracking. Please note that they will now have "
+"reduced functionality, and will not be protected by Storm Timetracking "
+"access controls."
+msgstr ""
+

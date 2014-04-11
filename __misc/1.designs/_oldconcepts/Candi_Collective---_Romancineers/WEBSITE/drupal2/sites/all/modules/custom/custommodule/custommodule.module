@@ -1,0 +1,14 @@
+<?php
+// $Id: customsite.module
+
+/**
+* @file
+* Custom functions for this site.
+*/
+
+	customsite_function()
+	{
+	
+	}
+
+?>

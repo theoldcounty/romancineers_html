@@ -1,0 +1,46 @@
+<?php
+// $Id: storm.install,v 1.1.2.4 2010/01/08 14:37:03 magnity Exp $
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Storm module.
+ */
+
+/**
+ * @function
+ * Install function for the Storm module
+ */
+function storm_install() {
+  variable_set('storm_report_header', '');
+  variable_set('storm_icons_path', drupal_get_path('module', 'storm') .'/icons');
+  variable_set('storm_organization_nid', 0);
+  variable_set('storm_yearsrangebegin', 2001);
+  variable_set('storm_yearsrangeend', 2012);
+}
+
+/**
+ * @function
+ * Uninstall function for the Storm module
+ */
+function storm_uninstall() {
+  variable_del('storm_report_header');
+  variable_del('storm_icons_path');
+  variable_del('storm_organization_nid');
+  variable_del('storm_yearsrangebegin');
+  variable_del('storm_yearsrangeend');
+}
+
+/**
+ * @function
+ * Implementation of hook_update_N
+ * Removes stormteammember table if it exists, cleanup from stormteam transition
+ */
+function storm_update_6101() {
+  $ret = array();
+  
+  if (db_table_exists('stormteammember')) {
+    db_drop_table($ret, 'stormteammember');
+  }
+    
+  return $ret;
+}

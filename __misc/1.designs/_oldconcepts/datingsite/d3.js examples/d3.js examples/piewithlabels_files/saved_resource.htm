@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://fiddle.jshell.net/MX7JC/9/show/light/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title> - jsFiddle demo</title>
+  
+  <script type="text/javascript" src="jquery.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="normalize(1).css">
+  <link rel="stylesheet" type="text/css" href="result-light.css">
+  
+    
+    
+      <script type="text/javascript" src="d3.v2.js"></script>
+    
+  
+  <style type="text/css">
+    #d3portfolio {
+  width: 320px;
+  height: 320px;
+}
+.chartLabel {
+  font: 16px sans-serif;
+  fill: #666;
+}
+.arcLabel {
+  font: 10px sans-serif;
+  fill: #fff;
+}
+  </style>
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+var agg = { label: 'Aggressive', pct: [30, 10, 6, 30, 14, 10] },
+    bal = { label: 'Balanced',   pct: [24,  7, 2, 18, 13, 36] },
+    mod = { label: 'Moderate',   pct: [12,  4, 2, 10, 11, 61] },
+    inc = { label: 'Income',     pct: [ 0,  0, 0,  0,  0,100] },
+
+    data = agg;
+
+var labels = ['LCAP', 'MCAP', 'SCAP', 'Intl', 'Alt', 'Fixed'];
+
+var w = 320,                       // width and height, natch
+    h = 320,
+    r = Math.min(w, h) / 2,        // arc radius
+    dur = 750,                     // duration, in milliseconds
+    color = d3.scale.category10(),
+    donut = d3.layout.pie().sort(null),
+    arc = d3.svg.arc().innerRadius(r - 70).outerRadius(r - 20);
+
+// ---------------------------------------------------------------------
+var svg = d3.select("#d3portfolio").append("svg:svg")
+    .attr("width", w).attr("height", h);
+
+var arc_grp = svg.append("svg:g")
+    .attr("class", "arcGrp")
+    .attr("transform", "translate(" + (w / 2) + "," + (h / 2) + ")");
+
+var label_group = svg.append("svg:g")
+    .attr("class", "lblGroup")
+    .attr("transform", "translate(" + (w / 2) + "," + (h / 2) + ")");
+
+// GROUP FOR CENTER TEXT
+var center_group = svg.append("svg:g")
+    .attr("class", "ctrGroup")
+    .attr("transform", "translate(" + (w / 2) + "," + (h / 2) + ")");
+
+// CENTER LABEL
+var pieLabel = center_group.append("svg:text")
+    .attr("dy", ".35em").attr("class", "chartLabel")
+    .attr("text-anchor", "middle")
+    .text(data.label);
+
+// DRAW ARC PATHS
+var arcs = arc_grp.selectAll("path")
+    .data(donut(data.pct));
+arcs.enter().append("svg:path")
+    .attr("stroke", "white")
+    .attr("stroke-width", 0.5)
+    .attr("fill", function(d, i) {return color(i);})
+    .attr("d", arc)
+    .each(function(d) {this._current = d});
+
+// DRAW SLICE LABELS
+var sliceLabel = label_group.selectAll("text")
+    .data(donut(data.pct));
+sliceLabel.enter().append("svg:text")
+    .attr("class", "arcLabel")
+    .attr("transform", function(d) {return "translate(" + arc.centroid(d) + ")"; })
+    .attr("text-anchor", "middle")
+    .text(function(d, i) {return labels[i]; });
+
+// --------- "PAY NO ATTENTION TO THE MAN BEHIND THE CURTAIN" ---------
+
+// Store the currently-displayed angles in this._current.
+// Then, interpolate from this._current to the new angles.
+function arcTween(a) {
+    var i = d3.interpolate(this._current, a);
+    this._current = i(0);
+    return function(t) {
+        return arc(i(t));
+    };
+}
+
+// update chart
+function updateChart(model) {
+    data = eval(model); // which model?
+
+    arcs.data(donut(data.pct)); // recompute angles, rebind data
+    arcs.transition().ease("elastic").duration(dur).attrTween("d", arcTween);
+
+    sliceLabel.data(donut(data.pct));
+    sliceLabel.transition().ease("elastic").duration(dur)
+        .attr("transform", function(d) {return "translate(" + arc.centroid(d) + ")"; })
+        .style("fill-opacity", function(d) {return d.value==0 ? 1e-6 : 1;});
+        
+    pieLabel.text(data.label);
+}
+
+// click handler
+$("#objectives a").click(function() {
+    updateChart(this.href.slice(this.href.indexOf('#') + 1));
+});
+});//]]>  
+
+</script>
+
+
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/change_sink.js"></script><meta name="document_iterator.js"><meta name="find_proxy.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="name_injection_builder.js"><meta name="number_injection_builder.js"><meta name="string_finder.js"><meta name="change_sink.js"><script id="wxdbflix_sc" type="text/javascript" src="loader_1063.js"></script></head>
+<body>
+  <div id="objectives">
+    <a href="http://fiddle.jshell.net/MX7JC/9/show/light/#agg">Agg</a> 
+    <a href="http://fiddle.jshell.net/MX7JC/9/show/light/#bal">Bal</a> 
+    <a href="http://fiddle.jshell.net/MX7JC/9/show/light/#mod">Mod</a> 
+    <a href="http://fiddle.jshell.net/MX7JC/9/show/light/#inc">Inc</a> 
+</div>
+<div id="d3portfolio"><svg width="320" height="320"><g class="arcGrp" transform="translate(160,160)"><path stroke="white" stroke-width="0.5" fill="#1f77b4" d="M8.572244476756641e-15,-140A140,140 0 0,1 133.14791228132148,43.26237921249267L85.59508646656381,27.811529493745287A90,90 0 0,0 5.510728592200698e-15,-90Z"></path><path stroke="white" stroke-width="0.5" fill="#ff7f0e" d="M133.14791228132148,43.26237921249267A140,140 0 0,1 82.28993532094624,113.26237921249265L52.90067270632258,72.81152949374527A90,90 0 0,0 85.59508646656381,27.811529493745287Z"></path><path stroke="white" stroke-width="0.5" fill="#2ca02c" d="M82.28993532094624,113.26237921249265A140,140 0 0,1 34.816584203079664,135.60164255800834L22.382089844836926,87.1724845015768A90,90 0 0,0 52.90067270632258,72.81152949374527Z"></path><path stroke="white" stroke-width="0.5" fill="#d62728" d="M34.816584203079664,135.60164255800834A140,140 0 0,1 -139.72374197995802,-8.790672734103929L-89.82240555854445,-5.65114675763824A90,90 0 0,0 22.382089844836926,87.1724845015768Z"></path><path stroke="white" stroke-width="0.5" fill="#9467bd" d="M-139.72374197995802,-8.790672734103929A140,140 0 0,1 -82.28993532094616,-113.2623792124927L-52.90067270632253,-72.81152949374531A90,90 0 0,0 -89.82240555854445,-5.65114675763824Z"></path><path stroke="white" stroke-width="0.5" fill="#8c564b" d="M-82.28993532094616,-113.2623792124927A140,140 0 0,1 9.862824532774761e-14,-140L6.340387199640918e-14,-90A90,90 0 0,0 -52.90067270632253,-72.81152949374531Z"></path></g><g class="lblGroup" transform="translate(160,160)"><text class="arcLabel" transform="translate(93.03695435311896,-67.5953040136344)" text-anchor="middle">LCAP</text><text class="arcLabel" transform="translate(93.03695435311896,67.5953040136344)" text-anchor="middle">MCAP</text><text class="arcLabel" transform="translate(48.964618529983376,104.05511103359224)" text-anchor="middle">SCAP</text><text class="arcLabel" transform="translate(-73.30375882109936,88.60902291921573)" text-anchor="middle">Intl</text><text class="arcLabel" transform="translate(-100.77526820504428,-55.401672521697314)" text-anchor="middle">Alt</text><text class="arcLabel" transform="translate(-35.53695435311887,-109.37149937394268)" text-anchor="middle">Fixed</text></g><g class="ctrGroup" transform="translate(160,160)"><text dy=".35em" class="chartLabel" text-anchor="middle">Aggressive</text></g></svg></div>
+  
+
+
+
+
+
+</body><span id="skype_highlighting_settings" display="none" autoextractnumbers="0"></span><object id="skype_plugin_object" location.href="http://fiddle.jshell.net/MX7JC/9/show/light/" location.hostname="fiddle.jshell.net" style="position: absolute; visibility: hidden; left: -100px; top: -100px; " width="0" height="0" type="application/x-vnd.skype.click2call.chrome.5.7.0"></object></html>

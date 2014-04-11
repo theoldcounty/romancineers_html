@@ -1,0 +1,141 @@
+
+#status{
+	position: absolute;
+	bottom: 0;
+	width: 50%;
+	padding: 2px;
+	left: 25%;
+}
+
+#status .user-location{
+    color: #ffffff;
+    margin: 0px;
+}
+
+#status .isotope .isotope-item{
+    bottom:0;
+    top: auto!important;    
+}
+
+#status .isotope {
+	padding: 0;
+	list-style: none;
+}
+
+#status #isotope{
+    margin:0;    
+}
+
+#status .user {
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 56px;
+	height: 56px;
+}
+
+
+#status .user-image {
+    padding: 0;
+    border: 3px solid #ffffff;
+    width: 50px;
+    height: 50px;
+}
+
+#status .user-link {
+	cursor: pointer;
+	display: block;
+	position: relative;
+    padding: 0;
+}
+
+#status .user-link:hover {
+	border-radius: 0;
+}
+
+#status .user-image,
+#status .user-details {
+	transition: none 0s ease-in-out;
+}
+
+
+#status .user-details {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 252px;
+    bottom: 0;
+    top: 0;
+    font-size: 11px;
+    padding: 5px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    background: #808080;
+}
+
+#status .user-title {
+	color: #333333;
+	font-size: 13px;
+	margin: 10px 0 0;
+}
+
+#status .user-description {
+	color: #333333;
+    font-size: 11px;
+    margin: 0px;
+}
+
+#status .user.loading .user-link,
+#status .user.open .user-link {
+	background: none;
+	cursor: default;
+    bottom: 0;
+    position: absolute;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+
+#status .user.open {
+	width:353px;
+	height:90px;
+}
+
+#status .user.open .close {
+	cursor: pointer;
+	background: #d1d1d0;
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	color: #fff;
+	line-height: 20px;
+	text-align: center;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 1;
+}
+
+#status .isotope {
+	transition-duration: 0;
+}
+
+
+#status .user.open .user-image {
+	width: 85px;
+	height: 85px;
+}
+
+#status .user.open .user-details {
+	display: block;
+	opacity: 1;
+}
+
+#status .item-open .user {
+    opacity: 0.15;
+}
+
+#status .item-open .user.open {
+    opacity: 1;
+}
+

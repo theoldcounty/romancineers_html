@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>
+Patient Medical History
+</title>
+
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/structure.css" type="text/css" />
+<link rel="stylesheet" href="css/form.css" type="text/css" />
+
+<!-- JavaScript -->
+<script type="text/javascript" src="scripts/wufoo.js"></script>
+</head>
+
+<body id="public">
+	
+<img id="top" src="images/top.png" alt="" />
+<div id="container">
+
+<h1 id="logo"><a>Wufoo</a></h1>
+
+<form id="form65" name="form65" class="wufoo topLabel" autocomplete="off"
+	enctype="multipart/form-data" method="post" action="#public">
+
+<div class="info">
+	<h2>Patient Medical History</h2>
+	<div></div>
+</div>
+
+<ul>
+		
+	
+<li id="foli0" 		class="leftHalf   ">
+	<label class="desc" id="title0" for="Field0">
+		Name
+			</label>
+	<span>
+		<input id="Field0" 			name="Field0" 			type="text" 			class="field text" 			value="" 			size="8" 			tabindex="1" 			/>
+		<label for="Field0">First</label>
+	</span>
+	<span>
+		<input id="Field1" 			name="Field1" 			type="text" 			class="field text" 			value="" 			size="14" 			tabindex="2" 			/>
+		<label for="Field1">Last</label>
+	</span>
+	</li>
+
+
+<li id="foli2" 		class="rightHalf   ">
+	<label class="desc" id="title2" for="Field2">
+		Date
+			</label>
+	<span>
+		<input id="Field2-1" 			name="Field2-1" 			type="text" 			class="field text" 			value="" 			size="2" 			maxlength="2" 			tabindex="3" 			/> /
+		<label for="Field2-1">MM</label>
+	</span>
+	<span>
+		<input id="Field2-2" 			name="Field2-2" 			type="text" 			class="field text" 			value="" 			size="2" 			maxlength="2" 			tabindex="4" 			/> /
+		<label for="Field2-2">DD</label>
+	</span>
+	<span>
+	 	<input id="Field2" 			name="Field2" 			type="text" 			class="field text" 			value="" 			size="4" 			maxlength="4" 			tabindex="5" 			/>
+		<label for="Field2">YYYY</label>
+	</span>
+	<span id="cal2">
+		<img id="pick2" class="datepicker" src="images/calendar.png" alt="Pick a date." />
+	</span>
+		<script type="text/javascript">
+	Calendar.setup({
+	inputField	 : "Field2",
+	displayArea  : "cal2",
+	button		 : "pick2",
+	ifFormat	 : "%B %e, %Y",
+	onSelect	 : selectDate
+	});
+	</script>
+	</li>
+
+
+<li id="foli3" 
+		class="   ">
+	
+		
+	<label class="desc" id="title3" for="Field3">
+		Reason for Today's Visit
+			</label>
+	
+	<div>
+				<textarea id="Field3" 
+			name="Field3" 
+			class="field textarea medium" 
+			rows="10" cols="50"
+			tabindex="6"
+						 ></textarea>
+			
+			</div>
+	
+		
+		
+	</li>
+
+
+<li id="foli7" 		class="   ">
+	<label class="desc" id="title7" for="Field7">
+		Check all that apply to you or your immediate family (parents, siblings, grandparents)
+			</label>
+	<div class="column">
+		<input id="Field7" 		name="Field7" 		type="checkbox" 		class="field checkbox" 		value="Asthma / Lung Problems" 		tabindex="7" 				/>
+	<label class="choice" for="Field7">Asthma / Lung Problems</label>
+		<input id="Field8" 		name="Field8" 		type="checkbox" 		class="field checkbox" 		value="Cancer" 		tabindex="8" 				/>
+	<label class="choice" for="Field8">Cancer</label>
+		<input id="Field9" 		name="Field9" 		type="checkbox" 		class="field checkbox" 		value="Cardiac Disease" 		tabindex="9" 				/>
+	<label class="choice" for="Field9">Cardiac Disease</label>
+		<input id="Field10" 		name="Field10" 		type="checkbox" 		class="field checkbox" 		value="Diabetes" 		tabindex="10" 				/>
+	<label class="choice" for="Field10">Diabetes</label>
+		<input id="Field11" 		name="Field11" 		type="checkbox" 		class="field checkbox" 		value="History of Back Pain" 		tabindex="11" 				/>
+	<label class="choice" for="Field11">History of Back Pain</label>
+		<input id="Field12" 		name="Field12" 		type="checkbox" 		class="field checkbox" 		value="Hypertension" 		tabindex="12" 				/>
+	<label class="choice" for="Field12">Hypertension</label>
+		<input id="Field13" 		name="Field13" 		type="checkbox" 		class="field checkbox" 		value="Psychiatric Disorders" 		tabindex="13" 				/>
+	<label class="choice" for="Field13">Psychiatric Disorders</label>
+		<input id="Field14" 		name="Field14" 		type="checkbox" 		class="field checkbox" 		value="Seizure Disorder" 		tabindex="14" 				/>
+	<label class="choice" for="Field14">Seizure Disorder</label>
+		<input id="Field15" 		name="Field15" 		type="checkbox" 		class="field checkbox" 		value="Stroke" 		tabindex="15" 				/>
+	<label class="choice" for="Field15">Stroke</label>
+		</div>
+	</li>
+
+
+<li id="foli207" 		class="   ">
+	<label class="desc" id="title207" for="Field207">
+		Check all symptoms you are currently experiencing
+			</label>
+	<div class="column">
+		<input id="Field207" 		name="Field207" 		type="checkbox" 		class="field checkbox" 		value="Allergy" 		tabindex="16" 				/>
+	<label class="choice" for="Field207">Allergy</label>
+		<input id="Field208" 		name="Field208" 		type="checkbox" 		class="field checkbox" 		value="Cardiovascular" 		tabindex="17" 				/>
+	<label class="choice" for="Field208">Cardiovascular</label>
+		<input id="Field209" 		name="Field209" 		type="checkbox" 		class="field checkbox" 		value="Chest Pain" 		tabindex="18" 				/>
+	<label class="choice" for="Field209">Chest Pain</label>
+		<input id="Field210" 		name="Field210" 		type="checkbox" 		class="field checkbox" 		value="Connective Tissue Disease" 		tabindex="19" 				/>
+	<label class="choice" for="Field210">Connective Tissue Disease</label>
+		<input id="Field211" 		name="Field211" 		type="checkbox" 		class="field checkbox" 		value="Diabetes Mellitus" 		tabindex="20" 				/>
+	<label class="choice" for="Field211">Diabetes Mellitus</label>
+		<input id="Field212" 		name="Field212" 		type="checkbox" 		class="field checkbox" 		value="Eating Disorder" 		tabindex="21" 				/>
+	<label class="choice" for="Field212">Eating Disorder</label>
+		<input id="Field213" 		name="Field213" 		type="checkbox" 		class="field checkbox" 		value="Ear / Nose / Throat" 		tabindex="22" 				/>
+	<label class="choice" for="Field213">Ear / Nose / Throat</label>
+		<input id="Field214" 		name="Field214" 		type="checkbox" 		class="field checkbox" 		value="Eye" 		tabindex="23" 				/>
+	<label class="choice" for="Field214">Eye</label>
+		<input id="Field215" 		name="Field215" 		type="checkbox" 		class="field checkbox" 		value="Fever" 		tabindex="24" 				/>
+	<label class="choice" for="Field215">Fever</label>
+		<input id="Field216" 		name="Field216" 		type="checkbox" 		class="field checkbox" 		value="Gastrointestinal" 		tabindex="25" 				/>
+	<label class="choice" for="Field216">Gastrointestinal</label>
+		<input id="Field217" 		name="Field217" 		type="checkbox" 		class="field checkbox" 		value="Genitourinary" 		tabindex="26" 				/>
+	<label class="choice" for="Field217">Genitourinary</label>
+		<input id="Field218" 		name="Field218" 		type="checkbox" 		class="field checkbox" 		value="Hemtalogical" 		tabindex="27" 				/>
+	<label class="choice" for="Field218">Hemtalogical</label>
+		<input id="Field219" 		name="Field219" 		type="checkbox" 		class="field checkbox" 		value="Lymphatic" 		tabindex="28" 				/>
+	<label class="choice" for="Field219">Lymphatic</label>
+		<input id="Field220" 		name="Field220" 		type="checkbox" 		class="field checkbox" 		value="Musculoskeletal Pain" 		tabindex="29" 				/>
+	<label class="choice" for="Field220">Musculoskeletal Pain</label>
+		<input id="Field221" 		name="Field221" 		type="checkbox" 		class="field checkbox" 		value="Neurological" 		tabindex="30" 				/>
+	<label class="choice" for="Field221">Neurological</label>
+		<input id="Field222" 		name="Field222" 		type="checkbox" 		class="field checkbox" 		value="Psychiatric" 		tabindex="31" 				/>
+	<label class="choice" for="Field222">Psychiatric</label>
+		<input id="Field223" 		name="Field223" 		type="checkbox" 		class="field checkbox" 		value="Respiratory" 		tabindex="32" 				/>
+	<label class="choice" for="Field223">Respiratory</label>
+		<input id="Field224" 		name="Field224" 		type="checkbox" 		class="field checkbox" 		value="Skin" 		tabindex="33" 				/>
+	<label class="choice" for="Field224">Skin</label>
+		<input id="Field225" 		name="Field225" 		type="checkbox" 		class="field checkbox" 		value="Weight Gain" 		tabindex="34" 				/>
+	<label class="choice" for="Field225">Weight Gain</label>
+		<input id="Field226" 		name="Field226" 		type="checkbox" 		class="field checkbox" 		value="Weight Loss" 		tabindex="35" 				/>
+	<label class="choice" for="Field226">Weight Loss</label>
+		</div>
+	</li>
+
+
+<li id="foli4" 
+		class="   ">
+	
+		
+	<label class="desc" id="title4" for="Field4">
+		Please list any medication allergies that you have : 
+			</label>
+	
+	<div>
+				<textarea id="Field4" 
+			name="Field4" 
+			class="field textarea medium" 
+			rows="10" cols="50"
+			tabindex="36"
+						 ></textarea>
+			
+			</div>
+	
+		
+		
+	</li>
+
+
+<li id="foli306" 
+		class="   ">
+	
+		
+	<label class="desc" id="title306" for="Field306">
+		Please list any medications you are currently taking (and dosage if known) :
+			</label>
+	
+	<div>
+				<textarea id="Field306" 
+			name="Field306" 
+			class="field textarea medium" 
+			rows="10" cols="50"
+			tabindex="37"
+						 ></textarea>
+			
+			</div>
+	
+		
+		
+	</li>
+
+
+<li id="foli308" 		class="   ">
+	<label class="desc" id="title308" for="Field308">
+		If you are a woman, are you currently pregnant, or is there a possibility that you are pregnant?
+			</label>
+	<div>
+		<select id="Field308" 			name="Field308" 			class="field select medium" 			tabindex="38"> 
+						<option value="" 								selected="selected">
+			</option>
+						<option value="Yes" 				>
+				Yes
+			</option>
+						<option value="No" 				>
+				No
+			</option>
+					</select>
+	</div>
+	</li>
+
+
+<li id="foli310" 		class="   ">
+	<label class="desc" id="title310" for="Field310">
+		Are you currently using or do you have a history of tobacco use?
+			</label>
+	<div class="column">
+	<input id="radioDefault_310" name="Field310" type="hidden" value="" />
+		<input id="Field310_0" 		name="Field310" 		type="radio" 		class="field radio" 		value="Yes" 		tabindex="39" 						/>
+	<label class="choice" for="Field310_0" 		>
+		Yes</label>
+		<input id="Field310_1" 		name="Field310" 		type="radio" 		class="field radio" 		value="No" 		tabindex="40" 						/>
+	<label class="choice" for="Field310_1" 		>
+		No</label>
+		</div>
+	</li>
+
+
+<li id="foli311" 		class="   ">
+	<label class="desc" id="title311" for="Field311">
+		Are you currently using or do you have a history of illegal drug use?
+			</label>
+	<div class="column">
+	<input id="radioDefault_311" name="Field311" type="hidden" value="" />
+		<input id="Field311_0" 		name="Field311" 		type="radio" 		class="field radio" 		value="Yes" 		tabindex="41" 						/>
+	<label class="choice" for="Field311_0" 		>
+		Yes</label>
+		<input id="Field311_1" 		name="Field311" 		type="radio" 		class="field radio" 		value="No" 		tabindex="42" 						/>
+	<label class="choice" for="Field311_1" 		>
+		No</label>
+		</div>
+	</li>
+
+
+<li id="foli313" 		class="   ">
+	<label class="desc" id="title313" for="Field313">
+		Do you feel you are at risk for falls or falling injuries?
+			</label>
+	<div class="column">
+	<input id="radioDefault_313" name="Field313" type="hidden" value="" />
+		<input id="Field313_0" 		name="Field313" 		type="radio" 		class="field radio" 		value="Yes" 		tabindex="43" 						/>
+	<label class="choice" for="Field313_0" 		>
+		Yes</label>
+		<input id="Field313_1" 		name="Field313" 		type="radio" 		class="field radio" 		value="No" 		tabindex="44" 						/>
+	<label class="choice" for="Field313_1" 		>
+		No</label>
+		</div>
+	</li>
+
+
+<li id="foli312" 		class="   ">
+	<label class="desc" id="title312" for="Field312">
+		Please describe your alcohol consumption :
+			</label>
+	<div class="column">
+	<input id="radioDefault_312" name="Field312" type="hidden" value="" />
+		<input id="Field312_0" 		name="Field312" 		type="radio" 		class="field radio" 		value="Daily" 		tabindex="45" 						/>
+	<label class="choice" for="Field312_0" 		>
+		Daily</label>
+		<input id="Field312_1" 		name="Field312" 		type="radio" 		class="field radio" 		value="Weekly" 		tabindex="46" 						/>
+	<label class="choice" for="Field312_1" 		>
+		Weekly</label>
+		<input id="Field312_2" 		name="Field312" 		type="radio" 		class="field radio" 		value="Monthly" 		tabindex="47" 						/>
+	<label class="choice" for="Field312_2" 		>
+		Monthly</label>
+		<input id="Field312_3" 		name="Field312" 		type="radio" 		class="field radio" 		value="Occasionally" 		tabindex="48" 						/>
+	<label class="choice" for="Field312_3" 		>
+		Occasionally</label>
+		<input id="Field312_4" 		name="Field312" 		type="radio" 		class="field radio" 		value="Rarely" 		tabindex="49" 						/>
+	<label class="choice" for="Field312_4" 		>
+		Rarely</label>
+		<input id="Field312_5" 		name="Field312" 		type="radio" 		class="field radio" 		value="Never" 		tabindex="50" 						/>
+	<label class="choice" for="Field312_5" 		>
+		Never</label>
+		</div>
+	</li>
+
+
+	
+	<li class="buttons">
+				<input id="saveForm" class="btTxt" type="submit" value="Submit" />
+			</li>
+
+	<li style="display:none">
+		<label for="comment">Do Not Fill This Out</label>
+		<textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+	</li>
+</ul>
+</form>
+
+</div><!--container-->
+<img id="bottom" src="images/bottom.png" alt="" />
+	
+</body>
+</html>

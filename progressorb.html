@@ -1,0 +1,276 @@
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/d3.superformula.v0.min.js"></script>
+	
+    <div id="progress">
+        <div class="progresschart"></div>
+        <div class="progresslabels"></div>
+    </div>
+
+
+<script>
+var progressChart = {
+    init: function(){
+    
+        var data = [
+            {
+                "label": "All Star",
+                "y": 10,
+                "x": 160,
+                "cx": 70,
+                "value" : 90
+            }
+        ];
+        
+        var minLimit = 0;
+        var maxLimit = 100;
+        
+        this.width = 560;
+        this.height = 300;
+        
+        this.completeWidth = 130;
+        this.completeHeight = 100;
+
+
+        // setup scales
+        
+        this.x = d3.scale.ordinal()
+            .rangeRoundBands([0, this.completeWidth], .1);
+        
+        this.y = d3.scale.linear()
+            .range([this.completeHeight, 0]);
+        
+        this.xAxis = d3.svg.axis()
+            .scale(this.x)
+            .orient("bottom");
+        
+        this.yAxis = d3.svg.axis()
+            .scale(this.y)
+            .orient("left"); 
+        // setup scales
+        
+        // chart container
+        var progresschart = d3.select(".progresschart").append("svg")
+            .attr("width", this.completeWidth)
+            .attr("height", this.completeHeight)
+        .append("g")
+                .attr("transform", "translate(0,5)");
+        
+         this.chart = progresschart.append("g")
+            .attr("class", "chart")
+            .attr("transform", "translate(-15,0)");
+        // chart container
+         
+         //_label containers
+         var progresslabels = d3.select(".progresslabels").append("svg")
+             .attr("width", this.width)
+             .attr("height", this.height)
+             .append("g")
+                .attr("transform", "translate(0,5)");
+        
+        this.labels = progresslabels.append("g")
+            .attr("class", "labels")        
+        
+        this.pointers = progresslabels.append("g")
+            .attr("class", "pointers")
+        //_label containers
+                
+        this.y.domain([minLimit, maxLimit]);
+        
+        this.chartBuild(data); 
+        this.addLabels(data);
+    },
+    chartBuild: function(data){
+        var that = this;
+    
+        var selector = ".progresschart";
+        
+        var svg = d3.select(selector);
+            
+        var barrects = d3.select(selector + " .chart");        
+        
+            var bar = barrects.selectAll("rect")
+            .data(data);
+            
+            // Enter
+            bar.enter()
+            .append("rect")
+            .attr("class", "bar")
+            .attr("y", that.completeHeight);
+            
+            // Update
+            bar
+            .attr("y", that.completeHeight)
+            .attr("height", 0)
+            .transition()
+            .duration(500)
+            .attr("width", that.x.rangeBand())
+            .attr("y", function(d) { return that.y(d.value); })
+            .attr("height", function(d) { return that.completeHeight - that.y(d.value); })
+            
+            // Exit
+            bar.exit()
+            .transition()
+            .duration(250)
+            .attr("y", 0)
+            .attr("height", 0)
+            .remove();
+    
+    },
+    addLabels: function(data){
+        var that = this;
+            
+            //build cy val from value 
+            data[0].cy = 100 - data[0].value;
+            
+            //__labels  
+        
+            //__ enter
+            var labels = that.labels.selectAll("text")
+            .data(data);
+            
+            labels.enter()
+            .append("text")
+            .attr("text-anchor", "middle")
+            
+            //__ update            
+            labels
+            .attr("x", function(d) {
+                return d.x;
+            })
+            .attr("y", function(d) {
+                return d.y;
+            })
+            .text(function(d) {
+                return d.label; 
+            })
+            .each(function(d) {
+                var bbox = this.getBBox();
+                d.sx = d.x - bbox.width/2 - 2;
+                d.ox = d.x + bbox.width/2 + 2;
+                d.sy = d.oy = d.y + 5;
+            })
+            .transition()
+            .duration(300)
+            
+            labels
+            .transition()
+            .duration(300)      
+            
+            //__ exit
+            labels.exit().remove();
+            //__labels            
+           
+
+                //__pointers
+            that.pointers.append("defs").append("marker")
+                    .attr("id", "circ")
+                    .attr("markerWidth", 6)
+                    .attr("markerHeight", 6)
+                    .attr("refX", 3)
+                    .attr("refY", 3)
+                    .append("circle")
+                    .attr("cx", 3)
+                    .attr("cy", 3)
+                    .attr("r", 3);
+
+                var pointers = that.pointers.selectAll("path.pointer")
+                    .data(data);
+
+                //__ enter
+                pointers.enter()
+                    .append("path")
+                    .attr("class", "pointer")
+                    .style("fill", "none")
+                    .style("stroke", "black")
+                    .attr("marker-end", "url(#circ)");
+
+                //__ update
+                pointers
+                    .attr("d", function(d) {
+                        if(d.cx > d.ox) {
+                            return "M" + d.sx + "," + d.sy + "L" + d.ox + "," + d.oy + " " + d.cx + "," + d.cy;
+                        } else {
+                            return "M" + d.ox + "," + d.oy + "L" + d.sx + "," + d.sy + " " + d.cx + "," + d.cy;
+                        }
+                    })
+                    .transition()
+                        .duration(300)
+
+                pointers
+                    .transition()
+                    .duration(300)      
+                
+                //__ exit
+                pointers.exit().remove();
+                //__pointers    
+                    
+    }
+}
+
+
+progressChart.init()
+
+
+
+</script>
+
+
+<style>
+path {
+  stroke-width: 1.5px;
+}
+
+.small {
+  fill: steelblue;
+}
+
+.big {
+  stroke: #666;
+  fill: #ddd;
+}
+
+.small:hover {
+  stroke: steelblue;
+  fill: lightsteelblue;
+}
+
+.test{
+    padding:30px
+}
+
+
+#progress{
+    position: relative;    
+    margin-top: 20px
+}
+
+
+
+.progresschart{
+    background: white;
+    border-radius:100px;
+    width: 100px;
+    height: 100px;
+    overflow:hidden;
+    border: 1px solid grey;
+    margin-top:5px;
+}
+
+
+	.bar {
+		fill: steelblue;
+	}
+
+	.bar:hover {
+		fill: brown;
+	}
+
+
+.progresslabels{
+    position: absolute;
+    top: 0px;
+    left: 0;    
+}
+
+</style>

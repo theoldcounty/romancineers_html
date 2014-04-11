@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="actions.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="batch.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="bootstrap.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="cache-install.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="cache.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="common.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="database.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="database.mysql-common.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="database.mysql.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="database.mysqli.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="database.pgsql.inc" server="94.136.62.229/httpdocs/" local="129114528600000000" remote="129114528600000000" />
+<file name="file.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="form.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="image.gd.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="image.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="install.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="install.mysql.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="install.mysqli.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="install.pgsql.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="language.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="locale.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="mail.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="menu.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="module.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="pager.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="path.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="session.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="tablesort.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="theme.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="theme.maintenance.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="unicode.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="xmlrpc.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+<file name="xmlrpcs.inc" server="94.136.62.229/httpdocs/" local="129114529200000000" remote="129114529200000000" />
+</dwsync>

@@ -1,0 +1,7 @@
+- color scheme according to wireframe
+- google map features
+- data fead on json
+- dynamic population from json feed.
+
+- call to get second set of data in tooltip
+

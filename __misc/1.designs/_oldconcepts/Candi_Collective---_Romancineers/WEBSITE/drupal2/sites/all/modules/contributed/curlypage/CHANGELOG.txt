@@ -1,0 +1,34 @@
+// $Id: CHANGELOG.txt,v 1.2.2.2 2010/01/05 23:36:17 manfer Exp $
+
+Curlypage x.x-x.x, xxxx-xx-xx
+-----------------------------
+
+
+Curlypage 6.x-2.3, 2010-01-05
+-----------------------------
+#674066 by manfer: Fixed problem with links containing get parameters.
+
+
+Curlypage 6.x-2.2, 2009-12-28
+-----------------------------
+#241881 by manfer: swfobject is now loaded from external source.
+
+
+Curlypage 6.x-2.1, 2009-11-16
+-----------------------------
+Initial curlypage release.
+
+
+Curlypage 5.x-2.3, 2010-01-05
+-----------------------------
+#674066 by manfer: Fixed problem with links containing get parameters.
+
+
+Curlypage 5.x-2.2, 2009-12-28
+-----------------------------
+#241881 by manfer: swfobject is now loaded from external source.
+
+
+Curlypage 5.x-2.1, 2009-11-16
+-----------------------------
+Initial curlypage release.

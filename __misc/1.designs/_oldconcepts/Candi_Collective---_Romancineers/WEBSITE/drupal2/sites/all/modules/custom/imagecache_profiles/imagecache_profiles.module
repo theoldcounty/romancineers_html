@@ -1,0 +1,45 @@
+<?php
+/**
+* Implementation of hook_help().
+*/
+function imagecache_profiles_help($section) {
+  switch($section) {
+    case 'admin/modules#description':
+      return t('utilizes imagecache presets for user profile pictures');
+  }
+}
+
+/**
+* Implementation of hook_form_alter().
+*/
+function imagecache_profiles_form_alter($form_id, &$form) {
+  switch($form_id) {
+    case 'user_edit':
+      $form['#validate']['imagecache_profiles_user_edit_validate'] = array();
+      $form['#submit']['imagecache_profiles_user_edit_submit'] = array();
+      break;
+  }
+}
+
+/**
+* Additional form validation for the user_edit form
+*/
+function imagecache_profiles_user_edit_validate($form_id, $form_values) {
+  // Add a minimum size requirement to the image upload form
+  if ($info = file_check_upload('picture_upload')) {
+    $image_info = image_get_info($form_values['picture']);
+    if ($image_info['width'] < 160 || $image_info['height'] < 160) {
+      form_set_error('picture_upload',t('Your profile image must be at least 160 pixels wide and tall (your image was @width x @height pixels).',array('@width' => $image_info['width'], '@height' => $image_info['height'])));
+    }
+  }
+}
+
+/**
+* Check for new or deleted uploads and clear the imagecache if necessary
+*/
+function imagecache_profiles_user_edit_submit($form_id, $form_values) {
+  if (file_check_upload('picture_upload') || $form_values['picture_delete']) {
+    imagecache_image_flush($form_values['picture']);
+  }
+}
+?>

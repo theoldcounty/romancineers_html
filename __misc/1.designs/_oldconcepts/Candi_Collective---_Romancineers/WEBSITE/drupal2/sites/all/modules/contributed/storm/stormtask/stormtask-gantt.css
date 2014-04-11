@@ -1,0 +1,7 @@
+/* $Id: stormtask-gantt.css,v 1.1.2.1 2009/09/10 17:57:44 magnity Exp $ */
+
+/* Ensures Gantt chart fits into page. Styling probably needs work still though. */
+div.gantt {
+  width: 100%;
+  overflow: hidden;
+}

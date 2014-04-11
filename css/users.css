@@ -1,0 +1,458 @@
+	img{
+		max-width: 100%;
+		width: auto;
+	}
+
+
+	.gender{
+		background: url("../__temp_images/gender.png") no-repeat 0 0;
+		width: 30px;
+		height: 35px;
+		display: inline-block;
+	}
+	
+	.gender.female{
+		background-position: 0 0;
+	}
+
+	.gender.male{
+		background-position: -29px 0;
+	}
+	
+	.user{
+		background: #ffffff;
+	}
+
+	/*interest-pie*/
+		.interest-pie{
+			display: none;
+			width: 190px;
+			position: absolute;
+			top: 68px;
+			right: 7px;
+		}
+		
+		.user.open .interest-pie {
+			display: block;
+			opacity: 1;
+		}
+	/*interest-pie*/
+
+
+	/*user-bar*/
+		.user-bar{
+			display: none;
+			position: absolute;
+			bottom: 15px;
+			left: 232px;
+			height: 52px;
+			/*background: blue;*/
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			width: 482px;
+		}
+		
+		.user.open .user-bar {
+			display: block;
+			opacity: 1;
+		}
+		
+		.user-bar a {
+			background: #39b54a;
+			color: #ffffff;
+			padding: 9px;
+			top: 17px;
+			position: relative;
+			font-size: 12px;
+			text-decoration: none;
+		}
+		
+	/*user-bar*/
+
+	/*user-bio*/
+		.user-bio{
+			display: none;
+			position: absolute;
+			top: 210px;
+			left: 7px;
+			/*background: green;*/
+			width: 200px;
+		}
+		
+		.user.open .user-bio {
+			display: block;
+			opacity: 1;
+		}
+	/*user-bio*/
+
+
+	/*user-profile-link*/									
+		.user-profile-link{
+			display: none;
+			position: absolute;
+			bottom: 32px;
+			right: 29px;
+			left: auto;
+		}
+
+		.user.open .user-profile-link{
+			display: block;
+			opacity: 1;
+		}
+	/*user-profile-link*/
+
+
+
+	/*last online*/
+		.last-online{
+			display: none;
+			position: absolute;
+			top: 255px;
+			right: 7px;
+			width: 200px;
+		}
+		
+		.user.open .last-online{
+			display: block;
+			opacity: 1;
+		}
+	/*last online*/
+
+
+
+	/*user focus*/
+		.user-focus{
+			display: none;
+			position: absolute;
+			bottom: 7px;
+			left: 7px;
+			/*background: green;*/
+			width: 96px;
+		}
+		
+		.user.open .user-focus {
+			display: block;
+			opacity: 1;
+		}
+	/*user focus*/
+
+
+
+	.user-image, 
+	.user-details {
+		transition: all 0s ease-in-out;
+	}
+
+
+	.isotope {
+		padding: 0;
+		list-style: none;
+	}
+
+	.user {
+		float: left;
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+
+	.user-link {
+		cursor: pointer;
+		display: block;
+		position: relative;
+		background: #dfe1e1;
+		height: 100%;
+	}
+	
+	li:nth-child(even) .user-link {
+		background: #d1d2d4;
+	}
+
+	.user-link:hover {
+		background: #f1f1f0;
+		border-radius: 4px;
+	}
+
+
+	.user,
+	.user-image {
+		width: 120px;
+		height: 120px;
+		/*background: pink;*/
+	}
+
+	.user-details {
+		display: none;
+		position: absolute;
+		width: 480px;
+		right: 7px;
+		bottom: 7px;
+		top: 7px;
+		padding: 10px 0 10px 0;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+		overflow:hidden;
+	}
+
+	.user-title {
+		color: #666;
+		font-size: 36px;
+		margin: 5px 0 0;
+	}
+
+	.user-description {
+		color: #111111;
+		width: 270px;
+		float: left;
+		line-height: 25px;
+		font-size: 13px;	
+	}
+
+
+	.user.loading .user-link,
+	.user.open .user-link {
+		background: none;
+		cursor: default;
+		margin-left: 7px;
+		margin-top: 7px;
+	}
+
+	.user.open {
+		width: 718px;
+		height: 348px;
+		border: 1px solid #d1d2d4;
+	}
+
+	.user.open .close {
+		cursor: pointer;
+		background: #d1d1d0;
+		height: 25px;
+		width: 25px;
+		border-radius: 25px;
+		color: #fff;
+		line-height: 25px;
+		font-size: 25px;
+		text-align: center;
+		position: absolute;
+		right: 7px;
+		top: 15px;
+		z-index: 1;
+	}
+
+	.user.open .user-image {
+		width: 200px;
+		height: 200px;
+	}
+
+	.user.open .user-details {
+		display: block;
+		opacity: 1;
+	}
+
+	.item-open .user {
+		opacity: 0.35;
+	}
+
+	.item-open .user.open {
+		opacity: 1;
+	}
+	
+	
+	
+	
+
+	/*responsive attributes*/
+	@media (max-width:768px) {
+
+		.user.open {
+			width: 478px;
+		}
+		
+		.user-title {
+			font-size: 21px;
+		}
+			
+		.user.open .user-image {
+			width: 115px;
+			height: 115px;
+		}	
+		.user-description {
+			width: 150px;
+			line-height: 15px;
+			font-size: 11px;
+		}
+		
+		.user-details{
+			width: 340px;
+		}
+			
+		.user-bar {
+			bottom: 32px;
+			left: 109px;
+			width: 365px;
+		}	
+
+		.interest-pie {
+			top: 45px;
+		}
+		
+		.user-profile-link {
+			bottom: 10px;
+			right: 7px;
+		}	
+	}
+
+
+	@media (max-width:480px) {
+		.user,
+		.user-image {
+			width: 80px;
+			height: 80px;
+		}	
+		
+		.user.open .user-image {
+			width: 110px;
+			height: 110px;
+		}
+
+		.user-bio{
+			width: 149px;
+			top:122px;
+		}
+
+		.user-focus{
+			bottom: auto;
+			top: 165px;
+		}
+
+
+		.user-details{
+			width: 100%;
+			right: auto;
+			bottom: auto;
+			top: 251px;
+		}
+
+		.interest-pie{
+			top: 8px;
+			right: auto;
+			left: 122px;
+		}
+
+		.user-title{
+			font-size: 22px;
+		}
+
+		.user-description {
+			width: 100%;
+			line-height: 16px;
+			font-size: 12px;
+		}
+
+		.user.open {
+			width: 318px;
+			height: 485px;
+		}
+
+		.user-bar {
+			bottom: 0;
+			left: 0;
+			height: 70px;
+			width: 320px;
+		}
+
+
+		.user-profile-link {
+			bottom: 5px;
+			right: auto;
+			left: 100px;
+		}
+	}
+
+
+
+
+	@media (min-width:320px) {
+		/* smartphones, iPhone, portrait 480x320 phones */ 
+		body{
+			background: pink;
+		}
+		
+		.flask{
+			width: 320px;
+		}
+		
+
+	}
+
+	@media (min-width:481px) {
+		/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+		body{
+			background: gold;
+		}
+
+		.flask{
+			width: 480px;
+		}	
+
+	}
+
+	@media (min-width:641px) {
+		/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+		body{
+			background: green;	
+		}
+		
+		
+		
+		.flask{
+			width: 600px;
+		}
+		
+	}
+
+	@media (min-width:768px) {
+		/* tablet, portrait iPad */
+		body{
+			background: purple;	
+		}
+		
+		.flask{
+			width: 720px;
+		}
+	}
+
+
+	@media (min-width:961px) {
+		/* tablet, landscape iPad, lo-res laptops ands desktops */
+		body{
+			background: blue;	
+		}
+		
+		.flask{
+			width: 960px;
+		}
+	}
+
+	@media (min-width:1025px) {
+		/* big landscape tablets, laptops, and desktops */
+		body{
+			background: red;
+		}
+		
+		.flask{
+			width: 1080px;
+		}	
+	}
+
+	@media (min-width:1281px) {
+		/* hi-res laptops and desktops */
+		body{
+			background: orange;
+		}
+		
+		
+		.flask{
+			width: 1200px;
+		}	
+	}	

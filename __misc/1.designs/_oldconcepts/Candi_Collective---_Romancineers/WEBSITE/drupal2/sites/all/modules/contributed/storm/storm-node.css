@@ -1,0 +1,35 @@
+/* $Id: storm-node.css,v 1.1.2.1 2009/11/27 21:24:00 magnity Exp $ */
+
+/* CSS Attributes used when viewing Storm nodes */
+
+dt.print_html {
+background: transparent url(images/html.png) no-repeat top left;
+}
+
+dt.print_pdf {
+background: transparent url(images/pdf.png) no-repeat top left;
+}
+
+div.stormfields, div.field, div.stormbody {
+  float: left;
+  width: 70%;
+}
+
+div.stormfields div.label, div.stormbody div.label, div.field div.field-label-inline-first {
+  float: left;
+  width: 150px;
+  text-align: right;
+  clear: left;
+  font-weight: bold;
+}
+
+/* Used on node view by most storm modules */
+div.stormlinks {
+  float:right;
+  width: 30%;
+}
+
+/* Used on node view for all storm modules */
+div.stormbody div.value p {
+  margin: 0;
+}

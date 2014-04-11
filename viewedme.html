@@ -1,0 +1,150 @@
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<div id="holder">
+		<div id="viz"></div>
+	</div>
+			
+
+
+		<svg>
+			<defs>
+		 <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+		 <image xlink:href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSTzjaQlkAJswpiRZByvgsb3CVrfNNLLwjFHMrkZ_bzdPOWdxDE2Q" x="0" y="0" width="100" height="100" />
+
+		</pattern>
+
+		</defs>
+		</svg>
+		
+		
+		<style>
+		
+			.chart{
+				background:#d1cec9;    
+			}
+			.arcchart path{
+				stroke: #2c2c2e;
+				stroke-width: 1px;
+			}
+	
+		</style>
+		
+		<script>
+			 var dataset = [],
+				i = 0;
+
+				for(i=0; i<75; i++){
+					dataset.push(Math.round(Math.random()*100));
+				}
+
+				var viz = d3.select("#viz")
+					.append("svg")
+					.attr("width", 600)
+					.attr("height", 600)
+				.append("g")
+					.attr("transform", "translate(100,0)")
+
+				var user = viz.append("g")
+					.attr("transform", "translate(50,0)")
+					.append("circle")
+								.attr("class", "user")
+								.style("stroke", "gray")
+								.style("fill", "url(#img1)")
+								.attr("r", 40)
+								.attr("cx", -59)
+								.attr("cy", 250)  
+				
+				
+				function buildContainer(viz, className, radius, colour, cx, cy){
+					var containingCircle = viz.append("g")
+						.attr("class", className)
+					
+					containingCircle
+						.append("g")
+							.attr("class", "containingholder")
+								.append("circle")
+								.attr("class", "containing")
+								.style("stroke", "gray")
+								.style("stroke-dasharray", ("3, 3"))
+								.style("fill", colour)
+								.attr("r", radius)
+								.attr("cx", cx)
+								.attr("cy", cy)   
+					
+					containingCircle
+						.append("g")
+						.attr("class", "dotholder")
+
+				}
+
+
+				buildContainer(viz, "followers", 200, "brown", 240, 240);
+				buildContainer(viz, "following", 140, "purple", 180, 240);
+				buildContainer(viz, "matches", 100, "green", 140, 240);
+
+				window.xps = [];
+				window.yps = [];
+
+				function getXCoordinateInCircleSection(i, x, y, r, xa, ya, ra) {
+					best = 0;
+					for (var c=0; c<i+1; c++) {
+						done = false;
+						while (!done) {
+							xp = getRandomCoordinate(x-r, x+r);
+							yp = getRandomCoordinate(y-r, y+r);
+							done = true;
+							if ((xp-x)*(xp-x)+(yp-y)*(yp-y) > (r-12)*(r-12)) done = false;
+						   if ((xp-xa)*(xp-xa)+(yp-ya)*(yp-ya) < (ra+12)*(ra+12)) done = false;
+						}
+						dist = 1000000;
+						for (var j=0; j<i; j++) {
+							d = (window.xps[j]-xp)*(window.xps[j]-xp)+(window.yps[j]-yp)*(window.yps[j]-yp);
+							if (d<dist) dist = d;
+						}
+						if (dist>best) {
+							xb = xp;
+							yb = yp;
+							best = dist;
+						}
+					}
+					window.xps[i] = xb;
+					window.yps[i] = yb;
+					return xb;
+				}
+
+				function getYCoordinateInCircleSection(i) {
+					return window.yps[i];
+				}
+				
+				function getRandomCoordinate(min, max){
+					return Math.floor(Math.random() * (max - min + 1)) + min;
+				}
+
+			// add followers markers
+			function plotDots(className, dataset, colour, x, y, r, xa, ya, ra){
+				
+				var holder = d3.select("g."+className+" .dotholder");
+					
+					holder.selectAll("circle")
+						.data(dataset)
+							.enter().append("circle")
+							.style("stroke", "gray")
+							.style("fill", colour)
+							.attr("r", 6)
+							.attr("cx", function(d, i){
+								return getXCoordinateInCircleSection(i, x, y, r, xa, ya, ra);
+							})
+							.attr("cy", function(d, i){
+							   return getYCoordinateInCircleSection(i);
+							});
+
+			}
+
+			plotDots("followers", dataset, "orange",240, 240, 200, 180, 240, 140);
+			plotDots("following", dataset, "green", 180, 240, 140, 140, 240, 100);
+			plotDots("matches", dataset, "blue", 140, 240, 100, 0, 0, 0);
+				
+
+
+		
+		</script>

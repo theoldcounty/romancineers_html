@@ -1,0 +1,154 @@
+
+
+Film Genres
+
+Comedy
+Action
+Adventure
+Drama
+Romantic Comedy
+Documentaries
+Horror
+Science Fiction
+Fantasy
+Historical
+Animated Films
+Musicals
+Police Drama
+War
+Independent Cinema
+Cartoons
+Erotic
+Manga
+Short Films
+Western
+Others
+
+
+Music
+
+
+Pop-rock
+R'n'B
+Variety
+Dance and DJ
+Soul
+Rock
+Classical
+Chart
+Blues
+Jazz
+Country
+Hard Rock
+Rap
+Electronic-techno
+Traditional
+World Music
+Independents
+Others
+Reggae
+Funk
+Disco
+
+
+
+
+Pets
+
+Dogs
+Cats
+Fish
+Horses
+Rabbits
+Gerbils
+Guinea pigs
+Birds
+Other
+Reptiles
+Exotic pets
+Insects
+
+
+
+
+Marriage
+
+important
+very important
+sacred
+not necessary
+I won't do it again
+out of the question
+
+
+Entertainment
+
+
+Evening with friends
+Dining out
+Cinema
+Bars / pubs
+Music and concerts
+Spending time with my family
+Theatre
+Reading
+Nightclubs/dancing
+Sporting event
+Museums and art
+Dance shows
+Karaoke
+Opera
+Singles parties
+Others
+	
+
+
+
+Sports
+
+walking / hiking
+fitness
+football
+running  
+dancing
+cycling  
+swimming  
+tennis / racquet sports
+rugby  
+skiing
+boxing / wrestling
+billiards / pool
+bowling
+badminton  
+weights / machines  
+mountain biking
+aerobics 
+cricket
+auto racing / motocross  
+baseball / softball
+basketball
+extreme sports
+golf
+gymnastics
+handball
+hockey  
+horseback riding  
+inline skating  
+judo
+karate
+martial arts 
+mountaineering
+water sports
+rock climbing
+rowing
+sailing
+skate boarding  
+motorracing  
+snowboarding  
+soccer
+squash  
+surfing  
+volleyball
+wind surfing
+yoga
+pilates					
