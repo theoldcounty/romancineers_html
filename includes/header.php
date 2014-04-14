@@ -69,6 +69,16 @@
 		<script type="text/javascript" src="js/d3/progressorb.js"></script>
 		<link rel="stylesheet" href="css/d3/progressorb.css">
 		
+		
+		
+		<script type="text/javascript" src="js/d3/barchart.js"></script>
+		<link rel="stylesheet" href="css/d3/barchart.css">
+		
+		
+		
+		<script type="text/javascript" src="js/d3/stackedchart.js"></script>
+		<link rel="stylesheet" href="css/d3/stackedchart.css">
+		
 
 		<script src="js/isotope.js"></script>
 		<script src="js/tiles.js"></script>

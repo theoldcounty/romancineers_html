@@ -1,0 +1,37 @@
+
+				
+		.axis path,
+		.axis line {
+			fill: none;
+			stroke: #333;
+			shape-rendering: crispEdges;
+		}
+
+		/*
+		text{
+			fill: #fff;
+		}
+		*/
+
+		.bar {
+			fill: steelblue;
+		}
+
+		.x.axis path {
+			/*display: none;*/
+		}
+
+		
+		#holder{
+			overflow:hidden;
+		}
+
+
+		.stackedchart{
+			background: grey;
+		}
+
+		.stackedchart .x.axis text{
+			font-size: 11px;
+			text-anchor:end!important;
+		}

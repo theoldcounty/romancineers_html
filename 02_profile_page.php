@@ -83,6 +83,12 @@
 										<div class="piechart" data-role="piechart" data-width=210 data-height=210 data-r=95 data-ir=65></div>
 									</li>
 									
+									
+									
+									<li class="block">
+										bar <div class="barchart" data-role="barchart" data-width=210 data-height=210></div>
+									</li>
+									
 									<li class="block h4">
 										matches
 									</li>
@@ -141,7 +147,8 @@
 									
 									
 									<li class="block">
-										stackchart chart <img src="__temp_images/stackchart.jpg">
+										<!--stackchart chart <img src="__temp_images/stackchart.jpg">-->
+										<div class="stacked" data-role="stacked" data-width=240 data-height=190></div>
 									</li>
 									
 									<li class="block">
