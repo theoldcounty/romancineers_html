@@ -13,28 +13,52 @@
 									</li>
 									<li class="block extendedwidth">
 										<div class="userimages">
-											<ul class="">
-												<li><a href="#"><img src="http://www.hollywoodtuna.com/images/bigimages/jaime_pressly_white_images_big.jpg"></a></li>
-												<li><a href="#"><img src="http://bhanks.encblogs.com/wp-content/uploads/2011/01/010711-jaime-pressly-is-a-lovely-woman.jpg"></a></li>
-												<li><a href="#"><img src="http://www.strangecosmos.com/images/content/136512.jpg"></a></li>
-												<li><a href="#"><img src="http://us.cdn281.fansshare.com/photos/jaimepressly/jaime-pressly-wallpaper-1286179958.jpg"></a></li>
-												<li><a href="#"><img src="http://www.pestaola.gr/img/jamie_pressly_white_sexy_dress_01.jpg"></a></li>
-												<li><a href="#"><img src="http://www.hollywoodtuna.com/images/bigimages/jaime_pressly_white_images_big.jpg"></a></li>
-												<li><a href="#"><img src="http://bhanks.encblogs.com/wp-content/uploads/2011/01/010711-jaime-pressly-is-a-lovely-woman.jpg"></a></li>
-												<li><a href="#"><img src="http://www.strangecosmos.com/images/content/136512.jpg"></a></li>
-												<li><a href="#"><img src="http://us.cdn281.fansshare.com/photos/jaimepressly/jaime-pressly-wallpaper-1286179958.jpg"></a></li>
-												<li><a href="#"><img src="http://www.pestaola.gr/img/jamie_pressly_white_sexy_dress_01.jpg"></a></li>
-												<li><a href="#"><img src="http://www.hollywoodtuna.com/images/bigimages/jaime_pressly_white_images_big.jpg"></a></li>
-												<li><a href="#"><img src="http://bhanks.encblogs.com/wp-content/uploads/2011/01/010711-jaime-pressly-is-a-lovely-woman.jpg"></a></li>
-												<li><a href="#"><img src="http://www.strangecosmos.com/images/content/136512.jpg"></a></li>
-												<li><a href="#"><img src="http://us.cdn281.fansshare.com/photos/jaimepressly/jaime-pressly-wallpaper-1286179958.jpg"></a></li>
-												<li><a href="#"><img src="http://www.pestaola.gr/img/jamie_pressly_white_sexy_dress_01.jpg"></a></li>
-												<li><a href="#"><img src="http://www.hollywoodtuna.com/images/bigimages/jaime_pressly_white_images_big.jpg"></a></li>
-												<li><a href="#"><img src="http://bhanks.encblogs.com/wp-content/uploads/2011/01/010711-jaime-pressly-is-a-lovely-woman.jpg"></a></li>
-												<li><a href="#"><img src="http://www.strangecosmos.com/images/content/136512.jpg"></a></li>
-												<li><a href="#"><img src="http://us.cdn281.fansshare.com/photos/jaimepressly/jaime-pressly-wallpaper-1286179958.jpg"></a></li>
-												<li><a href="#"><img src="http://www.pestaola.gr/img/jamie_pressly_white_sexy_dress_01.jpg"></a></li>												
-											</ul>
+
+
+											<div class="device" data-role="swiper" data-direction="horizontal">
+												<a class="arrow-left" href="#"></a>
+												<a class="arrow-right" href="#"></a>
+												<div class="swiper-container"><!--swiper-container-->
+													<div class="swiper-wrapper"><!--swiper-wrapper-->
+														<div class="swiper-slide">
+																
+															<ul class="">
+																<li><a href="#"><img src="http://www.hollywoodtuna.com/images/bigimages/jaime_pressly_white_images_big.jpg"></a></li>
+																<li><a href="#"><img src="http://bhanks.encblogs.com/wp-content/uploads/2011/01/010711-jaime-pressly-is-a-lovely-woman.jpg"></a></li>
+																<li><a href="#"><img src="http://www.strangecosmos.com/images/content/136512.jpg"></a></li>
+																<li><a href="#"><img src="http://us.cdn281.fansshare.com/photos/jaimepressly/jaime-pressly-wallpaper-1286179958.jpg"></a></li>
+																<li><a href="#"><img src="http://www.pestaola.gr/img/jamie_pressly_white_sexy_dress_01.jpg"></a></li>
+																<li><a href="#"><img src="http://i1-news.softpedia-static.com/images/news2/Jaime-Pressly-on-Losing-Pregnancy-Weight-I-Did-the-Cabbage-Soup-Diet-2.jpg"></a></li>
+																<li><a href="#"><img src="http://img2.wikia.nocookie.net/__cb20090704122638/charmed/images/f/fe/Jaime_Pressly.jpg"></a></li>
+																<li><a href="#"><img src="http://2.bp.blogspot.com/-5Mpo1wYddv8/Tco2Yc4oLWI/AAAAAAAAMOE/RcaSQ0XmgQM/s1600/Jaime%20Pressly4.jpg"></a></li>
+																<li><a href="#"><img src="http://img4.wikia.nocookie.net/__cb20131019183503/twohalfmen/images/f/fe/Jaime_Pressly.jpg"></a></li>
+																<li><a href="#"><img src="http://www.celebritybabyscoop.com/files/2009/09/jaime-pressly-ties-the-knot.jpg"></a></li>
+																<li><a href="#"><img src="http://img3.allvoices.com/thumbs/image/609/480/70165637-jamie-pressly.jpg"></a></li>
+																<li><a href="#"><img src="http://blogs.coventrytelegraph.net/passtheremote/jaime-pressly1.jpg"></a></li>
+																<li><a href="#"><img src="http://cdn.blogs.sheknows.com/thewire.sheknows.com/2011/01/jaimepressly.jpg"></a></li>
+																<li><a href="#"><img src="http://images.fanpop.com/images/image_uploads/Jaime-Pressly-in-Maxim-jaime-pressly-211860_400_500.jpg"></a></li>
+																<li><a href="#"><img src="http://img.spokeo.com/public/900-600/jaime_pressly_2007_06_03.jpg"></a></li>
+																<li><a href="#"><img src="http://2.bp.blogspot.com/-Cx9nzyMfzmQ/UYB0tV742mI/AAAAAAAADMo/FS2sfXdh7Zk/s1600/jaime-pressly.jpg"></a></li>
+															</ul>
+														</div>
+														<div class="swiper-slide">
+															<ul>
+																<li><a href="#"><img src="http://wallpapersbg.com/cache/Celebrities/Female/J/Jaime-Pressly/Jaime-Pressly-24.JPG_595.jpg"></a></li>
+																<li><a href="#"><img src="http://www.sharewallpapers.org/d/136162-2/Jaime+Pressly+047+1600x1200.jpg"></a></li>
+																<li><a href="#"><img src="http://www.sharewallpapers.org/d/136513-2/Jaime+Pressly+164+1024x768.jpg"></a></li>
+																<li><a href="#"><img src="http://imvdb.com/uploads/filmedinsert/files/jaime-pressly-music-videos.jpg"></a></li>												
+															</ul>
+														</div>
+														<div class="swiper-slide">
+														
+														c 3
+														
+														</div>
+													</div><!--swiper-wrapper-->
+													
+													<div class="pagination"></div>
+												</div><!--swiper-container-->
+											</div>
 										</div>
 									</li>
 									
@@ -44,7 +68,19 @@
 									
 									
 									<li class="block w1">
-										small block 2
+										<div class="device" data-role="swiper" data-direction="vertical">
+											<a class="arrow-left" href="#"></a>
+											<a class="arrow-right" href="#"></a>
+											<div class="swiper-container"><!--swiper-container-->
+												<div class="swiper-wrapper"><!--swiper-wrapper-->
+													<div class="swiper-slide">a 1</div>
+													<div class="swiper-slide">b 2</div>
+													<div class="swiper-slide">c 3</div>
+												</div><!--swiper-wrapper-->
+												
+												<div class="pagination"></div>
+											</div><!--swiper-container-->
+										</div>										
 									</li>
 									
 									<li class="block">
@@ -86,7 +122,7 @@
 									
 									
 									<li class="block">
-										bar <div class="barchart" data-role="barchart" data-width=210 data-height=210></div>
+										<div class="barchart" data-role="barchart" data-width=210 data-height=210></div>
 									</li>
 									
 									<li class="block h4">
@@ -102,7 +138,8 @@
 									</li>
 									
 									<li class="block w4">
-										compare <img src="__temp_images/comparecharts.jpg">
+										<!--compare <img src="__temp_images/comparecharts.jpg">-->
+										<div id="chart2"></div>
 									</li>
 									
 									<li class="block">
@@ -110,7 +147,8 @@
 									</li>
 									
 									<li class="block">
-										googlemap <img src="__temp_images/googlemaps.jpg">
+										<div id="canvasMap"></div>
+										<!--googlemap <img src="__temp_images/googlemaps.jpg">-->
 									</li>
 									
 									<li class="block">
@@ -153,10 +191,7 @@
 									
 									<li class="block">
 										<!--viewhistory chart <img src="__temp_images/viewhistory.jpg">-->
-										
 										<div id="viz"></div>
-
-
 									</li>
 									
 									

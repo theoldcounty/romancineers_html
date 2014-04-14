@@ -31,12 +31,14 @@
 		<script src="http://fgnass.github.io/spin.js/jquery.spin.js"></script>
 		
 		
-		
-
 		<script type="text/javascript" src="js/libs/underscore-min.js"></script>
 		<script type="text/javascript" src="js/libs/backbone-min.js"></script>
 		<script type="text/javascript" src="js/libs/colorbrewer/colorbrewer.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=true"></script>
+		
+		
+		<script src="http://www.idangero.us/sliders/swiper/js/idangerous.swiper.js"></script>
+		<link rel="stylesheet" href="http://www.idangero.us/sliders/swiper/demos/main-demos/css/idangerous.swiper.css">
 
 		<!--schedule a date -->
 		<!--<script type="text/javascript" src="js/rom/googlemaps/view.ExpandList.js"></script>-->
@@ -79,12 +81,25 @@
 		<script type="text/javascript" src="js/d3/stackedchart.js"></script>
 		<link rel="stylesheet" href="css/d3/stackedchart.css">
 		
+		
+		
+		<script type="text/javascript" src="js/d3/forcechart.js"></script>
+		<link rel="stylesheet" href="css/d3/forcechart.css">
+		
+		
+
+
+		<script type="text/javascript" src="js/swiper.js"></script>
+		<link rel="stylesheet" href="css/swiper.css">				
+		
 
 		<script src="js/isotope.js"></script>
 		<script src="js/tiles.js"></script>
 		
 		<script src="js/status.updates.js"></script>
 		<script src="js/matchmaker.js"></script>
+		
+		<script src="js/rom.google.maper.js"></script>
 		
 		
 		<script src="js/controller.js"></script>	

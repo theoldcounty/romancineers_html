@@ -12,9 +12,16 @@ $(document).ready(function() {
 		matchMaker.invoke($(this));		
 	});
 	
+	$('[data-role="swiper"]').each(function(){
+		swiper.invoke($(this));
+	});
+	
+	
 	viewedapp.invoke();
 
 	
 	progressChart.init();
 	
+	
+	googleMaper.setup(30,43);
 });

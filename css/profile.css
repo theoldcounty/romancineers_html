@@ -9,11 +9,82 @@
 		border: 1px solid black;
 	}
 	
+	
+
+.userimages{
+	
+	}
+	
+	.userimages ul{
+		list-style-type:none;
+		margin:0;
+		padding:0;
+	}
+	
+	.userimages ul li {
+		float: left;
+		width: 74px;
+		height: 74px;
+		overflow: hidden;
+		background: red;
+		margin-left: 0;
+		margin-bottom: 0;
+	}
+	
+	.userimages ul li img{
+		width: 130px;
+		height: auto;
+	}
+	
+	.action-link{
+		background: green;
+		color: white;
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	
+	
+	.w0{
+		width: 73px;
+	}
+	.w1{
+		width: 148px;
+	}
+	.w2{
+		width: 298px;
+	}
+	.w3{
+		width: 448px;
+	}
+	.w4{
+		width: 598px;
+	}
+
+
+	.h0{
+		height: 73px;
+	}
+	.h1{
+		height: 148px;
+	}
+	.h2{
+		height: 298px;
+	}
+	.h3{
+		height: 448px;
+	}
+	.h4{
+		height: 598px;
+	}	
+	
 	#isotope{
 		/*background: pink;*/
 	}	
 
-	
+	#canvasMap{
+		height: 300px;
+	}
 	
 	h1{
 		margin-bottom:0px;
@@ -24,6 +95,7 @@
 	
 	.featureimage{
 		background: pink;
+		padding: 9px;
 	}
 	
 	.feature{
@@ -34,6 +106,7 @@
 	
 	.userimages{
 		background: green;
+		height: 100%;
 	}
 	
 	.bio{

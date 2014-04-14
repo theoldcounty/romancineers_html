@@ -1,4 +1,8 @@
-
+	
+	.barchart{
+		background: grey;
+	}
+	
 	.barchart .bar {
 		fill: steelblue;
 	}

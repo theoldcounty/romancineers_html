@@ -1,0 +1,81 @@
+	
+	#chart2 h1 {
+		font-size: 64px;
+		font-weight: 300;
+		letter-spacing: -2px;
+		margin: .3em 0 .1em 0;
+	}
+
+	#chart2 h2 {
+		margin-top: 2em;
+	}
+
+	#chart2 h1, #chart2 h2 {
+		text-rendering: optimizeLegibility;
+	}
+
+	#chart2 svg {
+		font: 10px sans-serif;
+	}
+
+	#chart2 .axis path, 
+	#chart2 .axis line {
+		fill: none;
+		stroke: #ffffff;
+		shape-rendering: crispEdges;
+	}
+	
+
+	#chart2 {
+		height: 100%;
+		width: 100%;
+		background: grey;
+	}
+	#chart2 .node rect {
+		cursor: move;
+		fill-opacity: .9;
+		shape-rendering: crispEdges;
+	}
+	#chart2 .node text {
+		pointer-events: none;
+		text-shadow: 0 1px 0 #fff;
+	}
+	#chart2 .link {
+		fill: none;
+		stroke: #000;
+		stroke-opacity: .2;
+	}
+	#chart2 .link:hover {
+		stroke-opacity: .5;
+	}
+
+
+	#chart2 path.link {
+		fill: none;
+		stroke: #fff;
+		stroke-width: 1.5px;
+	}
+
+	#chart2 marker#defaultMarker {
+		fill: #fff;
+	}
+
+	#chart2 path.link.defaultMarker {
+		stroke: #fff;
+	}
+
+	#chart2 circle {
+		fill: #ccc;
+		stroke: #fff;
+		stroke-width: 1.5px;
+	}
+
+	#chart2 text {
+		pointer-events: none;
+	}
+
+	#chart2 text.shadow {
+		stroke: #fff;
+		stroke-width: 3px;
+		stroke-opacity: .8;
+	}
