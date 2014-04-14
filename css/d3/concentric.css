@@ -1,0 +1,27 @@
+		body{
+		background: #eeeeee;    
+		}
+		
+		#holder{
+			overflow:hidden;
+		}
+		.concentric{
+			float:left;
+			border: 1px solid black;
+		}
+
+		.concentricchart path {
+			stroke: #cccccc;
+			stroke-width: 1px;
+			opacity:0.8;
+		}
+
+		.concentricchart text{
+			font-size:12px;    
+		}
+
+		.legend_group circle{
+			stroke: #cccccc;
+			stroke-width: 1px;
+			opacity:0.8;
+		}

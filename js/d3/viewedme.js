@@ -1,35 +1,11 @@
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://d3js.org/d3.v3.min.js"></script>
-	<div id="holder">
-		<div id="viz"></div>
-	</div>
+
+var viewedapp = {
+	invoke: function(){
 			
-
-
-		<svg>
-			<defs>
-		 <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
-		 <image xlink:href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSTzjaQlkAJswpiRZByvgsb3CVrfNNLLwjFHMrkZ_bzdPOWdxDE2Q" x="0" y="0" width="100" height="100" />
-
-		</pattern>
-
-		</defs>
-		</svg>
-		
-		
-		<style>
-		
-			.chart{
-				background:#d1cec9;    
-			}
-			.arcchart path{
-				stroke: #2c2c2e;
-				stroke-width: 1px;
-			}
+			var w = 285;
+			var h = 285;
 	
-		</style>
-		
-		<script>
+
 			 var dataset = [],
 				i = 0;
 
@@ -39,20 +15,36 @@
 
 				var viz = d3.select("#viz")
 					.append("svg")
-					.attr("width", 600)
-					.attr("height", 600)
+					.attr("width", w)
+					.attr("height", h)
 				.append("g")
-					.attr("transform", "translate(100,0)")
+					.attr("transform", "translate("+(w*.1)+",0)")
+					
+					
+				var pattern = viz.append("svg")
+								.append("defs")
+								.append("pattern")
+									.attr("id", "img1")
+									.attr("width", (w*.16))
+									.attr("height", (h*.16))
+									.attr("patternUnits", "userSpaceOnUse")
+								.append("image")
+									.attr("xlink:href", "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSTzjaQlkAJswpiRZByvgsb3CVrfNNLLwjFHMrkZ_bzdPOWdxDE2Q")
+									.attr("x", 0)
+									.attr("y", 0)
+									.attr("width", (w*.16))
+									.attr("height", (h*.16))					
+					
 
 				var user = viz.append("g")
-					.attr("transform", "translate(50,0)")
+					.attr("transform", "translate("+(w*.09)+",0)")
 					.append("circle")
-								.attr("class", "user")
-								.style("stroke", "gray")
-								.style("fill", "url(#img1)")
-								.attr("r", 40)
-								.attr("cx", -59)
-								.attr("cy", 250)  
+						.attr("class", "user")
+						.style("stroke", "gray")
+						.style("fill", "url(#img1)")
+						.attr("r", (w*.06))
+						.attr("cx", -(w*.098))
+						.attr("cy", (h*.416))  
 				
 				
 				function buildContainer(viz, className, radius, colour, cx, cy){
@@ -78,9 +70,9 @@
 				}
 
 
-				buildContainer(viz, "followers", 200, "brown", 240, 240);
-				buildContainer(viz, "following", 140, "purple", 180, 240);
-				buildContainer(viz, "matches", 100, "green", 140, 240);
+				buildContainer(viz, "followers", (w *.38), "brown", (w *.45), (w *.4));
+				buildContainer(viz, "following", (w *.26), "purple", (w *.33), (w *.4));
+				buildContainer(viz, "matches", (w *.19), "green", (w *.26), (w *.4));
 
 				window.xps = [];
 				window.yps = [];
@@ -130,7 +122,7 @@
 							.enter().append("circle")
 							.style("stroke", "gray")
 							.style("fill", colour)
-							.attr("r", 6)
+							.attr("r", 3.5)
 							.attr("cx", function(d, i){
 								return getXCoordinateInCircleSection(i, x, y, r, xa, ya, ra);
 							})
@@ -140,11 +132,9 @@
 
 			}
 
-			plotDots("followers", dataset, "orange",240, 240, 200, 180, 240, 140);
-			plotDots("following", dataset, "green", 180, 240, 140, 140, 240, 100);
-			plotDots("matches", dataset, "blue", 140, 240, 100, 0, 0, 0);
+			plotDots("followers", dataset, "orange",(w *.45), (h *.4), (w *.38), (w *.3), (h *.4), (w *.26));
+			plotDots("following", dataset, "green", (w *.33), (h *.4), (w *.26), (w *.26), (h *.4), (w *.19));
+			plotDots("matches", dataset, "blue", (w *.26), (h *.4), (w *.19), 0, 0, 0);
 				
-
-
-		
-		</script>
+	}
+}

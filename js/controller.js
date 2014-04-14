@@ -12,4 +12,9 @@ $(document).ready(function() {
 		matchMaker.invoke($(this));		
 	});
 	
+	viewedapp.invoke();
+
+	
+	progressChart.init();
+	
 });

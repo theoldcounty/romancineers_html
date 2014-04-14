@@ -1,0 +1,124 @@
+
+path {
+  stroke-width: 1.5px;
+}
+
+.small {
+  fill: steelblue;
+}
+
+.big {
+  stroke: #666;
+  fill: #ddd;
+}
+
+.small:hover {
+  stroke: steelblue;
+  fill: lightsteelblue;
+}
+
+.test{
+    padding:30px
+}
+
+
+#progress{
+    position: relative;
+}
+
+.progresschart{
+    background: white;
+    border-radius:100px;
+    width: 100px;
+    height: 100px;
+    overflow:hidden;
+    border: 1px solid grey;
+    margin-top:5px;
+	left: 5px;
+	position: relative;
+}
+
+
+.bar {
+	fill: steelblue;
+}
+
+.bar:hover {
+	fill: brown;
+}
+
+
+.progresslabels{
+    position: absolute;
+    top: 0px;
+    left: 0;    
+}
+
+
+.userimages{
+	
+	}
+	
+	.userimages ul{
+		list-style-type:none;
+		margin:0;
+		padding:0;
+	}
+	
+	.userimages ul li {
+		float: left;
+		width: 85px;
+		height: 85px;
+		overflow: hidden;
+		background: red;
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
+	
+	.userimages ul li img{
+		width: 130px;
+		height: auto;
+	}
+	
+	.action-link{
+		background: green;
+		color: white;
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	
+	
+	.w0{
+		width: 73px;
+	}
+	.w1{
+		width: 148px;
+	}
+	.w2{
+		width: 298px;
+	}
+	.w3{
+		width: 448px;
+	}
+	.w4{
+		width: 598px;
+	}
+
+
+	.h0{
+		height: 73px;
+	}
+	.h1{
+		height: 148px;
+	}
+	.h2{
+		height: 298px;
+	}
+	.h3{
+		height: 448px;
+	}
+	.h4{
+		height: 598px;
+	}
+	

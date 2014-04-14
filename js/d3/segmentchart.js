@@ -1,17 +1,4 @@
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://d3js.org/d3.v3.min.js"></script>
-	<div id="holder">
-
-		<div id="threshold"></div>
-	</div>
-	
-		<ul class="testers">
-		<li><a href="#">1</a></li>
-		<li><a href="#">2</a></li>
-	</ul>
-	
-	<script>
-		var arcGenerator = {
+	var arcGenerator = {
 		radius: 190,
 		oldData: "",
 		init: function(data){
@@ -33,6 +20,11 @@
 			var that = this;
 			
 			var chart = d3.select(".arcchart");
+            
+            var pointers = d3.select(".pointers");
+            var labels = d3.select(".labels");
+            
+             this.addLabels(labels, pointers, data);
 			that.generateArcs(chart, data);
 		},	
 		setData: function(data){
@@ -120,16 +112,121 @@
 			}			
 		},
 		setup: function(data){		
+			
+			var w = 260;
+			var h = 260;
+			
+			this.radius = (w/2) - 70;
+		
 			var chart = d3.select("#threshold").append("svg:svg")
-					.attr("class", "chart")
-					.attr("width", 520)
-					.attr("height", 520)
-						.append("svg:g")
-						.attr("class", "arcchart")
-						.attr("transform", "translate(250,250)");
+				.attr("class", "chart")
+				.attr("width", w)
+				.attr("height", h)
+	
+			var segments = chart.append("g")
+				.attr("class", "arcchart")
+				.attr("transform", "translate("+w/2+","+h/2+")");
 
-			this.generateArcs(chart, data);		
+			var labels = chart.append("g")
+				.attr("class", "labels")
+				.attr("transform", "translate("+w/2+","+h/2+")");
+
+			var pointers = chart.append("g")
+				.attr("class", "pointers")
+				.attr("transform", "translate("+w/2+","+h/2+")");
+	
+            this.addLabels(labels, pointers, data);
+            
+			this.generateArcs(segments, data);		
 		},
+        addLabels: function(labels, pointers, data){
+
+            var ir = this.radius- 15;
+            var r = this.radius+ 30;
+
+						
+						//__labels	
+						var labels = labels.selectAll("text")
+							.data(data);
+							
+						labels.enter()
+							.append("text")
+							.attr("text-anchor", "middle")
+							
+								
+						labels
+							.attr("x", function(d) {
+								var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
+								d.cx = Math.cos(a) * (ir+((r-ir)/2));
+								return d.x = Math.cos(a) * (r + 20);
+							})
+							.attr("y", function(d) {
+								var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
+								d.cy = Math.sin(a) * (ir+((r-ir)/2));
+								return d.y = Math.sin(a) * (r + 20);
+							})
+							.text(function(d) {
+								return d.label; 
+							})
+							.each(function(d) {
+								var bbox = this.getBBox();
+								d.sx = d.x - bbox.width/2 - 2;
+								d.ox = d.x + bbox.width/2 + 2;
+								d.sy = d.oy = d.y + 5;
+							})
+							.transition()
+								.duration(300)
+								
+						labels
+							.transition()
+							.duration(300)		
+							
+						labels.exit().remove();
+						//__labels
+		
+								
+						//__pointers
+						pointers.append("defs").append("marker")
+							.attr("id", "circ")
+							.attr("markerWidth", 6)
+							.attr("markerHeight", 6)
+							.attr("refX", 3)
+							.attr("refY", 3)
+							.append("circle")
+							.attr("cx", 3)
+							.attr("cy", 3)
+							.attr("r", 3);
+						
+						var pointers = pointers.selectAll("path.pointer")
+							.data(data);
+							
+						pointers.enter()
+							.append("path")
+							.attr("class", "pointer")
+							.style("fill", "none")
+							.style("stroke", "black")
+							.attr("marker-end", "url(#circ)");
+							
+						pointers
+							.attr("d", function(d) {
+								if(d.cx > d.ox) {
+									return "M" + d.sx + "," + d.sy + "L" + d.ox + "," + d.oy + " " + d.cx + "," + d.cy;
+								} else {
+									return "M" + d.ox + "," + d.oy + "L" + d.sx + "," + d.sy + " " + d.cx + "," + d.cy;
+								}
+							})
+							.transition()
+								.duration(300)
+								
+						pointers
+							.transition()
+							.duration(300)		
+							
+						pointers.exit().remove();
+							
+						//__pointers            
+            
+        },
 		getArc: function(){
 			var that = this;
             
@@ -173,178 +270,22 @@
 							"segments": [
 								{
 									value: 50,
+                                    label: "happy",
 									color: "#2c2c2e"
 								},
 								{
 									value: 10,
-									color: "#2c2c2e"							
+									label: "sad",
+                                    color: "#2c2c2e"							
 								},
 								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 23,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
+									value: 120,
+									label: "horny",
+                                    color: "#2c2c2e"							
 								},
 								{
 									value: 40,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 33,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 45,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 40,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 33,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 33,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 45,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 40,
-									color: "#2c2c2e"							
-								},
-                                {
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 23,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 40,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 33,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 45,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 40,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 33,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 33,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 50,
-									color: "#2c2c2e"
-								},
-								{
-									value: 45,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 10,
-									color: "#2c2c2e"							
-								},
-								{
-									value: 40,
+                                    label: "angry",
 									color: "#2c2c2e"							
 								}                                
 							]
@@ -357,14 +298,17 @@
 							"segments": [
 								{
 									value: 50,
+                                    label: "happy",
 									color: "red"
 								},
 								{
 									value: 100,
+                                    label: "happy",
 									color: "yellow"							
 								},
 								{
 									value: 10,
+                                    label: "happy",
 									color: "green"							
 								}						
 							]
@@ -388,19 +332,3 @@
 			
 	});
 
-
-	</script>
-	
-	
-	
-	<style>
-	.chart{
-    background:#d1cec9;    
-}
-.arcchart path{
-    stroke: #2c2c2e;
-    stroke-width: 1px;
-}
-
-	
-	</style>

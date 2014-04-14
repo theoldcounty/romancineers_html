@@ -13,17 +13,6 @@
 		/*background: pink;*/
 	}	
 
-	.reducedwidth{
-		width: 148px;
-	}
-	
-	.extendedwidth{
-		width: 598px;
-	}
-	
-	.extendedheight{
-		height: 598px;
-	}
 	
 	
 	h1{
@@ -48,25 +37,43 @@
 	}
 	
 	.bio{
-	
+		padding: 10px 20px;
 	}
 	
 	
+	
+	.badges{
+		list-style-type:none;
+		margin:0;
+		padding: 10px 20px;
+		overflow:hidden;
+	}
+	
+	.badges li{
+		background: #ffffff;
+		width: 55px;
+		height: 35px;
+		float: left;
+		margin-left: 0;
+		margin-right: 10px;
+		font-size: 11px;
+		padding: 5px;
+	}
 	
 
 
 	/*responsive attributes*/
 	@media (max-width:768px) {
-		.block{
+		/*.block{
 			width: 298px;
-		}		
+		}*/		
 	}
 
 
 	@media (max-width:480px) {
-		.block{
+		/*.block{
 			width: 158px;
-		}
+		}*/
 	}
 
 

@@ -1,36 +1,41 @@
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://d3js.org/d3.superformula.v0.min.js"></script>
-	
-    <div id="progress">
-        <div class="progresschart"></div>
-        <div class="progresslabels"></div>
-    </div>
-
-
-<script>
 var progressChart = {
     init: function(){
     
-        var data = [
-            {
-                "label": "All Star",
-                "y": 10,
-                "x": 160,
-                "cx": 70,
-                "value" : 90
-            }
-        ];
-        
         var minLimit = 0;
         var maxLimit = 100;
-        
-        this.width = 560;
-        this.height = 300;
-        
-        this.completeWidth = 130;
-        this.completeHeight = 100;
+		
+		var el = '#progress';
+		$(el).append('<div class="progresschart"/><div class="progresslabels"/>')
 
+		var startColor = $(el).data("start-color");
+		var endColor = $(el).data("end-color");
+
+        this.width = $(el).data("width");
+        this.height = $(el).data("height");
+        
+		var orbWidth = $(el).data("width")*.3;
+		var orbHeight = $(el).data("width")*.3;
+		
+		$('.progresschart').css("width", orbWidth);
+		$('.progresschart').css("height", orbHeight);
+		
+        this.completeWidth = orbWidth;
+        this.completeHeight = orbHeight;
+		
+		
+		var vals = $(el).data("value");	
+			
+		var data = [
+            {
+                "label": $(el).data("label"),
+                "y": 10,
+                "x": this.width-50,
+                "cx": orbWidth-10,
+				"cy": orbHeight - (orbHeight * (vals/100)),
+                "value" : vals
+            }
+        ];
+		
 
         // setup scales
         
@@ -66,7 +71,7 @@ var progressChart = {
              .attr("width", this.width)
              .attr("height", this.height)
              .append("g")
-                .attr("transform", "translate(0,5)");
+                .attr("transform", "translate(0,6)");
         
         this.labels = progresslabels.append("g")
             .attr("class", "labels")        
@@ -77,51 +82,51 @@ var progressChart = {
                 
         this.y.domain([minLimit, maxLimit]);
         
-        this.chartBuild(data); 
+        this.chartBuild(data, startColor, endColor); 
         this.addLabels(data);
     },
-    chartBuild: function(data){
+    chartBuild: function(data, startColor, endColor){
         var that = this;
     
         var selector = ".progresschart";
         
         var svg = d3.select(selector);
             
-        var barrects = d3.select(selector + " .chart");        
-        
-            var bar = barrects.selectAll("rect")
-            .data(data);
-            
-            // Enter
-            bar.enter()
-            .append("rect")
-            .attr("class", "bar")
-            .attr("y", that.completeHeight);
-            
-            // Update
-            bar
-            .attr("y", that.completeHeight)
-            .attr("height", 0)
-            .transition()
-            .duration(500)
-            .attr("width", that.x.rangeBand())
-            .attr("y", function(d) { return that.y(d.value); })
-            .attr("height", function(d) { return that.completeHeight - that.y(d.value); })
-            
-            // Exit
-            bar.exit()
-            .transition()
-            .duration(250)
-            .attr("y", 0)
-            .attr("height", 0)
-            .remove();
+        var barrects = d3.select(selector + " .chart"); 
+		
+		var bar = barrects.selectAll("rect")
+			.data(data);
+			
+		// Enter
+		bar.enter()
+		.append("rect")
+		.attr("class", "bar")
+		.attr("y", that.completeHeight);
+		
+		// Update
+		bar
+		.attr("y", that.completeHeight)
+		.attr("height", 0)
+		.style("fill", startColor)
+		.transition()
+		.duration(2500)
+		.style("fill", endColor)
+		.attr("width", that.x.rangeBand())
+		.attr("y", function(d) { return that.y(d.value); })
+		.attr("height", function(d) { return that.completeHeight - that.y(d.value); })
+		
+		// Exit
+		bar.exit()
+		.transition()
+		.duration(250)
+		.attr("y", 0)
+		.attr("height", 0)
+		.remove();           
     
     },
     addLabels: function(data){
         var that = this;
             
-            //build cy val from value 
-            data[0].cy = 100 - data[0].value;
             
             //__labels  
         
@@ -209,68 +214,5 @@ var progressChart = {
 }
 
 
-progressChart.init()
 
 
-
-</script>
-
-
-<style>
-path {
-  stroke-width: 1.5px;
-}
-
-.small {
-  fill: steelblue;
-}
-
-.big {
-  stroke: #666;
-  fill: #ddd;
-}
-
-.small:hover {
-  stroke: steelblue;
-  fill: lightsteelblue;
-}
-
-.test{
-    padding:30px
-}
-
-
-#progress{
-    position: relative;    
-    margin-top: 20px
-}
-
-
-
-.progresschart{
-    background: white;
-    border-radius:100px;
-    width: 100px;
-    height: 100px;
-    overflow:hidden;
-    border: 1px solid grey;
-    margin-top:5px;
-}
-
-
-	.bar {
-		fill: steelblue;
-	}
-
-	.bar:hover {
-		fill: brown;
-	}
-
-
-.progresslabels{
-    position: absolute;
-    top: 0px;
-    left: 0;    
-}
-
-</style>

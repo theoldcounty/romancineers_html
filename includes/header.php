@@ -48,6 +48,26 @@
 		<!--d3 components-->
 		<script type="text/javascript" src="js/d3/piechart.js"></script>
 		<link rel="stylesheet" href="css/d3/piechart.css">
+
+
+		<script type="text/javascript" src="js/d3/concentric.js"></script>
+		<link rel="stylesheet" href="css/d3/concentric.css">		
+		
+		
+		<script type="text/javascript" src="js/d3/segmentchart.js"></script>
+		<link rel="stylesheet" href="css/d3/segmentchart.css">		
+		
+
+		<script type="text/javascript" src="js/d3/archeightchart.js"></script>
+		<link rel="stylesheet" href="css/d3/archeightchart.css">		
+		
+		
+		<script type="text/javascript" src="js/d3/viewedme.js"></script>
+		<link rel="stylesheet" href="css/d3/viewedme.css">
+		
+		
+		<script type="text/javascript" src="js/d3/progressorb.js"></script>
+		<link rel="stylesheet" href="css/d3/progressorb.css">
 		
 
 		<script src="js/isotope.js"></script>

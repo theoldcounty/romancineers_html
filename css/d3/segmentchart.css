@@ -1,0 +1,7 @@
+.chart{
+    background:#d1cec9;    
+}
+.arcchart path{
+    stroke: #2c2c2e;
+    stroke-width: 1px;
+}

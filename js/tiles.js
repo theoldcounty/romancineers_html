@@ -1,9 +1,9 @@
 var tileHandler = {
 	getColWidth : function(){
-		var cw = 150;
+		var cw = 75;
 		
 		if($(window).width() <= 465){
-			cw = 80;
+			cw = 75;
 		}
 		
 		return cw;	
