@@ -13,97 +13,123 @@
 		<meta name="robots" content="index, follow" />
 		
 		<!--stylesheets-->
-		<link rel="stylesheet" href="css/generic.css">
-		<link rel="stylesheet" href="css/isotope.css">
-		<link rel="stylesheet" href="css/users.css">
-		<link rel="stylesheet" href="css/profile.css">
-		<link rel="stylesheet" href="css/matchmaker.css">
-		<link rel="stylesheet" href="css/scheduledate.css">
+			<link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
+			<link rel="stylesheet" href="css/jqueryui/jquery-ui.css">
+			<link rel="stylesheet" href="css/mCustomScrollbar/jquery.mCustomScrollbar.css">
 		
-		<link rel="stylesheet" href="css/status.css">
-		
-		<!--javascript-->
-		<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>		
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="http://d3js.org/d3.v3.min.js"></script>
-		<script src="http://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
-		<script src="http://fgnass.github.io/spin.js/spin.js"></script>
-		<script src="http://fgnass.github.io/spin.js/jquery.spin.js"></script>
+			<link rel="stylesheet" href="css/generic.css">
+			<link rel="stylesheet" href="css/isotope.css">
+			<link rel="stylesheet" href="css/users.css">
+			<link rel="stylesheet" href="css/profile.css">
+			<link rel="stylesheet" href="css/matchmaker.css">
+			<link rel="stylesheet" href="css/scheduledate.css">
+			<link rel="stylesheet" href="css/status.css">
+			<link rel="stylesheet" href="css/swiper.css">
+			<link rel="stylesheet" href="css/fancybox_override.css">				
 		
 		
-		<script type="text/javascript" src="js/libs/underscore-min.js"></script>
-		<script type="text/javascript" src="js/libs/backbone-min.js"></script>
-		<script type="text/javascript" src="js/libs/colorbrewer/colorbrewer.js"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=true"></script>
+		<!-- Javascript -->
+			<!-- Libraries  -->
+			<script type="text/javascript" src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>		
+			<script type="text/javascript" src="js/libs/jquery.1.10.2.min.js"></script>
+			<script type="text/javascript" src="js/libs/d3.v3.min.js"></script>
+			<script src="http://d3js.org/d3.superformula.v0.min.js"></script>
+			<script type="text/javascript" src="js/libs/jquery.isotope.min.js"></script>
+			<script type="text/javascript" src="js/libs/spin.js"></script>
+			<script type="text/javascript" src="js/libs/jquery.spin.js"></script>
+			<script type="text/javascript" src="js/libs/underscore-min.js"></script>
+			<script type="text/javascript" src="js/libs/backbone-min.js"></script>
+			
+			
+			<script type="text/javascript" src="js/libs/jquery.browser.js"></script>
+			<script type="text/javascript" src="js/libs/jquery.ba-bbq.min.js"></script>
+			<script type="text/javascript" src="js/libs/jquery.easing.1.3.js"></script>
+			<script type="text/javascript" src="js/libs/jquery.knob.js"></script>
+			
+			<script type="text/javascript" src="js/libs/jquery.fancybox.js"></script>
+			<script type="text/javascript" src="js/libs/jquery.mCustomScrollbar.concat.min.js"></script>
+			<script type="text/javascript" src="js/libs/jquery-ui.js"></script>
+			
+			<script type="text/javascript" src="js/libs/colorbrewer/colorbrewer.js"></script>
+			
+			
+			
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=true"></script>
+			
 		
-		
-		<script src="http://www.idangero.us/sliders/swiper/js/idangerous.swiper.js"></script>
-		<link rel="stylesheet" href="http://www.idangero.us/sliders/swiper/demos/main-demos/css/idangerous.swiper.css">
+			<script type="text/javascript" src="js/libs/idangerous.swiper/idangerous.swiper.js"></script>
+			<link rel="stylesheet" href="js/libs/idangerous.swiper/idangerous.swiper.css">
 
 		<!--schedule a date -->
-		<!--<script type="text/javascript" src="js/rom/googlemaps/view.ExpandList.js"></script>-->
-		<script type="text/javascript" src="js/googlemaps/view.VenueOverlay.js"></script>
-		<script type="text/javascript" src="js/googlemaps/infoBox.js"></script>
-		<script type="text/javascript" src="js/googlemaps/googlemaps.js"></script>
-		<script type="text/javascript" src="js/googlemaps/rom.foursquare.js"></script>
+			<!--<script type="text/javascript" src="js/rom/googlemaps/view.ExpandList.js"></script>-->
+			<script type="text/javascript" src="js/rom/googlemaps/view.VenueOverlay.js"></script>
+			<script type="text/javascript" src="js/rom/googlemaps/infoBox.js"></script>
+			<script type="text/javascript" src="js/rom/googlemaps/googlemaps.js"></script>
+			<script type="text/javascript" src="js/rom/googlemaps/rom.foursquare.js"></script>
+			<script type="text/javascript" src="js/rom/googlemaps/rom.date.js"></script>
+			
+			
 		
 		<!--d3 components-->
-		<script type="text/javascript" src="js/d3/piechart.js"></script>
-		<link rel="stylesheet" href="css/d3/piechart.css">
+			
+			<!--arc chart-->
+			<script type="text/javascript" src="js/rom/d3/arc.chart/archeightchart.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/arc.chart/archeightchart.css">
+			
+			<!--bar chart-->			
+			<script type="text/javascript" src="js/rom/d3/bar.chart/barchart.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/bar.chart/barchart.css">
+			
+			<!--concentric chart-->
+			<script type="text/javascript" src="js/rom/d3/concentric.chart/concentric.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/concentric.chart/concentric.css">		
+			
+			<!--force chart-->			
+			<script type="text/javascript" src="js/rom/d3/force.chart/forcechart.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/force.chart/forcechart.css">
+			
+			<!--pie chart-->			
+			<script type="text/javascript" src="js/rom/d3/pie.chart/piechart.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/pie.chart/piechart.css">
+			
+			<!--progress chart-->			
+			<script type="text/javascript" src="js/rom/d3/progress.chart/progressorb.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/progress.chart/progressorb.css">
+			
+			<!--segment chart-->			
+			<script type="text/javascript" src="js/rom/d3/segment.chart/segmentchart.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/segment.chart/segmentchart.css">	
+			
+			<!--stacked.chart-->
+			<script type="text/javascript" src="js/rom/d3/stacked.chart/stackedchart.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/stacked.chart/stackedchart.css">
+			
+			<!--viewed me chart-->
+			<script type="text/javascript" src="js/rom/d3/viewed.me.chart/viewedme.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/viewed.me.chart/viewedme.css">	
+			
+			<!--person chart-->			
+			<script type="text/javascript" src="js/rom/d3/person.chart/personchart.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/person.chart/personchart.css">
+			
+			
+		
+		<script type="text/javascript" src="js/rom/rom.swiper.js"></script>
+		<script type="text/javascript" src="js/rom/rom.isotope.js"></script>
+		<script type="text/javascript" src="js/rom/rom.tiles.js"></script>		
+		<script type="text/javascript" src="js/rom/rom.status.updates.js"></script>
+		<script type="text/javascript" src="js/rom/rom.matchmaker.js"></script>
+		<script type="text/javascript" src="js/rom/rom.google.maper.js"></script>
+		<script type="text/javascript" src="js/rom/rom.doughnut.knob.js"></script>
+		<script type="text/javascript" src="js/rom/rom.fancybox.js"></script>
+		<script type="text/javascript" src="js/rom/rom.mcustom.scrollbar.js"></script>
+		<script type="text/javascript" src="js/rom/rom.slider.controls.js"></script>
+		
+			
+		
+		<script type="text/javascript" src="js/rom/rom.controller.js"></script>
 
-
-		<script type="text/javascript" src="js/d3/concentric.js"></script>
-		<link rel="stylesheet" href="css/d3/concentric.css">		
 		
-		
-		<script type="text/javascript" src="js/d3/segmentchart.js"></script>
-		<link rel="stylesheet" href="css/d3/segmentchart.css">		
-		
-
-		<script type="text/javascript" src="js/d3/archeightchart.js"></script>
-		<link rel="stylesheet" href="css/d3/archeightchart.css">		
-		
-		
-		<script type="text/javascript" src="js/d3/viewedme.js"></script>
-		<link rel="stylesheet" href="css/d3/viewedme.css">
-		
-		
-		<script type="text/javascript" src="js/d3/progressorb.js"></script>
-		<link rel="stylesheet" href="css/d3/progressorb.css">
-		
-		
-		
-		<script type="text/javascript" src="js/d3/barchart.js"></script>
-		<link rel="stylesheet" href="css/d3/barchart.css">
-		
-		
-		
-		<script type="text/javascript" src="js/d3/stackedchart.js"></script>
-		<link rel="stylesheet" href="css/d3/stackedchart.css">
-		
-		
-		
-		<script type="text/javascript" src="js/d3/forcechart.js"></script>
-		<link rel="stylesheet" href="css/d3/forcechart.css">
-		
-		
-
-
-		<script type="text/javascript" src="js/swiper.js"></script>
-		<link rel="stylesheet" href="css/swiper.css">				
-		
-
-		<script src="js/isotope.js"></script>
-		<script src="js/tiles.js"></script>
-		
-		<script src="js/status.updates.js"></script>
-		<script src="js/matchmaker.js"></script>
-		
-		<script src="js/rom.google.maper.js"></script>
-		
-		
-		<script src="js/controller.js"></script>	
-				
 		<!--[if lt IE 9]>
 			<script src="js/html5.js"></script>
 		<![endif]-->

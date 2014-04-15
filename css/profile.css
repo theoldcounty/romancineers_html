@@ -1,3 +1,11 @@
+/*
+* Romanineers
+* profile.css
+* Author: Rob Shan Lone
+* Copyright (c) 2012 The Old County Limited.
+*
+* All rights reserved.
+*/
 
 	.block{
 		background: #eeeeee;
@@ -7,12 +15,12 @@
 		display: block;
 		padding: 0;
 		border: 1px solid black;
+		overflow: hidden;
 	}
-	
-	
 
-.userimages{
-	
+
+	.userimages{
+
 	}
 	
 	.userimages ul{
@@ -35,6 +43,66 @@
 		width: 130px;
 		height: auto;
 	}
+	
+		
+	.sliderToggles{
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+	}
+
+	.sliderToggles span {
+		width: 50%;
+		float: left;
+		margin: 11px;
+		height: 10px;
+		margin-left: 0;
+		margin-right: 0;
+		left: 25%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.sliderToggles span.negative{
+		position: absolute;
+		left: -112px;
+		top: -5px;
+		width: auto;
+		margin: 0;
+		height: auto;
+	}
+	.sliderToggles span.positive{
+		position: absolute;
+		right: -116px;
+		float: right;
+		width: auto;
+		top: -5px;
+		margin: 0;
+		height: auto;
+		left: auto;
+	}
+
+
+	.sliderToggles .label{
+		position: absolute;
+		left: -40%;
+		font-size: 11px;
+		top: -4px;
+	}
+
+	.sliderToggles .label.left{
+		left: -40%;
+	}
+
+	.sliderToggles .label.right{
+		right: -40%;
+		left: auto;
+	}
+
+	.ui-widget{
+		font-family: inherit;
+	}	
 	
 	.action-link{
 		background: green;
@@ -94,7 +162,6 @@
 	}
 	
 	.featureimage{
-		background: pink;
 		padding: 9px;
 	}
 	
@@ -109,9 +176,26 @@
 		height: 100%;
 	}
 	
+	.characteristics,
 	.bio{
 		padding: 10px 20px;
 	}
+	
+	.user-listing{
+		margin:0;
+		padding:0;
+		list-style-type:none;
+	}
+	
+	.user-listing .mCSB_container{
+		margin-right:16px;
+	}
+
+	.user-listing .user{
+		width: 70px;
+		height: 70px;
+		overflow: hidden;
+	}	
 	
 	
 	

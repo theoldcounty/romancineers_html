@@ -1,0 +1,25 @@
+path {
+  stroke-width: 1.5px;
+}
+
+.small {
+  fill: steelblue;
+}
+
+.big {
+  stroke: #666;
+  fill: #ddd;
+}
+
+.small:hover {
+  stroke: steelblue;
+  fill: lightsteelblue;
+}
+
+.test{
+    padding:30px
+}
+
+.motives{
+    background: #eeeeee;    
+}
