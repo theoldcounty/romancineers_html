@@ -53,9 +53,9 @@
 			<script type="text/javascript" src="js/libs/colorbrewer/colorbrewer.js"></script>
 			
 			
-			
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=true"></script>
-			
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing,places&sensor=true"></script>
+			<script src="http://www.bdcc.co.uk/Gmaps/GDouglasPeuker.js"></script>			
+	
 		
 			<script type="text/javascript" src="js/libs/idangerous.swiper/idangerous.swiper.js"></script>
 			<link rel="stylesheet" href="js/libs/idangerous.swiper/idangerous.swiper.css">
@@ -67,8 +67,6 @@
 			<script type="text/javascript" src="js/rom/googlemaps/googlemaps.js"></script>
 			<script type="text/javascript" src="js/rom/googlemaps/rom.foursquare.js"></script>
 			<script type="text/javascript" src="js/rom/googlemaps/rom.date.js"></script>
-			
-			
 		
 		<!--d3 components-->
 			
@@ -112,8 +110,6 @@
 			<script type="text/javascript" src="js/rom/d3/person.chart/personchart.js"></script>
 			<link rel="stylesheet" href="js/rom/d3/person.chart/personchart.css">
 			
-			
-		
 		<script type="text/javascript" src="js/rom/rom.swiper.js"></script>
 		<script type="text/javascript" src="js/rom/rom.isotope.js"></script>
 		<script type="text/javascript" src="js/rom/rom.tiles.js"></script>		
@@ -124,8 +120,7 @@
 		<script type="text/javascript" src="js/rom/rom.fancybox.js"></script>
 		<script type="text/javascript" src="js/rom/rom.mcustom.scrollbar.js"></script>
 		<script type="text/javascript" src="js/rom/rom.slider.controls.js"></script>
-		
-			
+		<script type="text/javascript" src="js/rom/rom.google.map.search.js"></script>		
 		
 		<script type="text/javascript" src="js/rom/rom.controller.js"></script>
 
@@ -156,7 +151,7 @@
 						<!--nav-->
 							<nav id="main-navigation">
 								<a class="home" href="01_home_page.php">Home</a>
-								<a href="#">Search</a>
+								<a href="08_search_page.php">Search</a>
 								<a href="09_matchmaker_page.php">Matchmaker</a>
 							</nav>
 						<!--nav-->

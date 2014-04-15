@@ -1,83 +1,81 @@
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&libraries=drawing"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script src="http://www.bdcc.co.uk/Gmaps/GDouglasPeuker.js"></script>
-
-<script>
-
-if (!google.maps.Polygon.prototype.getBounds) {
-  google.maps.Polygon.prototype.getBounds = function(latLng) {
-    var bounds = new google.maps.LatLngBounds();
-    var paths = this.getPaths();
-    var path;
-    
-    for (var p = 0; p < paths.getLength(); p++) {
-      path = paths.getAt(p);
-      for (var i = 0; i < path.getLength(); i++) {
-        bounds.extend(path.getAt(i));
-      }
-    }
-
-    return bounds;
-  }
-}
-
-// Polygon containsLatLng - method to determine if a latLng is within a polygon
-google.maps.Polygon.prototype.containsLatLng = function(latLng) {
-  // Exclude points outside of bounds as there is no way they are in the poly
- 
-  var lat, lng;
-
-  //arguments are a pair of lat, lng variables
-  if(arguments.length == 2) {
-    if(typeof arguments[0]=="number" && typeof arguments[1]=="number") {
-      lat = arguments[0];
-      lng = arguments[1];
-    }
-  } else if (arguments.length == 1) {
-    var bounds = this.getBounds();
-
-    if(bounds != null && !bounds.contains(latLng)) {
-      return false;
-    }
-    lat = latLng.lat();
-    lng = latLng.lng();
-  } else {
-    console.log("Wrong number of inputs in google.maps.Polygon.prototype.contains.LatLng");
-  }
-
-  // Raycast point in polygon method
-  var inPoly = false;
-
-  var numPaths = this.getPaths().getLength();
-  for(var p = 0; p < numPaths; p++) {
-    var path = this.getPaths().getAt(p);
-    var numPoints = path.getLength();
-    var j = numPoints-1;
-
-    for(var i=0; i < numPoints; i++) {
-      var vertex1 = path.getAt(i);
-      var vertex2 = path.getAt(j);
-
-      if (vertex1.lng() < lng && vertex2.lng() >= lng || vertex2.lng() < lng && vertex1.lng() >= lng) {
-        if (vertex1.lat() + (lng - vertex1.lng()) / (vertex2.lng() - vertex1.lng()) * (vertex2.lat() - vertex1.lat()) < lat) {
-          inPoly = !inPoly;
-        }
-      }
-
-      j = i;
-    }
-  }
-
-  return inPoly;
-}
-
 
 var googleMapApp = {
     newShape: "",
     markers: [],
     map: "",
+	isInRegion: function(){
+				
+
+			if (!google.maps.Polygon.prototype.getBounds) {
+			  google.maps.Polygon.prototype.getBounds = function(latLng) {
+				var bounds = new google.maps.LatLngBounds();
+				var paths = this.getPaths();
+				var path;
+				
+				for (var p = 0; p < paths.getLength(); p++) {
+				  path = paths.getAt(p);
+				  for (var i = 0; i < path.getLength(); i++) {
+					bounds.extend(path.getAt(i));
+				  }
+				}
+
+				return bounds;
+			  }
+			}
+
+			// Polygon containsLatLng - method to determine if a latLng is within a polygon
+			google.maps.Polygon.prototype.containsLatLng = function(latLng) {
+			  // Exclude points outside of bounds as there is no way they are in the poly
+			 
+			  var lat, lng;
+
+			  //arguments are a pair of lat, lng variables
+			  if(arguments.length == 2) {
+				if(typeof arguments[0]=="number" && typeof arguments[1]=="number") {
+				  lat = arguments[0];
+				  lng = arguments[1];
+				}
+			  } else if (arguments.length == 1) {
+				var bounds = this.getBounds();
+
+				if(bounds != null && !bounds.contains(latLng)) {
+				  return false;
+				}
+				lat = latLng.lat();
+				lng = latLng.lng();
+			  } else {
+				console.log("Wrong number of inputs in google.maps.Polygon.prototype.contains.LatLng");
+			  }
+
+			  // Raycast point in polygon method
+			  var inPoly = false;
+
+			  var numPaths = this.getPaths().getLength();
+			  for(var p = 0; p < numPaths; p++) {
+				var path = this.getPaths().getAt(p);
+				var numPoints = path.getLength();
+				var j = numPoints-1;
+
+				for(var i=0; i < numPoints; i++) {
+				  var vertex1 = path.getAt(i);
+				  var vertex2 = path.getAt(j);
+
+				  if (vertex1.lng() < lng && vertex2.lng() >= lng || vertex2.lng() < lng && vertex1.lng() >= lng) {
+					if (vertex1.lat() + (lng - vertex1.lng()) / (vertex2.lng() - vertex1.lng()) * (vertex2.lat() - vertex1.lat()) < lat) {
+					  inPoly = !inPoly;
+					}
+				  }
+
+				  j = i;
+				}
+			  }
+
+			  return inPoly;
+			}
+	
+	
+	},
     setAllMap: function(map) {
         for (var i = 0; i < this.markers.length; i++) {
             this.markers[i].setMap(map);
@@ -144,10 +142,52 @@ var googleMapApp = {
             return isWithinPolygon;
         }
     },
+	generateMap: function(){
+		var that = this;
+		
+		
+		this.resolveSectionHeight();
+		
+        this.map = null;
+        var mapDefaults = {
+            zoom: 12,
+            center: null,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+		
+		var mapPosition = new google.maps.LatLng(-33.890542, 151.274856);
+		mapDefaults.center = mapPosition;
+		that.map = new google.maps.Map(document.getElementById("map_canvas"), mapDefaults);
+		
+		var points = [
+			['Bondi Beach', -33.890542, 151.274856, 4],
+			['Coogee Beach', -33.923036, 151.259052, 5],
+			['Cronulla Beach', -34.028249, 151.157507, 3],
+			['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+			['Maroubra Beach', -33.950198, 151.259302, 1]
+		];
+		
+		that.setMarkers(that.map, points);	
+	},
+	resolveSectionHeight: function(){
+
+		var windowHeight = $(window).height();
+		console.log("windowHeight", windowHeight);
+		
+		var headerHeight = $('header').height();
+		var footerHeight = $('footer').height();
+		
+		var remainingMapArea = windowHeight - headerHeight - footerHeight;
+		
+		$('.googlemaps').css("height", remainingMapArea);	
+	},
     invoke: function(){
         var that = this;
-        
-        $(".edit").click(function(e) {
+		
+		this.generateMap();
+		this.isInRegion();
+		
+		$(".editing").click(function(e) {
             e.preventDefault();
             
             if($(this).data("editing")){
@@ -178,7 +218,7 @@ var googleMapApp = {
             }
         });
         
-        $(".clear").click(function(e) {
+        $(".clearing").click(function(e) {
             e.preventDefault();
             console.log("clear");
             that.newShape.setMap(null);
@@ -291,7 +331,7 @@ var googleMapApp = {
             
         });
         
-        $(".draw").click(function(e) {
+        $(".drawing").click(function(e) {
             e.preventDefault();
             console.log("draw");
             
@@ -341,29 +381,7 @@ var googleMapApp = {
             });            
         });
       
-        this.map = null;
-        var mapDefaults = {
-            zoom: 12,
-            center: null,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        
-        // documentReady
-        $(function () {
-            var mapPosition = new google.maps.LatLng(-33.890542, 151.274856);
-            mapDefaults.center = mapPosition;
-            that.map = new google.maps.Map(document.getElementById("map"), mapDefaults);
-            
-            var points = [
-                ['Bondi Beach', -33.890542, 151.274856, 4],
-                ['Coogee Beach', -33.923036, 151.259052, 5],
-                ['Cronulla Beach', -34.028249, 151.157507, 3],
-                ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-                ['Maroubra Beach', -33.950198, 151.259302, 1]
-            ];
-            
-            that.setMarkers(that.map, points);
-        });
+	
         
     }
 }
@@ -371,64 +389,7 @@ var googleMapApp = {
 
 // documentReady
 $(function () {
+	console.log("ready");
     googleMapApp.invoke();
 }); 
        
-</script>
-
-
-<style>
-
-html, body, #map {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#placeholder{
-    width: 100%;
-    height: 100%;  
-    
-}
-
-
-ul.menu{
-    list-style-type:none;
-    background: grey;
-    margin:0;
-    overflow:hidden;
-}
-
-ul.menu li{
-    background: #333333;
-    float:left;
-    padding: 5px;
-    margin-right:2px;
-}
-
-ul.menu li a{
-    text-decoration: none;
-    font-size: 11px;
-    color: #ffffff;
-}
-
-
-</style>
-
-
-
-<ul class="menu">
-    <li class="clear"><a href="#">CLEAR</a></li>      
-    <li class="edit"><a href="#">EDIT</a></li>  
-    <li class="draw"><a href="#">DRAW</a></li> 
-    <li class="drawfreehand"><a href="#">DRAW FREEHAND</a></li> 
-    
-    
-    <li class="clearmarkers"><a href="#">clearmarkers</a></li> 
-    <li class="showmarkers"><a href="#">showmarkers</a></li> 
-</ul>
-
-<section id="placeholder">
-    <div id="map" ></div>
-</section>

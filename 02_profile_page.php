@@ -169,7 +169,7 @@
 									
 									<li class="block">
 										<!--interest block <img src="__temp_images/pie1.jpg">-->
-										<div class="piechart" data-role="piechart" data-width=210 data-height=210 data-r=95 data-ir=65></div>
+										<div class="piechart" data-role="piechart" data-width=210 data-height=210 data-r=95 data-ir=65 data-colors="#1f78b4,#fe7f0e,#ffbc78,#b2cae6,#ff08d9"></div>
 									</li>
 									
 									
@@ -201,7 +201,7 @@
 									</li>
 									<li class="block">
 										<!--relationship block <img src="__temp_images/pie2.jpg">-->
-										<div class="piechart" data-role="piechart" data-width=210 data-height=210 data-r=95 data-ir=65></div>
+										<div class="piechart" data-role="piechart" data-width=210 data-height=210 data-r=95 data-ir=65 data-colors="#ff0066,#ff909c,#fd61a2,#980156,#98017d"></div>
 									</li>
 									
 									<li class="block w4">

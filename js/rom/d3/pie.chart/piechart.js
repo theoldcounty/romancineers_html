@@ -8,7 +8,7 @@ $(document).ready(function() {
 						var clone = jQuery.extend(true, {}, options["data"]);
 						
 						methods.el = this;			
-						methods.setup(clone, options["width"], options["height"], options["r"], options["ir"]);
+						methods.setup(clone, options["width"], options["height"], options["r"], options["ir"], options["colors"]);
 					},
 					getArc: function(radius, innerradius){
 						var arc = d3.svg.arc()
@@ -17,7 +17,7 @@ $(document).ready(function() {
 							
 						return arc;
 					},
-					setup: function(dataset, w, h, r, ir){
+					setup: function(dataset, w, h, r, ir, colors){
 						
 						var padding = 80;
 					
@@ -26,17 +26,16 @@ $(document).ready(function() {
 						this.radius = r
 						this.innerradius = ir;
 						
-						//this.color = d3.scale.category20();
-						
-						var apple = new Array("#369801", "#2f8202", "#4ecd09", "#00ff00", "#00ff90");
-						var strawberry = new Array("#ff0000", "#ff4e4e", "#ff4eb2", "#980156", "#98017d");
-						
-						var colorArrayLength = apple.length;
-						console.log("colorArrayLength", colorArrayLength);
-						
-						this.color = d3.scale.ordinal()
-									.domain(d3.range(colorArrayLength))
-									.range(apple); 
+						if(colors != undefined){
+							//__custom colors
+							var colors = colors.split(",");						
+							var colorArrayLength = colors.length;						
+							this.color = d3.scale.ordinal()
+										.domain(d3.range(colorArrayLength))
+										.range(colors);
+						}else{
+							this.color = d3.scale.category20();
+						}
 						
 						this.pie = d3.layout.pie()
 							.sort(null)
@@ -361,7 +360,8 @@ $(document).ready(function() {
 						width: $(this).data("width"),
 						height: $(this).data("height"),
 						r: $(this).data("r"),
-						ir: $(this).data("ir")
+						ir: $(this).data("ir"),
+						colors: $(this).data("colors")
 					}
 					
 					$("#"+selector).piechart(options);
