@@ -1,35 +1,20 @@
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://d3js.org/d3.v3.min.js"></script>
-    <div id="holder">
-		<div id="threshold"></div>
-	</div>
-
-<style>
-
-.chart{
-    background:#d1cec9;    
-}
-.arcchart path{
-    stroke: #2c2c2e;
-    stroke-width: 1px;
-}
-
-</style>
-
-
-<script>
-
 	var timeArc = {
 		radius: 340,
 		oldData: "",
-		init: function(data){
-			var clone = jQuery.extend(true, {}, data);
+		init: function(el, options){
+			var clone = jQuery.extend(true, {}, options["data"]);
             
 			var preparedData = this.setData(clone);			
 			this.oldData = preparedData;
-			this.setup(preparedData);
-                        this.addLabel(clone);
+			
+			var w = options["width"];
+			var h = options["height"];
+			
+			this.radius = w/2;
+			
+			this.setup(el, preparedData, w, h);
+            this.addLabel(el, clone);
 		},
 		update: function(data){
 			var clone = jQuery.extend(true, {}, data);
@@ -204,34 +189,37 @@
 				};
 			}			
 		},
-        addLabel: function(data){
+        addLabel: function(el, data){
             var that = this;
             
-		var label_group = d3.select(".labels");
+			console.log("add label");
+			
+			var label_group = d3.select(el+ " .labels");
 
-        label_group.append("text")
-            .attr("class", "word")
-            .attr("dy", "30")
-            .text(data[0].label);
+			label_group.append("text")
+				.attr("class", "word")
+				.attr("dy", "30")
+				.text(data[0].label);
         
         },
-		setup: function(data){		
-			var chart = d3.select("#threshold")
+		setup: function(el, data, w, h){		
+		
+			var chart = d3.select(el)
                 .append("svg:svg")
                     .attr("class", "chart")					
-					.attr("width", 420)
-					.attr("height", 600)
-                    .attr("transform", "translate(0,40)");
+					.attr("width", w)
+					.attr("height", h)
+                    .attr("transform", "translate(0,30)");
             
             var arcchart = chart
                             .append("g")
                             .attr("class", "arcchart")
-                            .attr("transform", "translate(400,260)");
+                            .attr("transform", "translate("+((w/2)+5)+","+((h/2)-5)+")");
             
             this.labelHolder = chart
                             .append("g")
                             .attr("class", "labels")
-                            .attr("transform", "translate(100, 60) rotate(-55)")
+                            .attr("transform", "translate(3, "+h*.16+") rotate(-55)")
                         
 			this.generateArcs(arcchart, data);		
 		},
@@ -319,7 +307,7 @@
 				}			
 			];
 
-
+/*
 			var dataCharts = [
 				{
 					"data": [
@@ -352,15 +340,27 @@
 					]
 				}			
 			];
-			
+*/			
 			
 			
 			var clone = jQuery.extend(true, {}, dataCharts);
 			
-			timeArc.init(clone[0].data);
+			//var el = "#threshold3";
 			
+
+			//__invoke concentric
+			$('[data-role="timearc"]').each(function(index) {
+				var selector = "timearc"+index;
+				
+				$(this).attr("id", selector);
+				
+				var options = {
+					data: clone[0].data,
+					width: $(this).data("width"),
+					height: $(this).data("height")
+				}
+				
+				timeArc.init("#"+selector, options);
+			});			
 			
 	});
-
-
-</script>

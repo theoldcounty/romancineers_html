@@ -1,0 +1,9 @@
+
+.chart{
+    background:#d1cec9;    
+}
+.timearcchart path {
+	stroke: #cccccc;
+	stroke-width: 1px;
+	opacity: 0.8;
+}

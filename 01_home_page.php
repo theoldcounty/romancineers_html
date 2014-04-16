@@ -50,7 +50,7 @@
 									
 									<div class="interest-pie">
 										<!--<img src="__temp_images/interestpie.jpg">-->
-										<div class="piechart" data-role="piechart" data-width=95 data-height=95 data-r=45 data-ir=0></div>
+										<div class="piechart" data-role="piechart" data-width=95 data-height=95 data-r=45 data-ir=0 data-colors="#1f78b4,#fe7f0e,#ffbc78,#b2cae6,#ff08d9"></div>
 									</div>
 									
 									<div class="user-details">

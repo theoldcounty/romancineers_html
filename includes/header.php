@@ -110,6 +110,11 @@
 			<script type="text/javascript" src="js/rom/d3/person.chart/personchart.js"></script>
 			<link rel="stylesheet" href="js/rom/d3/person.chart/personchart.css">
 			
+			
+			<!--time arc chart-->			
+			<script type="text/javascript" src="js/rom/d3/time.arc.chart/timearcchart.js"></script>
+			<link rel="stylesheet" href="js/rom/d3/time.arc.chart/timearcchart.css">
+			
 		<script type="text/javascript" src="js/rom/rom.swiper.js"></script>
 		<script type="text/javascript" src="js/rom/rom.isotope.js"></script>
 		<script type="text/javascript" src="js/rom/rom.tiles.js"></script>		
@@ -144,11 +149,33 @@
 				<div class="headerstrip">
 					<div class="flask">
 						<h1 id="logo">Romancineers</h1>
-						
-						<nav id="user-navigation">
-							<a href="#">Login</a>
-							<a href="#">Register</a>
-						</nav>
+												
+						<div class="user-configuration">
+							<?php
+								$logged = true;
+								
+								if($logged){
+									?>
+									<div id="user-avatar">
+										<a class="user-avatar" href="02_profile_page.php"><img src="__temp_images/featureimage.jpg"></a>
+									</div>
+
+									<nav id="user-navigation">
+										<a href="02_profile_page.php">Jean-cecile dolezal</a>
+										<a data-role="fancybox" class="fancybox.ajax" href="_lightbox_template.html">Logout</a>
+									</nav>									
+
+									<?php
+								}{
+									?>
+										<nav id="user-navigation">
+											<a data-role="fancybox" class="fancybox.ajax" href="_lightbox_template.html">Login</a>
+											<a data-role="fancybox" class="fancybox.ajax" href="_lightbox_template.html">Register</a>
+										</nav>
+									<?php
+								}
+							?>
+						</div>
 					</div>
 				</div>
 				<div class="navstrip">
@@ -156,8 +183,8 @@
 						<!--nav-->
 							<nav id="main-navigation">
 								<a class="home" href="01_home_page.php">Home</a>
-								<a href="08_search_page.php">Search</a>
-								<a href="09_matchmaker_page.php">Matchmaker</a>
+								<a class="search" href="08_search_page.php">Search</a>
+								<a class="matchmaker" href="09_matchmaker_page.php">Matchmaker</a>
 							</nav>
 						<!--nav-->
 					</div><!--flask-->

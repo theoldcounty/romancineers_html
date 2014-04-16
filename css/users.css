@@ -12,12 +12,13 @@
 		width: auto;
 	}
 
-
 	.gender{
-		background: url("../__temp_images/gender.png") no-repeat 0 0;
+		background: url("../images/gender.png") no-repeat 0 0;
 		width: 30px;
 		height: 35px;
 		display: inline-block;
+		top: 5px;
+		position: relative;
 	}
 	
 	.gender.female{
@@ -30,6 +31,19 @@
 	
 	.user{
 		background: #ffffff;
+	}
+	
+	
+	.user-name{
+		margin-bottom: 5px;
+		line-height: 25px;
+		font-size: 25px;		
+	}
+	
+	.user-location{
+		margin-bottom: 5px;				
+		line-height: 15px;
+		font-size: 15px;
 	}
 
 	/*interest-pie*/
@@ -205,7 +219,7 @@
 
 	.user-title {
 		color: #666;
-		font-size: 36px;
+		font-size: 34px;
 		margin: 5px 0 0;
 	}
 

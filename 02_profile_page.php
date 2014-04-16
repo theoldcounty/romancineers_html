@@ -2,10 +2,9 @@
 			
 				<div class="flask"><!--flask-->
 					<div class="batch">
-							<h1>Jean-cecile dolezal <span>female</span></h1>
-							<h3>Montreal, Canada, 34 years old</h3>
+							<h1 class="user-name">Jean-cecile dolezal <span class="gender female"></span></h1>
+							<h3 class="user-location">Montreal, Canada, 34 years old</h3>
 							
-							<div id="progress" data-width=240 data-height=80 data-label="The Player" data-value=30 data-start-color="#1f77b4" data-end-color="#ff7f0e"></div>
 							
 								<ul data-role="isotope-tiles" id="isotope" class="isotope">
 									<li class="block">
@@ -13,7 +12,6 @@
 									</li>
 									<li class="block extendedwidth">
 										<div class="userimages">
-
 
 											<div class="device" data-role="swiper" data-direction="horizontal">
 												<a class="arrow-left" href="#"></a>
@@ -147,28 +145,27 @@
 									
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link" href="_lightbox_template.html">Followers</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link followers" href="_lightbox_template.html">Followers</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link" href="_lightbox_template.html">Follow Me</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link followme" href="_lightbox_template.html">Follow Me</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link" href="_lightbox_template.html">Private Message</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link privatemessage" href="_lightbox_template.html">Private Message</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link" href="_lightbox_template.html">Photos</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link photos" href="_lightbox_template.html">Photos</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a class="action-link" href="03_schedule_date_page.php">Schedule date</a>
+										<a class="action-link scheduledate" href="03_schedule_date_page.php">Schedule date</a>
 									</li>
 									
-									
 									<li class="block w0 h0">
-										<a class="action-link" href="throbbingdot.html">Who is near me</a>
+										<a class="action-link whoeisnear" href="throbbingdot.html">Who is near me</a>
 									</li>
 									
 									
@@ -281,6 +278,16 @@
 									
 									
 									<li class="block">
+										<div class="timearc" data-role="timearc" data-width=240 data-height=240 data-type="indent"></div>
+									</li>
+									
+									
+									
+									<li class="block h1">
+										<div id="progress" data-width=240 data-height=80 data-label="The Player" data-value=30 data-start-color="#1f77b4" data-end-color="#ff7f0e"></div>
+									</li>
+									
+									<li class="block h1">
 										<!--history chart <img src="__temp_images/history.jpg">-->
 										<h3>Recently Viewed</h3>
 										<ul class="user-listing" data-custom-scroller="true" data-horizontalscroll="true" data-theme="dark">

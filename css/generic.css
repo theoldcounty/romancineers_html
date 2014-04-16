@@ -66,6 +66,43 @@
 				width: 219px;
 				margin: 0;
 				margin-top: 18px;
+				float: left;
+			}
+			
+			.user-configuration{
+				float: right;
+				overflow: hidden;
+			}
+			
+			#user-avatar{
+				float: left;
+				margin-top: 12px;
+			}
+			
+			#user-avatar .user-avatar{
+				width: 50px;
+				height: 50px;
+				overflow: hidden;
+				display: inline-block;
+			}
+						
+			#user-navigation{
+				float: right;
+				margin-top: 30px;			
+			}
+			
+			#user-navigation a{
+				font-size: 12px;
+				text-decoration: none;
+				margin-left: 10px;
+				color: #dcdcdc;
+				text-decoration: none;
+				border-right: 1px solid black;
+				padding-right: 10px;
+			}
+			
+			#user-navigation a:hover{
+				color: #ffffff;
 			}
 			
 			#main-navigation{
@@ -77,17 +114,28 @@
 			#main-navigation a{
 				color: #030303;
 				font-size: 12px;
-				background: #ebecee;
+				background: url("../images/sprite_main_navigation.png") 0 0 no-repeat #ebecee;
 				display: block;
 				float: right;
 				border: 1px solid black;
-				height: 80px;
+				height: 20px;
 				width: 80px;
 				text-align: center;
+				padding-top: 60px;
+				text-decoration: none;
 			}
 			
 			#main-navigation a.home{
 				float:left;
+				background-position: -9px -9px;
+			}
+			
+			#main-navigation a.search{
+				background-position: -135px -9px;
+			}
+			
+			#main-navigation a.matchmaker{
+				background-position: -268px -9px;
 			}
 			
 			
