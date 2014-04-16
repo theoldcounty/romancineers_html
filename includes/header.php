@@ -144,6 +144,11 @@
 				<div class="headerstrip">
 					<div class="flask">
 						<h1 id="logo">Romancineers</h1>
+						
+						<nav id="user-navigation">
+							<a href="#">Login</a>
+							<a href="#">Register</a>
+						</nav>
 					</div>
 				</div>
 				<div class="navstrip">
