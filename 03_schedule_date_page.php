@@ -3,20 +3,8 @@
 				<!--<div class="flask">--><!--flask-->
 					<div class="batch">
 						
-						
-						<script>
-
-							$(document).ready(function() {
-								console.log("ready!");
-								
-								//_enable the google map/foursquare dating app
-								new GoogleMaps({el: $(document)});
-							});
-						</script>
-
-
 						<!--googlemaps-->
-						<div class="googlemaps">
+						<div class="googlemaps" data-role="scheduledate">
 									<section class="maps-panel">
 										<div class="data-attributes">
 											<div id="googleMapData">

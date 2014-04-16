@@ -163,8 +163,15 @@
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link" href="_lightbox_template.html">Schedule date</a>
+										<a class="action-link" href="03_schedule_date_page.php">Schedule date</a>
 									</li>
+									
+									
+									<li class="block w0 h0">
+										<a class="action-link" href="throbbingdot.html">Who is near me</a>
+									</li>
+									
+									
 									
 									
 									<li class="block">

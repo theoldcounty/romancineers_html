@@ -47,6 +47,14 @@ $(document).ready(function() {
 		googleMaper.invoke($(this));
 	});
 	
+
+	$('[data-role="searchgooglemap"]').each(function(){
+		googleMapApp.invoke();
+	});	
 	
+	
+	$('[data-role="scheduledate"]').each(function(){
+		new GoogleMaps({el: $(document)});
+	});		
 	
 });

@@ -17,7 +17,7 @@
 }
 	
 .device .arrow-left{
-	background: url(http://www.idangero.us/sliders/swiper/demos/main-demos/img/arrows.png) no-repeat left top;
+	background: url(swiper/arrows.png) no-repeat left 0;
 	position: absolute;
 	left: 10px;
 	top: 50%;
@@ -28,7 +28,7 @@
 	cursor: pointer;	
 }
 .device .arrow-right{
-	background: url(http://www.idangero.us/sliders/swiper/demos/main-demos/img/arrows.png) no-repeat left bottom;
+	background: url(swiper/arrows.png) no-repeat left -30px;
 	position: absolute;
 	right: 10px;
 	top: 50%;
@@ -67,3 +67,24 @@
 }
 .swiper-pagination-switch{display:inline-block;width:10px;height:10px;border-radius:10px;background:#999;box-shadow:0px 1px 2px #555 inset;margin:0 3px;cursor:pointer; }
 .swiper-active-switch{background:#fff;}
+
+[data-role="swiper"] {
+ 
+}
+
+
+[data-role="swiper"][data-direction="vertical"] .arrow-left{
+	left: 42%;
+	top: 5%;
+	width: 30px;
+	height: 17px;
+	background-position: 0 -65px;
+}
+
+[data-role="swiper"][data-direction="vertical"] .arrow-right{
+	left: 42%;
+	top: 90%;
+	width: 30px;
+	height: 17px;
+	background-position: 0 -90px;
+}

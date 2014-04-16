@@ -73,10 +73,14 @@ var VenueOverlay = Backbone.View.extend({
 		var recepientUid = "518b090fd1ef11c72b4bcb85";
 		
 		console.log("venueId2 ", venueId);
+		
+		//date
+		var url = "_scheduledate_lightbox.php";
+		
 
 		$.fancybox({
 			type: 'ajax',
-			href : 'date?venueId='+venueId+'&senderUid='+senderUid+'&recepientUid='+recepientUid,
+			href : url+'?venueId='+venueId+'&senderUid='+senderUid+'&recepientUid='+recepientUid,
 			title : 'Lorem lipsum',
 			beforeShow : function(){
 				date.init();

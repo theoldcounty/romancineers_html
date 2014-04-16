@@ -150,16 +150,18 @@ var googleMapApp = {
 		
         this.map = null;
         var mapDefaults = {
-            zoom: 12,
+            zoom: 3,
             center: null,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 		
-		var mapPosition = new google.maps.LatLng(-33.890542, 151.274856);
+		var mapPosition = new google.maps.LatLng(13.890542, 91.274856);
 		mapDefaults.center = mapPosition;
 		that.map = new google.maps.Map(document.getElementById("map_canvas"), mapDefaults);
 		
 		var points = [
+			['Bondi Beach', 23.890542, 30.274856, 7],
+			['Bondi Beach', 33.890542, 31.274856, 6],
 			['Bondi Beach', -33.890542, 151.274856, 4],
 			['Coogee Beach', -33.923036, 151.259052, 5],
 			['Cronulla Beach', -34.028249, 151.157507, 3],
@@ -386,10 +388,3 @@ var googleMapApp = {
     }
 }
 
-
-// documentReady
-$(function () {
-	console.log("ready");
-    googleMapApp.invoke();
-}); 
-       

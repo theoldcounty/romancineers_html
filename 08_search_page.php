@@ -54,7 +54,7 @@ ul.menu li a{
     <li class="showmarkers"><a href="#">showmarkers</a></li> 
 </ul>
 
-<div class="googlemaps">
+<div class="googlemaps" data-role="searchgooglemap">
     <div id="map_canvas"></div>
 </div>						
 						

@@ -361,6 +361,10 @@ var GoogleMaps = Backbone.View.extend({
 	onMarkerClicked: function(marker) {
 
 		var venueId = marker.venueInfoVO.venueInfo.id;
+		console.log("venueId", venueId);
+		
+		console.log("marker", marker);
+		
 		if(venueId){
 			foursquareApi.exploreVenue(venueId);
 		}
