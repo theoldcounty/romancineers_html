@@ -19,4 +19,10 @@
 
 
 
+.fancybox-wrap{
+	width: 80%!important;
+}
 
+.fancybox-inner{
+	width: 100%!important;
+}

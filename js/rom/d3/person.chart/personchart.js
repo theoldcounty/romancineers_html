@@ -1,11 +1,11 @@
 var personBuilder = {
     init: function(){
     
-        var h = 150;
-        var w = 250;
+        var h = 130;
+        var w = 240;
         
-        var padding = 20;
-        
+        var paddingLeft = 20;
+        var paddingTop = 10;
         
         var x = d3.scale.ordinal()
             .domain(d3.superformulaTypes)
@@ -13,10 +13,10 @@ var personBuilder = {
         
         var svg = d3.select("#person").append("svg")
             .attr("width", w)
-            .attr("height", h+20)
+            .attr("height", h+10)
             .attr("class", "motives") 
         .append("g")
-            .attr("transform", "translate("+padding+","+padding+")");
+            .attr("transform", "translate("+paddingLeft+","+paddingTop+")");
         
         
          this.peoples = svg.append("g")

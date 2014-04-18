@@ -17,7 +17,7 @@
 		border: 1px solid black;
 		overflow: hidden;
 	}
-
+	
 	.user-name .gender{
 		top:9px;
 	}
@@ -212,6 +212,19 @@
 	.characteristics,
 	.bio{
 		padding: 10px 20px;
+		font-size:12px;
+	}
+	
+	.bio-container{
+		height: 200px;
+	}
+	
+	.characteristics table td{
+		padding: 0 2px;
+	}
+	
+	.characteristics .label{
+		color: #ff247c;
 	}
 	
 	.user-listing{

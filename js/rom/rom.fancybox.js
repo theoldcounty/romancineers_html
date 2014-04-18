@@ -7,16 +7,12 @@
 * All rights reserved.
 */
 
-
 var fancybox = {
 	invoke: function(el){
-		
 		var options = {
-			maxWidth	: 800,
-			maxHeight	: 600,
+			minWidth : 400,
+			maxWidth	: "70%",
 			fitToView	: false,
-			width		: '70%',
-			height		: '70%',
 			padding: 0,
 			helpers: {
 				overlay: {
@@ -24,14 +20,29 @@ var fancybox = {
 				}
 			},
 			beforeShow: function(){
-
 				var section = $(this).attr("href");
-				//pageHandler.reBindEvents(section);
-				
-				//tabs.init();
-			}
+				console.log("fancy before show");
+			},
+			onComplete:	function() {
+				console.log("fancy complete");
+				appController.invoke();
+			}	
 		};
 		
 		el.fancybox(options);	
+	},
+	ajaxBased: function(url, callback){
+		$.fancybox({
+			type: 'ajax',
+			minWidth : 400,
+			maxWidth	: "70%",			
+			fitToView	: false,
+			padding: 0,
+			href : url,
+			title : 'Lorem lipsum',
+			beforeShow : function(){
+				callback();
+			}
+		});	
 	}
 };

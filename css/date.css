@@ -1,0 +1,238 @@
+	#dating{
+		overflow: hidden;
+	}					
+	
+	#dating  h3{
+		margin: 0;
+		font-size: 13px;
+	}
+	
+	#dating .dating-holder{
+		overflow: hidden;
+		font-size: 12px;
+		opacity:0;
+	}
+	
+	#dating .ui-tabs .ui-tabs-nav{
+		background: none;
+		border: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: 30%;
+		font-size: 12px;
+		border-bottom: 1px solid black;
+		border-radius: 0;
+		padding-top: 7px;
+	}
+
+	#dating .dating-holder button,
+	#dating .dating-holder input[type="submit"]{
+		background: #333333;
+		border: 0;
+		padding: 10px;
+		color: #ffffff;
+	}
+	
+	#dating .knob{
+		color: #333333!important;
+		font-size: 13px!important;
+		top: 8px;
+		position: relative;
+	}
+	
+	#dating .venue{
+		float:left;
+	}
+	
+	#dating .venue .venue-event-list{
+		list-style-type:none;
+		margin:0;
+		padding:0;
+	}
+	
+	#dating .venue .venue-event-list li{
+		margin: 0;
+		margin-bottom: 7px;	
+	}
+	
+	#dating .venue .venue-event{
+		margin-bottom:20px;
+	}
+	
+	#dating .venue .venue-event-container{
+		height:	200px;
+	}
+	
+	#dating .venue .venue-feedback-container{
+		height:	200px;
+	}
+	
+	#dating .venue .venue-image-container{
+		height:	100px;
+	}
+	
+	#dating .venue-rating-title{
+		position: relative;
+		text-align: right;
+		top: 33px;
+		right: 23px;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	
+	
+	#dating .venue .venue-feedback{
+		list-style-type:none;
+		margin:0;
+		padding:0;
+	}
+	
+	#dating .venue .venue-feedback li{
+		margin: 0;
+		margin-bottom: 7px;					
+	}
+	
+	#dating .venue .venue-image{
+		list-style-type:none;
+		margin:0;
+		padding:0;								
+		margin-left: 10px;
+	}
+	
+	#dating .venue .venue-image li{
+		float: left;
+		margin-right: 8px;
+		margin-bottom: 8px;
+		margin-left: 0;
+		width: 60px;
+	}
+	
+	
+	/*candidate*/
+	#dating .candidate{
+		float:right;
+	}
+	
+	#dating .candidate .feature-image{
+		width: 200px;
+		height: auto;
+	}
+	
+	#dating .candidate .user-interests{
+	}
+	
+	#dating .venue-map{
+		margin-bottom:20px;
+	}
+	
+	#dating .venue-rating{
+		text-align: right;
+		top: -20px;
+		position: relative;
+	}
+					
+	
+	@media screen and (max-width: 767px){
+		.ui-tabs .ui-tabs-panel{
+			padding: 0;
+		}
+
+		.dating-holder h1{
+			font-size: 19px;
+			margin-bottom: 10px;
+		}
+		
+		.dating-holder h2{
+			font-size: 17px;
+			margin-bottom: 10px;
+		}
+		
+		#dating .venue .venue-image li{
+			width: 44px;
+		}
+		
+		#dating .venue-rating-title{
+			right: auto;
+			top: 44px;
+		}
+		
+		#dating .candidate .feature-image {
+			width: 100%;
+		}
+		
+		#dating .venue-rating {
+			text-align: center;
+			margin-top: 15px;
+		}
+
+		#dating .venue .venue-event-container {
+			margin-bottom: 20px;
+		}
+
+		#dating .venue .venue-feedback-container {
+			margin-bottom: 20px;
+		}
+
+		#dating .venue .venue-image-container {
+			margin-bottom: 20px;
+		}		
+	}
+						
+					
+
+	/*responsive attributes*/
+	@media (max-width:768px) {
+			
+	}
+
+
+	@media (max-width:480px) {
+		#dating .dating-holder {
+			font-size: 11px;
+		}
+	}
+
+
+
+
+	@media (min-width:320px) {
+		/* smartphones, iPhone, portrait 480x320 phones */ 
+		
+		
+
+	}
+
+	@media (min-width:481px) {
+		/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+		
+	}
+
+	@media (min-width:641px) {
+		/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+		
+
+	}
+
+	@media (min-width:768px) {
+		/* tablet, portrait iPad */
+		
+	}
+
+
+	@media (min-width:961px) {
+		/* tablet, landscape iPad, lo-res laptops ands desktops */
+		
+	}
+
+	@media (min-width:1025px) {
+		/* big landscape tablets, laptops, and desktops */
+		
+	}
+
+	@media (min-width:1281px) {
+		/* hi-res laptops and desktops */
+
+	}	
+					
+					
+						

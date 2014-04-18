@@ -24,6 +24,8 @@ path {
 
 #progress{
     position: relative;
+	left: 8px;
+	top: 8px;
 }
 
 .progresschart{
@@ -38,7 +40,6 @@ path {
 	position: relative;
 }
 
-
 .bar {
 	fill: steelblue;
 }
@@ -46,7 +47,6 @@ path {
 .bar:hover {
 	fill: brown;
 }
-
 
 .progresslabels{
     position: absolute;

@@ -25,6 +25,7 @@
 			<link rel="stylesheet" href="css/scheduledate.css">
 			<link rel="stylesheet" href="css/status.css">
 			<link rel="stylesheet" href="css/swiper.css">
+			<link rel="stylesheet" href="css/date.css">
 			<link rel="stylesheet" href="css/fancybox_override.css">				
 		
 		
@@ -33,7 +34,7 @@
 			<script type="text/javascript" src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>		
 			<script type="text/javascript" src="js/libs/jquery.1.10.2.min.js"></script>
 			<script type="text/javascript" src="js/libs/d3.v3.min.js"></script>
-			<script src="http://d3js.org/d3.superformula.v0.min.js"></script>
+			<script type="text/javascript" src="js/libs/d3.superformula.v0.min.js"></script>
 			<script type="text/javascript" src="js/libs/jquery.isotope.min.js"></script>
 			<script type="text/javascript" src="js/libs/spin.js"></script>
 			<script type="text/javascript" src="js/libs/jquery.spin.js"></script>
@@ -49,6 +50,8 @@
 			<script type="text/javascript" src="js/libs/jquery.fancybox.js"></script>
 			<script type="text/javascript" src="js/libs/jquery.mCustomScrollbar.concat.min.js"></script>
 			<script type="text/javascript" src="js/libs/jquery-ui.js"></script>
+			<script type="text/javascript" src="js/libs/jquery.scrollTo.min.js"></script>
+			
 			
 			<script type="text/javascript" src="js/libs/colorbrewer/colorbrewer.js"></script>
 			
@@ -125,7 +128,10 @@
 		<script type="text/javascript" src="js/rom/rom.fancybox.js"></script>
 		<script type="text/javascript" src="js/rom/rom.mcustom.scrollbar.js"></script>
 		<script type="text/javascript" src="js/rom/rom.slider.controls.js"></script>
-		<script type="text/javascript" src="js/rom/rom.google.map.search.js"></script>		
+		<script type="text/javascript" src="js/rom/rom.google.map.search.js"></script>
+		<script type="text/javascript" src="js/rom/rom.tabs.js"></script>
+		<script type="text/javascript" src="js/rom/rom.date.picker.js"></script>
+		<script type="text/javascript" src="js/rom/rom.autocomplete.js"></script>
 		
 		<script type="text/javascript" src="js/rom/rom.controller.js"></script>
 

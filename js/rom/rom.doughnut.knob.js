@@ -67,6 +67,8 @@
 			$.each(options.data, function(index, value) {
 				knobElement.attr('data-'+index,value);
 			});
+			
+			console.log("knobElement", knobElement);
 
 			if(options.type=="standard"){
 				this.createStandard(knobElement);
@@ -182,3 +184,29 @@
 	};
 
 })(jQuery);
+
+
+var doughnutKnobHandler = {
+	invoke: function(el){
+		//console.log("take on a new backbone view.");
+		var optionObj = {
+			"data":
+			{
+				"min": $(el).data('min'),
+				"max": $(el).data('max'),
+				"width": $(el).data('width'),
+				"height": $(el).data('height'),
+				"displayPrevious": true,
+				"readonly": $(el).data('readonly'),
+				"fgcolor": $(el).data('fgcolor'),
+				"bgcolor": $(el).data('bgcolor')
+			},
+			"fieldName": $(el).data('fieldname'),
+			"value": $(el).data('value'),
+			"type": "standard"
+		};
+		$($(el)).doughnutKnob('init', optionObj);	
+	}
+};
+		
+		

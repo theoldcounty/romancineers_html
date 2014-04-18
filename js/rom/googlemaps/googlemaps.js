@@ -80,11 +80,6 @@ var GoogleMaps = Backbone.View.extend({
 
 
 	setUserMarker: function(latitute, longitute){
-		//console.log("latitute", latitute);
-		//console.log("longitute", longitute);
-
-		//console.log("this.map", this.map);
-
 		var image = 'images/googlemaps/usermarker.png';
 		var myLatLng = new google.maps.LatLng(latitute, longitute);
 
@@ -94,14 +89,19 @@ var GoogleMaps = Backbone.View.extend({
 			icon: image
 		});
 	},
+		
+	getVenueListTemplate: function(){
+		return $('.venue-list li').eq(0).clone();
+	},
 
 	initialize: function() {
+		var that = this;
 
-		console.log("GoogleMaps");
+		this.temp = this.getVenueListTemplate();
+		
 		//setup height of googlemap
 		
 		var windowHeight = $(window).height();
-		console.log("windowHeight", windowHeight);
 		
 		var headerHeight = $('header').height();
 		var footerHeight = $('footer').height();
@@ -110,12 +110,45 @@ var GoogleMaps = Backbone.View.extend({
 		
 		$('.googlemaps').css("height", remainingMapArea);
 		
-
+		$('.venue-list-container').css("height", parseInt($('.venue-list-container').height() - $('.control-container').height(), 10));
+		
 		this.$searchForm = this.$el.find("#searchForm");
 		this.$searchTextfield = this.$searchForm.find(".search-textfield");
 
 		this.$queryFoursquarefield = this.$searchForm.find("#queryFoursquare");
-
+		
+		function suggest(val){
+			foursquareApi.suggestCompletion(val, function(d){				
+				if(d.response.minivenues != undefined){
+					var suggestions = new Array();				
+					$.each(d.response.minivenues, function( key, value ) {
+						suggestions.push(value.name)
+					});
+					
+					var suggestions = suggestions.map(function(value) {
+						return value.toLowerCase();
+					});
+					
+					var suggestions = _.uniq(suggestions);
+					function toTitleCase(str){
+						return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+					}
+					
+					var suggestions = suggestions.map(function(value) {
+						return toTitleCase(value);
+					});
+					
+					autocomplete.newSource(that.$queryFoursquarefield[0], suggestions);
+				}
+			});		
+		}
+		
+		
+		this.$queryFoursquarefield.keyup(function(){
+			var val = $(this).val();
+			//suggest(val);
+		});
+		
 		this.clearSearchTextfield();
 		$searchButton = this.$searchForm.find("input[type='button']");
 
@@ -165,7 +198,7 @@ var GoogleMaps = Backbone.View.extend({
 		var self = this;
 
 		$("#searchTextField").on("click", function(event){
-			console.log("clicked on search field");
+			//console.log("clicked on search field");
 			$(".user-option").removeClass("selected").addClass("unavailable");
 			$("#searchTextField").removeClass("disabled");
 		});
@@ -229,7 +262,7 @@ var GoogleMaps = Backbone.View.extend({
 
 	onSearchButtonClick: function(event) {
 		event.preventDefault();
-		console.log("clicked on button");
+		//console.log("clicked on button");
 		
 		if(this.getSearchTextValue() != "") {
 			this.geocoder.geocode({
@@ -295,12 +328,141 @@ var GoogleMaps = Backbone.View.extend({
 		}
 	},
 
+	populateVenueList: function(venues){
+		var that = this;
+		
+		console.log("pop venue list", venues);
+		
+		$('[data-custom-scroller="true"]').each(function(index) {
+			mcustomscroller.destroy($(this));
+		});
+		
+		function bindVenues(venueArray, temp){
+			$.each(venueArray, function(index, value) {
+				$('.venue-list').append(that.buildItem(index, value, temp));
+
+				if(index == venueArray.length-1){
+					$('[data-custom-scroller="true"]').each(function(index) {
+						mcustomscroller.init($(this));
+					});	
+				}
+			});
+		}
+
+		$('.venue-list').empty();
+		var temp = that.temp;
+		
+		bindVenues(venues, temp);
+		
+		$(".venue-list li").on("click",function(e){
+			e.preventDefault();
+			that.selectItem(this);
+		});		
+		
+		/*
+		var venueIdArray = new Array();
+		$.each(venues, function(index, value) {
+			venueIdArray.push(value.id);
+		});
+		$.each(venueIdArray, function(index, value) {
+			foursquareApi.exploreVenue(value, function(data){
+				$('.venue-list').append(that.buildItem(index, data.response.venue, temp));
+				
+				if(index == venueIdArray.length-1){
+					$('[data-custom-scroller="true"]').each(function(index) {
+						mcustomscroller.init($(this));
+					});	
+				}
+			});
+		});
+		*/
+	
+	},
+	
+	selectItem: function(el){
+		var that = this;
+		$(".venue-list li").removeClass("selected");
+		$(el).addClass("selected");
+		
+		var venueId = $(el).find('.venue-title').data("venue-id");
+		//.venue-list li
+		
+		//find relevant marker and highlight it.
+		
+		for (var i = 0; i < that.venueOverlays.length; i++) {
+		
+			var markerVenueId = that.venueOverlays[i].options.venueInfo.id;
+			
+			if(markerVenueId == venueId){
+				google.maps.event.trigger(that.venueOverlays[i].marker, 'click');
+				break;
+			}
+		}		
+		
+	},
+	
+	buildItem: function(index, data, temp){
+        var that = this;   
+        
+		console.log("data", data);
+		
+        var template = temp.clone();
+        $(template).find('.venue-number').text(index+1+".");
+		$(template).find('.venue-title').text(data.name);
+		$(template).find('.venue-title').attr("data-venue-id", data.id);
+		
+		/*
+		if(data.rating != undefined){
+			$(template).find('.venue-rating').text(data.rating);
+		}{
+			$(template).find('.venue-rating').text(0);
+		}*/
+		
+		var location = "";		
+		if(data.location.address != undefined){
+			location += data.location.address;
+		}
+		
+		$(template).find('.venue-address').text(location);
+		
+		/*
+		if(data.photos.groups.length >0){
+			var venueimage = data.photos.groups[0].items[0];
+			var venueimageurl = venueimage.prefix+"80x80"+venueimage.suffix;
+			$(template).find('.venue-image').html('<img src="'+venueimageurl+'">');
+		}else{
+			$(template).find('.venue-image').empty();
+		}*/
+		
+		/*
+		$(template).find('.venue-tips').empty();
+		if(data.tips.groups.length > 0){
+			$.each(data.tips.groups[0].items, function(i, v) {
+				$(template).find('.venue-tips').append('<li>'+v.text+'</li>');
+
+				if(i>2){
+					return false;
+				}
+			});
+		}
+		*/
+		
+		$(template).wrapAll("<li/>");
+		
+        return $(template);
+    },
+
 	sendSearchRequestToService: function() {
 		this.clearAllMarker();
 
 		var c = this.map.getCenter();
 		var query = this.$queryFoursquarefield.val();
-		//console.log("query", query);
+		
+		//choose first autocomplete string
+		if(!query){
+			query = this.$queryFoursquarefield.data("availabletags").split(",")[0];
+		}
+		var query = query.replace(" ","%20");
 
 		var queryObject = {
 			q: query,
@@ -310,7 +472,28 @@ var GoogleMaps = Backbone.View.extend({
 
 		var that = this;
 		foursquareApi.search(queryObject, function(venues){
+			console.log("venues found", venues);
+			
 			that.onServiceSuccess(venues);
+			that.populateVenueList(venues);
+			
+			var globalBoolean = false;			
+			console.log("this.venueOverlays", that.venueOverlays);
+			for (var i = 0; i < that.venueOverlays.length; i++) {
+				var pos = that.venueOverlays[i].marker.getPosition();
+				var onMap = that.map.getBounds().contains(pos);
+				
+				globalBoolean = onMap;
+				
+				if(onMap){
+					break;
+				}
+			}
+			
+			//no flags can be seen on the map - maybe zoom out.
+			if(!globalBoolean){
+				that.map.setZoom(that.options.zoomLevel - 4);
+			}			
 		});
 	},
 
@@ -340,10 +523,9 @@ var GoogleMaps = Backbone.View.extend({
 	//create symbols and set them on the map
 	onServiceSuccess: function(data) {
 
-
 		var self = this;
 		$.each(data, function(index, venue) {
-			console.log("venue", venue);
+			//console.log("venue", venue);
 			var venueOverlay = new VenueOverlay({venueInfo: venue});
 			venueOverlay.setMap(self.map);
 			venueOverlay.on(VenueOverlay.ClickOnMarkerEvent, _.bind(self.onMarkerClicked, self));
@@ -353,20 +535,66 @@ var GoogleMaps = Backbone.View.extend({
 	},
 
 	onServiceError: function(xhr, ajaxOptions, thrownError) {
-		console.log("xhr", xhr);
-		console.log("ajaxOptions", ajaxOptions);
-		console.log("thrownError", thrownError);
+		//console.log("xhr", xhr);
+		//console.log("ajaxOptions", ajaxOptions);
+		//console.log("thrownError", thrownError);
 	},
 
 	onMarkerClicked: function(marker) {
-
+		var that = this;
+		
 		var venueId = marker.venueInfoVO.venueInfo.id;
 		console.log("venueId", venueId);
 		
-		console.log("marker", marker);
+		function reverseLookup(venueId){
+			$(".venue-list li").removeClass("selected");
+			$(".venue-list li").find('[data-venue-id="'+venueId+'"]').closest("li").addClass("selected");
+			$(".venue-list").mCustomScrollbar("scrollTo",".selected");
+		}
+		reverseLookup(venueId);
+		//console.log("marker", marker);
 		
 		if(venueId){
-			foursquareApi.exploreVenue(venueId);
+			foursquareApi.exploreVenue(venueId, function(data){
+			
+				var theVenue = data.response.venue;
+				setInfoWindow(theVenue);
+				
+				function setInfoWindow(theVenue){
+						//set photo on info window
+						if(theVenue.photos.count > 0){
+							var firstImage = theVenue.photos.groups[0].items[0];
+							var image = '<img src="'+firstImage.prefix+'75x75'+firstImage.suffix+'">';
+							$('.info-window .pictureholder').empty().html(image);
+						}
+
+						//set events
+						foursquareApi.viewEvents(theVenue.id, function(data){
+							//console.log("data",data);
+							var setOfEvents = data.response.events.items;
+							$.each(setOfEvents, function(index, value) {
+
+								//console.log("all day val", value.allDay);
+								//console.log("name val", value.name);
+
+								//console.log("startAt val", value.startAt);
+								//console.log("endAt val", value.endAt);
+
+								var times = "";
+
+								if(value.allDay){
+									times = "All Day";
+								}else{
+									times = foursquareApi.convertTimeStamp(value.startAt, true)+" to "+foursquareApi.convertTimeStamp(value.endAt, true);
+								}
+ 
+
+								var innterListItem = '<li>'+value.name+' - '+times+'</i>';
+								$('#venue #events').append(innterListItem);
+							});
+						});					
+				}				
+			});
 		}
 
 		if(this.currentClickedMarker) {

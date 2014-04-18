@@ -84,7 +84,11 @@
 											<li>Amsterdam Saarl</li>
 											<li>Schibil</li>
 										</ul>
-										<div class="bio">I am a upbeat girl who loves to make the most out of everything that life has to offer. I love to go out and try new things and traveling is one of my favorite things when I have the time and the money. Other then that I love sports and I try to take pretty good care of myself and stay in shape. </div>
+										<div class="bio-container">
+											<div class="bio" data-custom-scroller="true" data-horizontalscroll="false" data-theme="dark">
+												I am a upbeat girl who loves to make the most out of everything that life has to offer. I love to go out and try new things and traveling is one of my favorite things when I have the time and the money. Other then that I love sports and I try to take pretty good care of myself and stay in shape. I am a upbeat girl who loves to make the most out of everything that life has to offer. I love to go out and try new things and traveling is one of my favorite things when I have the time and the money. Other then that I love sports and I try to take pretty good care of myself and stay in shape.
+											</div>
+										</div>
 									</li>
 									
 
@@ -92,51 +96,86 @@
 										<div class="characteristics">
 											<table>
 												<tr>
-													<td>Relationship</td>
-													<td>Single</td>
-												</tr>
-												<tr>
-													<td>Body Type</td>
+													<td class="label">Body Type</td>
 													<td>Athletic</td>
 												</tr>
 												<tr>
-													<td>Hair Colour</td>
+													<td class="label">Hair Colour</td>
 													<td>Blonde</td>
 												</tr>									           
 												<tr>
-													<td>Eye Colour</td>
+													<td class="label">Eye Colour</td>
 													<td>Blue</td>
-												</tr>									           
+												</tr>	
 												<tr>
-													<td>Children</td>
+													<td class="label">Gender</td>
+													<td>Female</td>
+												</tr>
+												<tr>
+													<td class="label">Ethnicity</td>
+													<td>Caucasian</td>
+												</tr>
+											</table>
+										</div>
+									</li>	
+
+									<li class="block">
+										<div class="characteristics">
+											<table>
+												<tr>
+													<td class="label">Relationship</td>
+													<td>Single</td>
+												</tr>
+												<tr>
+													<td class="label">Intent</td>
+													<td>Looking for a relationship</td>
+												</tr>
+												<tr>
+													<td class="label">Longest Relationship</td>
+													<td>Over 5 years</td>
+												</tr>
+												<tr>
+													<td class="label">Sexuality</td>
+													<td>Hetrosexual</td>
+												</tr>
+												<tr>
+													<td class="label">Spoken Languages</td>
+													<td>Chinese, English</td>
+												</tr>								           
+												<tr>
+													<td class="label">Children</td>
+													<td>None, but would like to have</td>
+												</tr>								           
+												<tr>
+													<td class="label">Drive</td>
+													<td>No</td>
+												</tr>
+												<tr>
+													<td class="label">Pets</td>
 													<td>None</td>
-												</tr>										             
+												</tr>		
 												<tr>
-													<td>Personality</td>
+													<td class="label">Personality</td>
 													<td>Outgoing</td>
 												</tr>
 												<tr>
-													<td>Entertainment</td>
-													<td>Nightclubs, Dancing</td>
-												</tr>
-												<tr>
-													<td>Interests</td>
-													<td>Travel, Sightseeing</td>
-												</tr>
-												<tr>
-													<td>Sports</td>
-													<td>Dancing, Swimming, Bowling</td>
-												</tr>
-												<tr>
-													<td>Smoking</td>
+													<td class="label">Smoking</td>
 													<td>Occassional</td>
+												</tr>												
+												<tr>
+													<td class="label">Drinking</td>
+													<td>No</td>
+												</tr>																								
+												<tr>
+													<td class="label">Drugs</td>
+													<td>No</td>
 												</tr>
 												<tr>
-													<td>Education</td>
+													<td class="label">Education</td>
 													<td>Degree</td>
 												</tr>
 												<tr>
-													<td>Occupation</td>
+													<td class="label">Occupation</td>
 													<td>Doctor</td>
 												</tr>
 											</table>
@@ -169,7 +208,29 @@
 									</li>
 									
 									
+
+									<li class="block h1">
+										<div id="progress" data-width=240 data-height=80 data-label="The Player" data-value=30 data-start-color="#1f77b4" data-end-color="#ff7f0e"></div>
+									</li>
 									
+									<li class="block h1">
+										<!--history chart <img src="__temp_images/history.jpg">-->
+										<h3>Recently Viewed</h3>
+										<ul class="user-listing" data-custom-scroller="true" data-horizontalscroll="true" data-theme="dark">
+											<?php
+												for ($i = 1; $i <= 10; $i++) {
+											?>
+												<li class="user">
+													<a class="user-link" href="02_profile_page.php">
+														<img class="user-image" src="http://ecx.images-amazon.com/images/I/71TlW66wMgL._SL290_.jpg">
+													</a>
+												</li>
+											<?php
+													}
+											?>
+										</ul>
+									</li>
+																		
 									
 									<li class="block">
 										<!--interest block <img src="__temp_images/pie1.jpg">-->
@@ -258,7 +319,7 @@
 										
 									</li>
 									
-									<li class="block">
+									<li class="block h1">
 										<!--person  <img src="__temp_images/personchart.jpg">-->
 										<div id="person"></div>
 									</li>
@@ -282,28 +343,6 @@
 									</li>
 									
 									
-									
-									<li class="block h1">
-										<div id="progress" data-width=240 data-height=80 data-label="The Player" data-value=30 data-start-color="#1f77b4" data-end-color="#ff7f0e"></div>
-									</li>
-									
-									<li class="block h1">
-										<!--history chart <img src="__temp_images/history.jpg">-->
-										<h3>Recently Viewed</h3>
-										<ul class="user-listing" data-custom-scroller="true" data-horizontalscroll="true" data-theme="dark">
-											<?php
-												for ($i = 1; $i <= 10; $i++) {
-											?>
-												<li class="user">
-													<a class="user-link" href="02_profile_page.php">
-														<img class="user-image" src="http://ecx.images-amazon.com/images/I/71TlW66wMgL._SL290_.jpg">
-													</a>
-												</li>
-											<?php
-													}
-											?>
-										</ul>
-									</li>
 									
 									
 									<li class="block">

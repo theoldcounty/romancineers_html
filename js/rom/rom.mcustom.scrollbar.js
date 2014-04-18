@@ -8,34 +8,37 @@
 */
 
 var mcustomscroller = {
-	init: function(){
-		//$(window).load(function(){
-			$('[data-custom-scroller="true"]').each(function(index) {
-				
-				console.log("start the mobile scroller");
-				
-				if(!$(this).data("horizontalscroll")){				
-					$(this).css("height", parseInt($(this).parent().css("height"),10));
-				}
-				
-				
-				var config= {
-					horizontalScroll: $(this).data("horizontalscroll"),
-					theme: $(this).data("theme"),
-					advanced:{
-						autoExpandHorizontalScroll:true,
-						updateOnContentResize: true,
-						updateOnBrowserResize: true
-					},
-					scrollButtons:{
-					  enable:true
-					},
-					scrollInertia: 600
-				}
+	init: function(el){
+		console.log("start the mobile scroller");
+		
+		if(!el.data("horizontalscroll")){				
+			el.css("height", parseInt(el.parent().css("height"),10));
+			
+			console.log("new height", parseInt(el.parent().css("height"),10));
+		}
+		
+		var config= {
+			horizontalScroll: el.data("horizontalscroll"),
+			theme: el.data("theme"),
+			advanced:{
+				autoExpandHorizontalScroll:true,
+				updateOnContentResize: true,
+				updateOnBrowserResize: true
+			},
+			scrollButtons:{
+			  enable:true
+			},
+			scrollInertia: 600,
+		}
 
-				$(this).mCustomScrollbar(config);
-			});
-		//});
+		el.mCustomScrollbar(config);
+	},
+	destroy: function(el){
+		el.mCustomScrollbar("destroy");	
+	},
+	update: function(el){
+		console.log("update the elements");
+		el.mCustomScrollbar("update");
 	}
 }
 

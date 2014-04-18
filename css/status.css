@@ -147,3 +147,38 @@
     opacity: 1;
 }
 
+
+
+
+@media screen and (max-width: 767px){
+
+	#status {
+		width: 96%;
+		left: 2%;
+	}
+
+	#status .user.open {
+		width: 169px;
+		height: 61px;
+	}
+	
+	#status .user-details{
+		width: 95px;
+	}
+	
+	#status .user.open .user-image {
+		width: 55px;
+		height: 55px;
+	}
+	
+	#status .user-title{
+		margin:0;
+		font-size:12px;
+	}
+	
+	#status .user-location {
+		margin-bottom: 2px;
+		line-height: 13px;
+		font-size: 11px;
+	}
+}

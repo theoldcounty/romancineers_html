@@ -1,0 +1,14 @@
+-- do a search
+
+if no results
+
+-- zoom out --- center on coordinates and then do a lookup
+
+--- drop user focuse, candidate focus
+
+--- use lookup for venue.
+
+--- place right pane showing venues
+--- map in left pane showing venues -- in mobile mode - map over right pane.
+--- as you hover over list in right pane - highlight marker
+--- click on marker on map -- highlight element in list - auto scroll to

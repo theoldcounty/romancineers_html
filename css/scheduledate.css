@@ -23,39 +23,23 @@
 }
 
 .googlemaps .control-container{
-	margin: 0;
-	padding: 0;
-	float: right;
-	width: 70%;
-	top: 20px;
-	position: relative;
+	
 }
 
 .googlemaps .maps-panel {
-	padding: 2px;
 	background: #626262;
-	position: absolute;
-	left: 25%;
 	z-index: 221;
-	width: 580px;
+	height: 100%;
 }
 
-
-
-.googlemaps select {
-	height: 22px;
-	width: 100px;
-	border: 1px solid black;
-	margin:0;
-	padding:0;
-}
 
 .googlemaps input[type="text"]{
-	height: 20px;
-	width: 170px;
+	height: 7px;
+	width: 90%;
 	border: 1px solid black;
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 5%;
+	margin-bottom: 5px;
 }
 
 .googlemaps input[type="text"].disabled{
@@ -123,14 +107,36 @@
 	padding-top: 15px;
 }
 
+
+
+
+
+/*info window*/
+
+.info-window .pictureholder{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	right: 25px;
+	top: 25px;
+}
+
+
 .info-list{
 	padding:0;
 	margin:0;
 }
 
+
 .info-window .header-container p, .mobile-info-layer .header-container p {
 	line-height: 19px;
 	margin:0;
+	font-size: 12px;
+}
+
+.info-window .header-container .name,
+.info-window .header-container .address{
+	width: 68%;
 }
 
 
@@ -176,7 +182,8 @@
 .info-window .header-container, 
 .mobile-info-layer .header-container {
 	border-bottom: 1px solid #b8b3ad;
-	padding: 1.1875em;
+	padding: 2em;
+	min-height: 70px;
 }
 
 
@@ -188,14 +195,14 @@
 .info-window .header-container .close-button, 
 .mobile-info-layer .header-container .close-button {
 	position: absolute;
-	top: 4px;
-	right: 4px;
+	top: 5px;
+	right: 5px;
 }
 
 .close-button {
-	background: transparent url("../images/googlemaps/sprite-tooltip.png") -5px -40px no-repeat;
-	height: 40px;
-	width: 40px;
+	background: url("../images/googlemaps/sprite-tooltip.png") -12px -48px no-repeat;
+	height: 25px;
+	width: 25px;
 }
 
 
@@ -203,17 +210,18 @@
 .mobile-info-layer .info-list .list-item {
 	border-bottom: 1px solid #b8b3ad;
 	overflow: hidden;
-	padding-left: 1.1875em;
+	padding-left: 2em;
 	cursor: pointer;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	margin-left:0;
 }
 
 .googlemaps a, 
 .googlemaps a:visited, 
 .googlemaps button {
-	font-size: 16px;
-	line-height: 16px;
+	font-size: 12px;
+	line-height: 12px;
 	color: #807c7c;
 	text-decoration: none;
 	outline: none;
@@ -235,15 +243,149 @@
 .mobile-info-layer .button-container .link-button, 
 .info-window .button-container .share-button, 
 .mobile-info-layer .button-container .share-button {
-	margin: 1.1875em;
+	margin: 1.4em;
 }
 
 
 .info-window .button-container .link-button{
-	left:0;
-	background: red;
-	border-radius: 7px;
-	padding: 7px;
+	left: 0;
+	background: #a7a7a7;
+	border-radius: 4px;
+	padding: 8px;
 	display: block;
 	text-align: center;
+	color: #ffffff;
+	font-size: 14px;
 }
+
+
+
+
+	.venue-list-container{
+		height: 100%;
+		background: #ffffff;
+	}
+
+	.maps-panel{
+		padding: 0;
+	}
+
+	.search-textfield-container{
+		padding: 10px;
+	}
+
+	.googlemaps .search-textfield{
+		width: 70%!important;
+	}
+
+	.googlemaps #searchForm input[type="submit"]{
+		background: url("../images/date_search.png") 0 0 no-repeat;
+		border: 0;
+		text-indent: -999px;
+		width: 34px;
+		height: 34px;
+		padding: 0;
+		cursor: pointer;
+	}
+
+
+	.venue-list{
+		margin:0;
+		padding:0;
+		list-style-type:none;
+	}
+
+	.venue-list li{
+		border-bottom: 1px solid black;
+		margin:0;
+		padding: 7px;
+	}
+	
+	.venue-list li:hover{
+		background: #fff4fb;
+	}
+	
+	.venue-list li.selected{
+		background: #ffe6f6;
+	}
+	
+	.venue-list .venue-title{
+		font-size: 13px;
+		margin:0;
+		color: #ff005a;		
+		width: 88%;
+	}
+	
+	.venue-list .venue-number{
+		float:left;
+		padding-right: 4px;
+	}
+
+	.venue-list .venue-image{
+		float: right;
+	}
+
+	.venue-list .venue-rating{
+		background: #ff2270;
+		border-radius: 15px;
+		width: 15px;
+		padding: 5px;
+		height: 15px;
+		font-size: 11px;
+	}
+
+	.venue-list .venue-address{
+		font-size: 11px;
+	}
+
+	.venue-list .venue-tips{
+		margin:0;
+		padding:0;
+		list-style-type:none;
+		font-size: 11px;
+	}
+
+	.venue-list .venue-tips li{
+		border:0;
+		margin:0;
+		padding: 0;
+		line-height: 18px;
+	}
+	
+	
+	
+	@media screen and (max-width: 767px){
+		.googlemaps{
+			height: auto!important;
+		}
+		
+		#map_canvas {
+			height: 350px;
+		}
+		
+		.googlemaps input[type="text"]{
+			padding: 2%;
+		}
+		
+		.venue-list-container{
+			height: 350px;
+			margin: 0 10px;
+		}
+		
+		.info-window{
+			width: 240px;
+		}
+		
+		
+		.info-window .header-container p,
+		.mobile-info-layer .header-container p{
+			line-height: 15px;
+			font-size: 11px;
+		}
+		
+		.info-window .pictureholder {
+			width: 65px;
+			height: 65px;
+		}
+		
+	}

@@ -10,7 +10,7 @@ var VenueOverlay = Backbone.View.extend({
 	mobileInfoLayer: null,
 
 	initialize: function(attributes) {
-		console.log("attributes", attributes);
+		//console.log("attributes", attributes);
 
 		this.venueInfoVO = new VenueInfoVO({venueInfo: attributes});
 		this.createMarker();
@@ -48,7 +48,7 @@ var VenueOverlay = Backbone.View.extend({
 			this.infoBox = new InfoBox({latlng: this.getLatLng(), map: this.map, infoLayer: $(this.getInfoLayer())});
 			$(this.infoBox).bind(InfoBox.ClickCloseButton, _.bind(this.onCloseButtonInfoBox, this));
 
-			console.log("created info box");
+			//console.log("created info box");
 			$(this.infoBox).bind(InfoBox.ClickMoreInfoButton, _.bind(this.onClickMoreInfoButton, this));
 		}
 	},
@@ -69,25 +69,21 @@ var VenueOverlay = Backbone.View.extend({
 		event.preventDefault();
 
 		var venueId = this.venueInfoVO.venueInfo.id;
-		var senderUid = "51895628d1efa7a5d9df83c9";
-		var recepientUid = "518b090fd1ef11c72b4bcb85";
+		var senderUid = $("#userData").data("user-id");
+		var recepientUid = $("#candidateData").data("user-id");
 		
-		console.log("venueId2 ", venueId);
+		//console.log("venueId2 ", venueId);
 		
 		//date
-		var url = "_scheduledate_lightbox.php";
-		
+		var url = $('#googleMapData').data("dating-page");
+			url += '?venueId='+venueId+'&senderUid='+senderUid+'&recepientUid='+recepientUid;
 
-		$.fancybox({
-			type: 'ajax',
-			href : url+'?venueId='+venueId+'&senderUid='+senderUid+'&recepientUid='+recepientUid,
-			title : 'Lorem lipsum',
-			beforeShow : function(){
-				date.init();
-			}
+		fancybox.ajaxBased(url, function(){
+			date.init();
+			appController.invoke();
 		});
 	},
-
+	
 	clearVenueOverLayer: function() {
 		this.venueInfoVO.clear();
 		this.closeInfoBox();
@@ -104,24 +100,6 @@ var VenueOverlay = Backbone.View.extend({
 						'<div class="header-container">' +
 							this.venueInfoVO.getHeaderInfo() +
 							'<a class="close-button" href="#">close button</a>' +
-						'</div>' +
-						'<div class="desktop">' +
-							'<ul class="info-list" data-role="expand-list">' +
-								'<li class="list-item">' +
-									'<a href="#" class="link-big">Link1</a>' +
-									'<div class="wrapper">' +
-										'<ul class="opening-hours">' +
-											this.venueInfoVO.getDays() +
-										'</ul>' +
-									'</div>' +
-								'</li>' +
-								'<li class="list-item">' +
-									'<a href="#" class="link-big">Services</a>' +
-									'<div class="wrapper services">' +
-										'<p>' + this.venueInfoVO.getServices() + '</p>' +
-									'</div>' +
-								'</li>' +
-							'</ul>' +
 						'</div>' +
 						'<div class="button-container">' +
 							'<a class="link-button arrow-right" href="#"><span class="text">Schedule a date at this venue</span></a>' +
@@ -148,13 +126,13 @@ var VenueOverlay = Backbone.View.extend({
 			//customType = "http://icons.iconarchive.com/icons/icons-land/vista-map-markers/256/Map-Marker-Push-Pin-1-Right-Azure-icon.png";
 
 			//customType = (this.venueInfoVO.venueInfo.categories[0].name).toLowerCase();
-			//console.log("customType", customType);
+			////console.log("customType", customType);
 
 			//theater
 			//indie theater
 			//college theater
 
-
+			
 			//café
 
 
@@ -221,7 +199,7 @@ var VenueOverlay = Backbone.View.extend({
 		}
 
 
-		////console.log("this.venueInfoVO.categories", this.venueInfoVO.venueInfo.categories[0].icon);
+		//////console.log("this.venueInfoVO.categories", this.venueInfoVO.venueInfo.categories[0].icon);
 		return customIcon; //this.symbolUrl;//this.venueInfoVO.venueInfo.categories[0];
 		//this.symbolUrl; //new google.maps.LatLng(this.venueInfoVO.getLatitude(), this.venueInfoVO.getLongitude());
 	},
@@ -244,7 +222,7 @@ var VenueInfoVO = Backbone.View.extend({
 	services: null,
 
 	initialize: function(attributes) {
-		//console.log("attributes", attributes);
+		////console.log("attributes", attributes);
 
 		this.venueInfo = attributes.venueInfo.venueInfo;
 
@@ -287,25 +265,6 @@ var VenueInfoVO = Backbone.View.extend({
 
 	setServices: function() {
 		this.services = [];
-		/*
-		if(this.venueInfo.mccafe) {
-			this.services.push("McCafe");
-		}
-		if(this.venueInfo.mcdrive) {
-			this.services.push("McDrive");
-		}
-		if(this.venueInfo.wlan) {
-			this.services.push("WLAN");
-		}
-		if(this.venueInfo.open24h) {
-			this.services.push("24-Stunden geöffnet");
-		}
-		if(this.venueInfo.toggo) {
-			this.services.push("Kindergeburtstag");
-		}
-		if(this.venueInfo.coupons) {
-			this.services.push("Gutscheine");
-		}*/
 	},
 
 	getServices: function() {
@@ -323,39 +282,33 @@ var VenueInfoVO = Backbone.View.extend({
 
 	getId: function(){
 
-		console.log("this.venueInfo", this.venueInfo.id);
+		//console.log("this.venueInfo", this.venueInfo.id);
 		var id = 2;
 		return id;
 	},
 
 	getHeaderInfo: function() {
 
-		var name = "";
+		var html = "";
 		if(this.venueInfo.name != undefined){
-			name = '<p class="name">'+this.venueInfo.name+'</p>';
+			html += '<p class="name">'+this.venueInfo.name+'</p>';
 		}
-
-		var address = "";
 		if(this.venueInfo.location.address != undefined){
-			address = '<p class="address">'+this.venueInfo.location.address+'</p>';
+			html += '<p class="address">'+this.venueInfo.location.address+'</p>';
 		}
-
-		var city = "";
 		if(this.venueInfo.location.city != undefined){
-			city = '<p class="city">'+this.venueInfo.location.city+'</p>';
+			html += '<p class="city">'+this.venueInfo.location.city+'</p>';
 		}
-
-		var state = "";
 		if(this.venueInfo.location.state != undefined){
-			state = '<p class="state">'+this.venueInfo.location.state+'</p>';
+			html += '<p class="state">'+this.venueInfo.location.state+'</p>';
 		}
-
-		var postalCode = "";
 		if(this.venueInfo.location.postalCode != undefined){
-			postalCode = '<p class="postalCode">'+this.venueInfo.location.postalCode+'</p>';
+			html += '<p class="postalCode">'+this.venueInfo.location.postalCode+'</p>';
 		}
-
-		return name + address+ city + state + postalCode;
+		
+		html += '<div class="pictureholder"></div>';
+		
+		return html;
 	},
 
 	getLatitude: function() {

@@ -14,7 +14,7 @@
 					url += "&code="+this.code;
 
 					this.getJson(url, function(data){
-						console.log("authorize",data);
+						//console.log("authorize",data);
 					})
 			},
 			getCode : function(){
@@ -23,7 +23,7 @@
 					url += "&response_type=code";
 					url += "&redirect_uri="+this.redirectUrl;
 					this.getJson(url, function(data){
-						//console.log("code",data);
+						////console.log("code",data);
 					})
 
 			},
@@ -60,12 +60,14 @@
 					that.markToDo(venueId);
 				});
 			},
-			convertTimeStamp: function(unix_timestamp){
+			convertTimeStamp: function(unix_timestamp, withTime){
 				var d = new Date(unix_timestamp*1000);
-
-
-				var dateCombination = d.getDate()+"-"+(parseInt(d.getMonth(),10)+1)+"-"+d.getFullYear()+" "+d.getHours()+":"+d.getMinutes();
-
+				var dateCombination = d.toDateString(); 
+				
+				if(withTime){
+					dateCombination += d.toLocaleTimeString(); 
+				}
+				
 				return dateCombination;
 			},
 			search: function(queryObj, callback){
@@ -77,8 +79,8 @@
 				//var location = "29.43601,106.503525"; //china
 				//var location = "51.165691,10.451526"; //germany
 
-				console.log("query", query);
-				console.log("location", location);
+				//console.log("query", query);
+				//console.log("location", location);
 
 				//this.viewTrends(location);
 
@@ -103,7 +105,7 @@
 					
 					
 					
-					console.log("setOfVenues", setOfVenues);
+					//console.log("setOfVenues", setOfVenues);
 					
 					callback(setOfVenues);
 
@@ -125,13 +127,13 @@
 								catergory = catergory.replace(" ","_");
 								catergory = catergory.replace(/\s+/g, "");
 
-								console.log("catergory ",catergory);
+								//console.log("catergory ",catergory);
 							});
 
 							icon = value.categories[0].icon;
 						}
 
-						console.log("value.id", value.id);
+						//console.log("value.id", value.id);
 
 						var locations = [
 								[value.name, value.location.lat, value.location.lng, 4, icon, value.id]
@@ -160,7 +162,7 @@
 					var template = '<ul id="trendResults"></ul>';
 					$('body').append(template);
 
-					console.log("getting trends", data);
+					//console.log("getting trends", data);
 
 
 
@@ -176,7 +178,7 @@
 
 				var url = "https://api.foursquare.com/v2/venues/"+venueId+"/events?oauth_token="+this.oauth_token+"&v=20140308";
 				this.getJson(url, function(data){
-					//console.log("getting events", data);
+					////console.log("getting events", data);
 
 					callback(data);
 					/*
@@ -193,117 +195,23 @@
 				});
 
 			},
-			exploreVenue: function(venueId){
+			suggestCompletion: function(input, callback){
+				//ll=51.529622428012544,-0.1381740757634631&
+				//venues/
+				var locale = "intent=global";
+				var url = "https://api.foursquare.com/v2/venues/suggestCompletion?"+locale+"&query="+input+"&oauth_token="+this.oauth_token+"&v=20140308";
+				
+				var that = this;
+				this.getJson(url, function(data){
+					callback(data);
+				});
+			},
+			exploreVenue: function(venueId, callback){
 				var url = "https://api.foursquare.com/v2/venues/"+venueId+"?oauth_token="+this.oauth_token+"&v=20140308";
 
 				var that = this;
 				this.getJson(url, function(data){
-
-					var theVenue = data.response.venue;
-					//var theTips = theVenue.tips.groups;
-					//var thePhotos = theVenue.photos.groups;
-
-					//var venue = data.response.venue;
-
-					console.log("data",data);
-
-
-
-					var latitude = theVenue.location.lat;
-					var longitude = theVenue.location.lng;
-
-					var googleMap = '<img src="http://maps.google.com/maps/api/staticmap?center='+latitude+','+longitude+'&zoom=16&markers=icon:http://tinyurl.com/2ftvtt6|'+latitude+','+longitude+'&size=200x200&sensor=true">';
-
-
-					$('#venue #name').html(theVenue.name);
-					$('#venue #id').html(theVenue.id);
-					$('#venue #map').html(googleMap);
-					$('#venue #location').html(theVenue.location.address+"<br>"+theVenue.location.city+"<br>"+theVenue.location.country+"<br>"+theVenue.location.postalCode);
-
-					$('#venue #rating').html(theVenue.rating);
-
-					/*
-					$('#venue').data("venueId", venue.id);
-
-					*/
-
-					that.viewEvents(theVenue.id, function(data){
-						console.log("data",data);
-						var setOfEvents = data.response.events.items;
-						$.each(setOfEvents, function(index, value) {
-
-							console.log("all day val", value.allDay);
-							console.log("name val", value.name);
-
-							console.log("startAt val", value.startAt);
-							console.log("endAt val", value.endAt);
-
-							var times = "";
-
-							if(value.allDay){
-								times = "All Day";
-							}else{
-								times = that.convertTimeStamp(value.startAt)+" to "+that.convertTimeStamp(value.endAt);
-							}
-
-
-
-							var innterListItem = '<li>'+value.name+' - '+times+'</i>';
-							$('#venue #events').append(innterListItem);
-						});
-					});
-
-
-					var foursquareObj = {
-											id: theVenue.id,
-											name: theVenue.name,
-											streetAddress: theVenue.location.address,
-											locality: theVenue.location.city,
-											region: theVenue.location.state,
-											postalCode: theVenue.location.postalCode,
-										};
-					
-					/*
-					var venuePhotoCount = theVenue.photos.count;
-					var venueAlbums = theVenue.photos.groups;
-
-					var album = "";
-					//loop over groups
-					$.each(venueAlbums, function(index, value) {
-
-						console.log("photos value",value);
-
-						//loop over items
-						$.each(value.items, function(index, v) {
-							album += '<li><img src="'+that.getPhoto("300x300",v.url)+'"></li>';
-						});
-					});
-					$('#venue #photos').html(album);
-					*/
-					
-					
-					
-					
-					/*
-					var tips = "";
-					$.each(theTips, function(index, value) {
-
-						console.log("value",value);
-
-						//loop over items
-						$.each(value.items, function(index, v) {
-							tips += '<li>'+v.text+'</li>';
-						});
-					});
-
-					$('#venue #tips').html(tips);
-					*/
-
-					/*
-					that.bindVenueEvent();
-					that.myFoursquareReplaceSave(foursquareObj);
-
-					*/
+					callback(data);
 				});
 			},
 			markToDo: function(venueId){
