@@ -21,13 +21,14 @@ var swiper = {
 		return swiperunit;
 	},
 	nextSwipe: function(s){
-		console.log(s.swipeNext());
+		s.reInit();
 		s.swipeNext();
 	},
 	prevSwipe: function(s){
+		s.reInit();
 		s.swipePrev();
 	},
-	invoke: function(el, index){
+	invoke: function(el){
 		var options = {
 			mode: el.data("direction"),
 			loop: el.data("loop"),
@@ -45,17 +46,20 @@ var swiper = {
 			options["pagination"] = el.find('.pagination')[0];
 		}
 
+		var index = this.swiperstorage.length+1;
 		var selector = "swiper"+index;
-		el.attr("id", selector);	
-
+		el.attr("id", selector);
+		
 		el.find('.swiper-container').css("height", parseInt(el.parent().css("height"), 10));
 	
 		var mySwiper = new Swiper(el.find('.swiper-container')[0],options);
 		
 		var swiperObj = {
+			"index": index,
 			"id": selector,
 			"swiper": mySwiper
 		}
+		
 		this.swiperstorage.push(swiperObj);
 		
 		el.find('.arrow-left').on('click', function(e){

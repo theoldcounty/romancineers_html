@@ -186,19 +186,23 @@
 									
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link followers" href="_lightbox_template.html">Followers</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link followers" href="_followers_lightbox.php">Followers*</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link followme" href="_lightbox_template.html">Follow Me</a>
+										<a data-role="fancybox" data-width="45%" class="fancybox.ajax action-link followme" href="_lightbox_template.html">Follow Me</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link privatemessage" href="_inbox_private_message_lightbox.php">Private Message*</a>
+										<a data-role="fancybox" data-width="45%" class="fancybox.ajax action-link messageme" href="_send_private_message_lightbox.php">Message Me</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link photos" href="_lightbox_template.html">Photos</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link privatemessage" href="_inbox_private_message_lightbox.php">Private*</a>
+									</li>
+									
+									<li class="block w0 h0">
+										<a data-role="fancybox" class="fancybox.ajax action-link photos" href="_gallery_lightbox.php">Photos*</a>
 									</li>
 									
 									<li class="block w0 h0">

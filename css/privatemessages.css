@@ -7,6 +7,15 @@
 		margin-right: 15px;
 	}
 	
+	
+	.privatemessages-container{
+		height: 500px;
+	}
+	
+	.privatemessages{
+		height: 350px;
+	}
+	
 	.private-message{
 		height: 350px;
 	}
@@ -84,6 +93,23 @@
 		position: relative;
 	}
 	
+	.user-data .user-image .message-status{
+		position: absolute;
+		bottom:0;
+		right:0;
+		background: red;
+		width: 25px;
+		height: 25px;
+	}
+	
+	.user-data .user-image .message-status.read{
+		background: url("../images/sprite_private_message.png") -5px 0px;
+	}
+	.user-data .user-image .message-status.unread{
+		background: url("../images/sprite_private_message.png") -53px 0px;
+	}
+
+	
 	.private-pane .user-data .user-image .private-message-marker{
 		position: absolute;
 		left: 0px;
@@ -94,6 +120,8 @@
 		height: 200px;
 	}
 	
+	
+	.send-pane input[type="submit"],
 	.privatemessages .view-list-trigger {
 		background: green;
 		float: right;
@@ -103,4 +131,20 @@
 		text-align: center;
 		color: #ffffff!important;
 		font-size: 12px;
+		border: 0;
+	}
+	
+	
+	
+	.sendmessages-container {
+		height: 220px;
+		padding: 20px;
+	}
+	
+	.send-pane .user-data .user-image{
+		width: 60px;
+		height: 60px;
+		padding: 0;
+		overflow: hidden;
+		position: relative;
 	}

@@ -1,12 +1,7 @@
 	var privatemessageHandler = {
 		disableMovement: false,
-		messageConfiguration: function(){
-			
-			//do visually on pane - if on pane.
-			
-			
-			//do visually on list
-			
+		messageConfiguration: function(messageId, mode){
+			console.log(messageId, mode);
 			//do required action on backend.
 		},
 		invoke: function(el){
@@ -16,11 +11,13 @@
 			var parentSwiperId = $(el).closest('[data-role="swiper"]').attr("id");
 			var parentSwiper = swiper.getSwiper(parentSwiperId);
 			
+			parentSwiper.reInit();
+			
 			that.bindcheck(el);
 			
 			privateHandler.find("a").click(function(e) {
 				e.preventDefault();
-				var that = this;
+				//var that = this;
 
 				var actionableItems = new Array();
 				$('.private-message-list:visible li').each(function(index, value){
@@ -36,6 +33,7 @@
 						$(actionableItems).each(function(index, value){
 							//delete on backend
 							var messageId = $(value).data("message-id");
+							that.messageConfiguration(messageId, "delete");
 							
 							//visually delete
 							$(value).fadeOut(350, function(){
@@ -46,9 +44,28 @@
 					break;
 					case "markasunread":
 						//execute markasunread
+						
+						$(actionableItems).each(function(index, value){
+							//make change on backend
+							var messageId = $(value).data("message-id");
+							that.messageConfiguration(messageId, "markasunread");
+							
+							//visually change
+							$('[data-message-id="'+messageId+'"]').find(".message-status").removeClass("read").addClass("unread");
+						});						
+						
 					break;
 					case "markread":
 						//execute markread
+						$(actionableItems).each(function(index, value){
+							//make change on backend
+							var messageId = $(value).data("message-id");
+							that.messageConfiguration(messageId, "markread");
+							
+							//visually change
+							$('[data-message-id="'+messageId+'"]').find(".message-status").removeClass("unread").addClass("read");
+						});	
+						
 					break;
 				}
 			});
@@ -64,19 +81,17 @@
 					//init scroller on private pane - for new data
 					mcustomscroller.init($(el).find(".private-pane").find(".message-body"));
 					
-					parentSwiper.reInit();
 					swiper.nextSwipe(parentSwiper);
 				}
 			});
 			
 			$(el).find(".view-list-trigger").click(function(e) {
 				e.preventDefault();
-				parentSwiper.reInit();
 				swiper.prevSwipe(parentSwiper);
 			});
 		},
 		bindcheck: function(el){
-			//console.log("bind checkbox");
+			////console.log("bind checkbox");
 			var that = this;
 			$(el).find(".private-message-marker").on("click",function(e){
 				//e.preventDefault();
@@ -105,6 +120,7 @@
 			$(el).find(".private-pane").find(".user-name").text(list.find(".user-name").html());
 			$(el).find(".private-pane").find(".user-date").text(list.find(".user-date").html());
 			$(el).find(".private-pane").find(".message-subject").text(list.find(".message-subject").text());
-			$(el).find(".private-pane").find(".message-body").text(list.find(".message-body").html());
+			$(el).find(".private-pane").find(".message-body").text(list.find(".message-body").html());			
+			$(el).find(".private-pane").attr("data-message-id", list.data("message-id"));			
 		}
 	};

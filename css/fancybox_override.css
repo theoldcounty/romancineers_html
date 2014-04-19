@@ -20,9 +20,10 @@
 	background: url('../images/pinkpurplestripesm.png') rgba(0,0,0,0.9);
 }
 
+/*
 .fancybox-type-ajax.fancybox-wrap{
 	width: 80%!important;
-}
+}*/
 
 .fancybox-type-ajax .fancybox-inner{
 	width: 100%!important;
