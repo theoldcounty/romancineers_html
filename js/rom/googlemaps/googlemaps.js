@@ -471,7 +471,7 @@ var GoogleMaps = Backbone.View.extend({
 		};
 
 		var that = this;
-		foursquareApi.search(queryObject, function(venues){
+		foursquareApi.explore(queryObject, function(venues){
 			console.log("venues found", venues);
 			
 			that.onServiceSuccess(venues);

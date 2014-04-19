@@ -215,6 +215,22 @@
 			}
 			
 			
+			/*ui tabs*/
+			.ui-tabs{
+				border-radius: 0;
+			}			
+			.ui-tabs .ui-widget-header{
+				border-radius: 0;
+			}
+			.ui-tabs .ui-state-default{
+				border-radius: 0;
+			}
+			.ui-tabs .ui-tabs-nav li a{
+				padding: 10px 40px 10px 20px;
+				outline: none;
+			}
+			
+			
 			
 			@media screen and (max-width: 767px){
 				#user-navigation {

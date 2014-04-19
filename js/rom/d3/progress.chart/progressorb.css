@@ -21,8 +21,11 @@ path {
     padding:30px
 }
 
+.progresscontainer{
+	position: relative;
+}
 
-#progress{
+[data-role="progress-chart"]{
     position: relative;
 	left: 8px;
 	top: 8px;

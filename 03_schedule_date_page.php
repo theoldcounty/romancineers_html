@@ -23,7 +23,7 @@
 												<input type="hidden" name="radius" value="5">
 																								
 												<div class="search-textfield-container">
-													<input data-role="autocomplete" data-minlength=0 data-availabletags="Cafe, Restaurant, Theatre, Bowling, Cinema, Ice Cream, Comedy Show, Pub, Club, Concert, Park, Museum, Zoo, Horse Back Riding, Picnic, Amusement Park, Water Park, Hiking, Aquarium, Driving Range, Art Gallery, Local Music Show, Ice-Skating, Stringfellows, Cocktail Bar, Art Gallery, Gay Bar, Casino, Hotel, Beer Garden, Theme Park, Playground, Library" id="queryFoursquare" class="foursquare-textfield" name="queryFoursquare" type="text" placeholder="I want to go out for...">
+													<input data-role="autocomplete" data-minlength=0 data-availabletags="Cafe, Restaurant, Theatre, Bowling, Cinema, Ice Cream, Comedy Show, Pub, Club, Concert, Park, Museum, Zoo, Horse Back Riding, Picnic, Amusement Park, Water Park, Hiking, Aquarium, Driving Range, Art Gallery, Local Music Show, Ice-Skating, Stringfellows, Cocktail Bar, Art Gallery, Gay Bar, Casino, Hotel, Beer Garden, Theme Park, Playground, Library, Nightclub" id="queryFoursquare" class="foursquare-textfield" name="queryFoursquare" type="text" placeholder="I want to go out for...">
 													<input id="searchTextField" class="search-textfield" name="searchTextField" type="text" placeholder="Location"/>
 													
 													<span data-id="search-button" class="link-button small">

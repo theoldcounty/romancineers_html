@@ -70,6 +70,35 @@
 				
 				return dateCombination;
 			},
+			explore: function(queryObj, callback){
+
+				var query = queryObj.q;
+				var location = queryObj.lat+","+queryObj.lng; //london, shaftesbury avenue
+
+				var limit = 50;
+
+				var that = this;
+
+				var url = "https://api.foursquare.com/v2/venues/explore?ll="+location+"&query="+query+"&limit="+limit+"&oauth_token="+this.oauth_token+"&v=20140308";
+				console.log(url);
+				
+				this.getJson(url, function(data){
+					//var setOfVenues = "";
+					console.log("data.response.venues", data.response.venues);
+					
+					console.log("data.response", data.response.groups[0].items);
+					
+					var venueArray = new Array();
+					if(data.response.groups[0].items != undefined){
+						$.each(data.response.groups[0].items, function( index, value ) {
+							venueArray.push(value.venue);
+						});
+					}
+					
+					callback(venueArray);
+				});
+				
+			},
 			search: function(queryObj, callback){
 
 				var query = queryObj.q;

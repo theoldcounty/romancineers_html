@@ -10,6 +10,10 @@
 var appController = {
 	invoke: function(){
 		console.log("app invoke");
+
+		$('[data-role="tabs"]').each(function(){
+			tabs.invoke($(this));
+		});
 		
 		$('[data-role="isotope-user"]').each(function(){
 			isotopeHandler.invoke($(this));		
@@ -23,12 +27,8 @@ var appController = {
 			matchMaker.invoke($(this));		
 		});
 		
-		$('[data-role="swiper"]').each(function(){
-			swiper.invoke($(this));
-		});
-		
-		$('[data-role="tabs"]').each(function(){
-			tabs.invoke($(this));
+		$('[data-role="swiper"]').each(function(index){
+			swiper.invoke($(this), index);
 		});
 		
 		$('[data-role="autocomplete"]').each(function(){
@@ -38,7 +38,10 @@ var appController = {
 		$('[data-role="date-picker"]').each(function(){
 			datePicker.invoke($(this));
 		});	
-		
+
+		$('[data-role="image-fix"]').each(function(){
+			galleryFix.invoke($(this));
+		});	
 		
 		$('[data-role="doughnut-knob"]').each(function() {
 			doughnutKnobHandler.invoke($(this));
@@ -49,7 +52,10 @@ var appController = {
 		
 		personBuilder.init();
 		
-		progressChart.init();
+		$('[data-role="progress-chart"]').each(function() {
+			progressChart.init(this);
+		});
+		
 		
 		fancybox.invoke($('[data-role="fancybox"]'));
 		
@@ -77,6 +83,9 @@ var appController = {
 			new GoogleMaps({el: $(document)});
 		});
 
+		$('[data-role="private-message"]').each(function(){
+			privatemessageHandler.invoke(this);
+		});
 
 		$('[data-role="date"]').each(function(){
 			date.init();

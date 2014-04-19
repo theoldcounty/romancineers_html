@@ -9,12 +9,12 @@
 
 var mcustomscroller = {
 	init: function(el){
-		console.log("start the mobile scroller");
+		//console.log("start the mobile scroller");
 		
 		if(!el.data("horizontalscroll")){				
 			el.css("height", parseInt(el.parent().css("height"),10));
 			
-			console.log("new height", parseInt(el.parent().css("height"),10));
+			//console.log("new height", parseInt(el.parent().css("height"),10));
 		}
 		
 		var config= {
@@ -37,7 +37,7 @@ var mcustomscroller = {
 		el.mCustomScrollbar("destroy");	
 	},
 	update: function(el){
-		console.log("update the elements");
+		//console.log("update the elements");
 		el.mCustomScrollbar("update");
 	}
 }

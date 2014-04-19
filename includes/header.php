@@ -26,7 +26,9 @@
 			<link rel="stylesheet" href="css/status.css">
 			<link rel="stylesheet" href="css/swiper.css">
 			<link rel="stylesheet" href="css/date.css">
-			<link rel="stylesheet" href="css/fancybox_override.css">				
+			<link rel="stylesheet" href="css/fancybox_override.css">
+			<link rel="stylesheet" href="css/privatemessages.css">
+			
 		
 		
 		<!-- Javascript -->
@@ -132,6 +134,9 @@
 		<script type="text/javascript" src="js/rom/rom.tabs.js"></script>
 		<script type="text/javascript" src="js/rom/rom.date.picker.js"></script>
 		<script type="text/javascript" src="js/rom/rom.autocomplete.js"></script>
+		<script type="text/javascript" src="js/rom/rom.gallery.fix.js"></script>
+		
+		<script type="text/javascript" src="js/rom/rom.private.message.handler.js"></script>
 		
 		<script type="text/javascript" src="js/rom/rom.controller.js"></script>
 

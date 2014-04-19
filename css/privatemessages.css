@@ -1,0 +1,106 @@
+
+	.message-handler{
+		padding: 15px 40px;
+	}
+	
+	.message-handler a{
+		margin-right: 15px;
+	}
+	
+	.private-message{
+		height: 350px;
+	}
+
+	.private-message-list-container{
+		height: 300px;
+	}
+	
+	.private-message-list{
+		margin:0;
+		padding:0;
+		list-style-type: none;
+	}
+	
+	.private-message-list li {
+		padding-bottom: 4px;
+		padding-top: 4px;
+		border-top: 1px solid black;
+		overflow: hidden;
+	}
+	
+	.private-message-list li:hover{
+		background: #fff4fb;
+	}
+	
+	.private-message-list .user-data{
+	}
+	
+	.private-message-list .user-data .user-image{
+		width: 60px;
+		height: 60px;
+		padding: 0;
+		overflow: hidden;
+		position: relative;
+	}
+	
+	.private-message-list .user-data .user-image .private-message-marker{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+	}
+	
+	.private-message-list .user-data .user-information{
+	}
+	
+	.private-message-list .user-data .user-name{
+	}
+	
+	.private-message-list .user-data .user-date{
+	}
+	
+	.private-message-list .message-data{
+	}
+	
+	.private-message-list .message-data .message-subject{
+		margin-bottom: 5px;
+		line-height: 25px;
+		font-size: 25px;
+	}
+	
+	
+	.private-message-list .message-data .message-summary{
+	}
+	
+	.private-message-list .message-data .message-body{
+		display:none;
+	}
+	
+	
+	.private-pane .user-data .user-image{
+		width: 60px;
+		height: 60px;
+		padding: 0;
+		overflow: hidden;
+		position: relative;
+	}
+	
+	.private-pane .user-data .user-image .private-message-marker{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+	}
+	
+	.private-pane .message-body-container{
+		height: 200px;
+	}
+	
+	.privatemessages .view-list-trigger {
+		background: green;
+		float: right;
+		width: 80px;
+		padding: 8px;
+		text-decoration: none;
+		text-align: center;
+		color: #ffffff!important;
+		font-size: 12px;
+	}

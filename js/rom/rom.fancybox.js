@@ -8,7 +8,7 @@
 */
 
 var fancybox = {
-	invoke: function(el){
+	getOptions: function(){
 		var options = {
 			minWidth : 400,
 			maxWidth	: "70%",
@@ -18,31 +18,33 @@ var fancybox = {
 				overlay: {
 					locked: false
 				}
-			},
-			beforeShow: function(){
-				var section = $(this).attr("href");
-				console.log("fancy before show");
-			},
-			onComplete:	function() {
-				console.log("fancy complete");
-				appController.invoke();
-			}	
+			}
+		};
+		
+		return options;
+	},
+	invoke: function(el){
+		var options = this.getOptions();
+		options["beforeShow"] = function(){
+			console.log("invoke app");
+			appController.invoke();
 		};
 		
 		el.fancybox(options);	
 	},
 	ajaxBased: function(url, callback){
-		$.fancybox({
-			type: 'ajax',
-			minWidth : 400,
-			maxWidth	: "70%",			
-			fitToView	: false,
-			padding: 0,
-			href : url,
-			title : 'Lorem lipsum',
-			beforeShow : function(){
-				callback();
-			}
-		});	
+		console.log("get fancy");
+		
+		var options = this.getOptions();
+		
+		options["type"] = "ajax";
+		options["href"] = url;
+		options["title"] = "Lorem lipsum";
+		
+		options["beforeShow"] = function(){
+			callback();
+		};
+		
+		$.fancybox(options);	
 	}
 };

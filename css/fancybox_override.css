@@ -6,9 +6,8 @@
 *
 * All rights reserved.
 */
-
-.fancybox-close{
-	background: red!important;
+.fancybox-close {
+	background: url("../images/fancybox_close.png") 50% 50% no-repeat #ffffff !important;
 	top: -36px!important;
 	right: -36px!important;
 }
@@ -17,12 +16,14 @@
 	border-radius:0!important;	
 }
 
+.fancybox-overlay{
+	background: url('../images/pinkpurplestripesm.png') rgba(0,0,0,0.9);
+}
 
-
-.fancybox-wrap{
+.fancybox-type-ajax.fancybox-wrap{
 	width: 80%!important;
 }
 
-.fancybox-inner{
+.fancybox-type-ajax .fancybox-inner{
 	width: 100%!important;
 }

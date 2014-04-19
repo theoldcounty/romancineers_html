@@ -18,6 +18,16 @@
 		overflow: hidden;
 	}
 	
+	img.portrait {
+		width: 100%;
+		height: auto;
+	}
+
+	img.landscape {
+		width: auto;
+		height: 100%;
+	}	
+	
 	.user-name .gender{
 		top:9px;
 	}
@@ -33,18 +43,15 @@
 	
 	.userimages ul li {
 		float: left;
-		width: 74px;
-		height: 74px;
+		width: 74.5px;
+		height: 74.5px;
 		overflow: hidden;
 		background: red;
 		margin-left: 0;
 		margin-bottom: 0;
 	}
 	
-	.userimages ul li img{
-		width: 130px;
-		height: auto;
-	}
+	.userimages ul li img{}
 	
 		
 	.sliderToggles{
@@ -195,17 +202,17 @@
 	}
 	
 	.featureimage{
-		padding: 9px;
+
 	}
 	
 	.feature{
-		overflow:hidden;
-		width: 100%;
+		overflow: hidden;
+		width: 96%;
 		height: auto;
+		padding: 2%;
 	}
 	
 	.userimages{
-		background: green;
 		height: 100%;
 	}
 	
@@ -220,11 +227,13 @@
 	}
 	
 	.characteristics table td{
-		padding: 0 2px;
+		padding: 0;
 	}
 	
 	.characteristics .label{
 		color: #ff247c;
+		padding-right: 8px;
+		border-bottom: 1px solid;
 	}
 	
 	.user-listing{

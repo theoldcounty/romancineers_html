@@ -7,13 +7,15 @@
 							
 							
 								<ul data-role="isotope-tiles" id="isotope" class="isotope">
-									<li class="block">
+									
+									<li class="block" data-role="image-fix">
 										<div class="feature"><a data-role="fancybox" class="fancybox.image" rel="gallery" href="__temp_images/featureimage.jpg"><img class="featureimage" src="__temp_images/featureimage.jpg"/></a></div>
 									</li>
-									<li class="block extendedwidth">
+									
+									<li class="block" data-role="image-fix">
 										<div class="userimages">
 
-											<div class="device" data-role="swiper" data-direction="horizontal">
+											<div data-role="swiper" data-showpagination=true data-direction="horizontal" data-loop=true data-grabcursor=true data-speed=600 data-paginationclickable=true data-noswiping=false data-initialslide=0>
 												<a class="arrow-left" href="#"></a>
 												<a class="arrow-right" href="#"></a>
 												<div class="swiper-container"><!--swiper-container-->
@@ -47,37 +49,36 @@
 																<li><a data-role="fancybox" class="fancybox.image" rel="gallery" href="http://imvdb.com/uploads/filmedinsert/files/jaime-pressly-music-videos.jpg"><img src="http://imvdb.com/uploads/filmedinsert/files/jaime-pressly-music-videos.jpg"></a></li>												
 															</ul>
 														</div>
-														<div class="swiper-slide">														
-														c 3														
-														</div>
+														
 													</div><!--swiper-wrapper-->
 													
-													<div class="pagination"></div>
+													<!--<div class="pagination"></div>-->
 												</div><!--swiper-container-->
 											</div>
 										</div>
 									</li>
 									
+									<!--
 									<li class="block w1">
 										small block 1
-									</li>
+									</li>-->
 									
-									
+									<!--
 									<li class="block w1">
-										<div class="device" data-role="swiper" data-direction="vertical">
+										<div class="device" data-role="swiper" data-direction="vertical" data-loop=true  data-grabcursor=true data-speed=600 data-paginationclickable=true>
 											<a class="arrow-left" href="#"></a>
 											<a class="arrow-right" href="#"></a>
-											<div class="swiper-container"><!--swiper-container-->
-												<div class="swiper-wrapper"><!--swiper-wrapper-->
+											<div class="swiper-container"> 
+												<div class="swiper-wrapper"> 
 													<div class="swiper-slide">a 1</div>
 													<div class="swiper-slide">b 2</div>
 													<div class="swiper-slide">c 3</div>
-												</div><!--swiper-wrapper-->
+												</div> 
 												
 												<div class="pagination"></div>
-											</div><!--swiper-container-->
+											</div> 
 										</div>										
-									</li>
+									</li>-->
 									
 									<li class="block">
 										<ul class="badges">
@@ -91,8 +92,16 @@
 										</div>
 									</li>
 									
-
+									<!--
 									<li class="block">
+										<div class="characteristics">
+											<table>
+												
+											</table>
+										</div>
+									</li>	-->
+
+									<li class="block h3">
 										<div class="characteristics">
 											<table>
 												<tr>
@@ -115,13 +124,6 @@
 													<td class="label">Ethnicity</td>
 													<td>Caucasian</td>
 												</tr>
-											</table>
-										</div>
-									</li>	
-
-									<li class="block">
-										<div class="characteristics">
-											<table>
 												<tr>
 													<td class="label">Relationship</td>
 													<td>Single</td>
@@ -192,7 +194,7 @@
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link privatemessage" href="_lightbox_template.html">Private Message</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link privatemessage" href="_inbox_private_message_lightbox.php">Private Message*</a>
 									</li>
 									
 									<li class="block w0 h0">
@@ -207,10 +209,17 @@
 										<a class="action-link whoeisnear" href="throbbingdot.html">Who is near me</a>
 									</li>
 									
-									
-
 									<li class="block h1">
-										<div id="progress" data-width=240 data-height=80 data-label="The Player" data-value=30 data-start-color="#1f77b4" data-end-color="#ff7f0e"></div>
+										<div data-role="progress" data-radius=240 data-width=240 data-height=80 data-label="The Player" data-value=30 data-start-color="#1f77b4" data-end-color="#ff7f0e"></div>
+									</li>
+									
+									<li class="block w1 h3">
+										<div data-role="progress" data-radius=210 data-width=160 data-height=80 data-label="Filmmaking" data-value=98 data-start-color="#1f77b4" data-end-color="#734677"></div>
+										<div data-role="progress" data-radius=210 data-width=160 data-height=80 data-label="Comics" data-value=90 data-start-color="#1f77b4" data-end-color="#14aaf8"></div>
+										<div data-role="progress" data-radius=210 data-width=160 data-height=80 data-label="Rugby" data-value=50 data-start-color="#1f77b4" data-end-color="#4ff814"></div>
+										<div data-role="progress" data-radius=210 data-width=160 data-height=80 data-label="Books" data-value=30 data-start-color="#1f77b4" data-end-color="#f81465"></div>
+										<div data-role="progress" data-radius=210 data-width=160 data-height=80 data-label="Gym" data-value=60 data-start-color="#1f77b4" data-end-color="#f8d514"></div>
+										<div data-role="progress" data-radius=210 data-width=160 data-height=80 data-label="Family" data-value=70 data-start-color="#1f77b4" data-end-color="#f88014"></div>
 									</li>
 									
 									<li class="block h1">
@@ -233,11 +242,8 @@
 																		
 									
 									<li class="block">
-										<!--interest block <img src="__temp_images/pie1.jpg">-->
 										<div class="piechart" data-role="piechart" data-width=210 data-height=210 data-r=95 data-ir=65 data-colors="#1f78b4,#fe7f0e,#ffbc78,#b2cae6,#ff08d9"></div>
 									</li>
-									
-									
 									
 									<li class="block">
 										<div class="barchart" data-role="barchart" data-width=210 data-height=210></div>
@@ -265,12 +271,10 @@
 										bubble <img src="__temp_images/bubble1.jpg">
 									</li>
 									<li class="block">
-										<!--relationship block <img src="__temp_images/pie2.jpg">-->
 										<div class="piechart" data-role="piechart" data-width=210 data-height=210 data-r=95 data-ir=65 data-colors="#ff0066,#ff909c,#fd61a2,#980156,#98017d"></div>
 									</li>
 									
 									<li class="block w4">
-										<!--compare <img src="__temp_images/comparecharts.jpg">-->
 										<div id="chart2"></div>
 									</li>
 									
@@ -304,17 +308,27 @@
 										<div class="archeightchart" data-role="archeightchart" data-width=210 data-height=210 data-r=95 data-ir=65></div>
 									</li>
 									
-									<li class="block">
+									<li class="block h4">
 										<!--slider controls <img src="__temp_images/sliders.jpg">-->
 										
-										<div id="controls" class="sliderToggles" data-role="slider-controls-nav" data-disable=false>
+										<div id="controls" class="sliderToggles" data-role="slider-controls-nav" data-disable=true>
 											<span data-label-left="Reserved" data-label-right="Outgoing">88</span>
-											<span data-label-left="Direct" data-label-right="Flexible">77</span>
+											<span data-label-left="Quiet" data-label-right="Loud">70</span> 
+											<span data-label-left="Stubborn" data-label-right="Flexible">77</span>
 											<span data-label-left="Senstitive" data-label-right="Steady">55</span>
 											<span data-label-left="Consitent" data-label-right="Curious">33</span>
 											<span data-label-left="Couple" data-label-right="Family">40</span>
 											<span data-label-left="Tender" data-label-right="Passionate">45</span>
 											<span data-label-left="Focus" data-label-right="Funny">70</span>
+											<span data-label-left="Rigid" data-label-right="Adaptable">70</span>
+											<span data-label-left="Impatient" data-label-right="Patient">70</span>
+											<span data-label-left="Dishonest" data-label-right="Honest">70</span>
+											<span data-label-left="Average" data-label-right="Intelligent">70</span>
+											<span data-label-left="Distracted" data-label-right="Focused">70</span>
+											<span data-label-left="Analyitcal" data-label-right="Creative">70</span>
+											<span data-label-left="Callous" data-label-right="Caring">70</span>
+											<span data-label-left="Lazy" data-label-right="Busy">70</span>
+											<span data-label-left="Self Critical" data-label-right="Confident">70</span>
 										</div>
 										
 									</li>
