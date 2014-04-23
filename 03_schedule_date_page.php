@@ -9,7 +9,7 @@
 							<section class="grid-20 mobile-grid-100 maps-panel">
 									<div class="control-container">
 										<div class="data-attributes">
-											<div id="googleMapData" data-dating-page="_scheduledate_lightbox.php">
+											<div id="googleMapData" data-dating-page="lightbox_scheduledate.php">
 												<div id="userData" class="user-option" data-user-id="51895628d1efa7a5d9df83c9" data-user-lat="51.529622428012544" data-user-long="-0.1381740757634631"></div>
 												<div id="candidateData" class="user-option" data-user-id="518b090fd1ef11c72b4bcb85" data-user-lat="53.331647402998776" data-user-long="-2.9767332668951405"></div>
 											</div>

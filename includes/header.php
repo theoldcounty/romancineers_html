@@ -53,6 +53,7 @@
 			<script type="text/javascript" src="js/libs/jquery.mCustomScrollbar.concat.min.js"></script>
 			<script type="text/javascript" src="js/libs/jquery-ui.js"></script>
 			<script type="text/javascript" src="js/libs/jquery.scrollTo.min.js"></script>
+			<script type="text/javascript" src="js/libs/jquery.validate.js"></script>
 			
 			
 			<script type="text/javascript" src="js/libs/colorbrewer/colorbrewer.js"></script>
@@ -115,10 +116,13 @@
 			<script type="text/javascript" src="js/rom/d3/person.chart/personchart.js"></script>
 			<link rel="stylesheet" href="js/rom/d3/person.chart/personchart.css">
 			
-			
 			<!--time arc chart-->			
 			<script type="text/javascript" src="js/rom/d3/time.arc.chart/timearcchart.js"></script>
 			<link rel="stylesheet" href="js/rom/d3/time.arc.chart/timearcchart.css">
+
+			<!--throbbing circles-->
+			<script type="text/javascript" src="js/rom/d3/throbbing.circles/throbbing.circles.js"></script>
+			
 			
 		<script type="text/javascript" src="js/rom/rom.swiper.js"></script>
 		<script type="text/javascript" src="js/rom/rom.isotope.js"></script>
@@ -137,6 +141,8 @@
 		<script type="text/javascript" src="js/rom/rom.gallery.fix.js"></script>
 		
 		<script type="text/javascript" src="js/rom/rom.private.message.handler.js"></script>
+		<script type="text/javascript" src="js/rom/rom.send.message.handler.js"></script>
+		<script type="text/javascript" src="js/rom/rom.form.validation.js"></script>
 		
 		<script type="text/javascript" src="js/rom/rom.controller.js"></script>
 
@@ -163,7 +169,7 @@
 												
 						<div class="user-configuration">
 							<?php
-								$logged = true;
+								$logged = false;//true;
 								
 								if($logged){
 									?>
@@ -180,8 +186,8 @@
 								}{
 									?>
 										<nav id="user-navigation">
-											<a data-role="fancybox" class="fancybox.ajax" href="_lightbox_template.html">Login</a>
-											<a data-role="fancybox" class="fancybox.ajax" href="_lightbox_template.html">Register</a>
+											<a data-role="fancybox" class="fancybox.ajax" href="lightbox_login.php">Login</a>
+											<a data-role="fancybox" class="fancybox.ajax" href="lightbox_register.php">Register</a>
 										</nav>
 									<?php
 								}

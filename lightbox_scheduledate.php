@@ -13,7 +13,7 @@
 ?>
 
 		<form id="date" data-role="date" data-venue-id="<?php echo $_GET["venueId"]; ?>" data-senderUid="<?php echo $_GET["senderUid"]; ?>" data-recepientUid="<?php echo $_GET["recepientUid"]; ?>" action="date" enctype="multipart/form-data" method="post" action="">
-					<div data-role="tabs" data-active="0," data-disable="1,2" data-heightStyle="auto" id="dating">
+					<div data-role="tabs" data-active="0," data-disable="1,2" data-heightStyle="auto" data-max-height=650 id="dating">
 						<ul>
 							<li><a href="#tabs-1">Review Venue</a></li>
 							<li><a href="#tabs-2">Schedule Date</a></li>

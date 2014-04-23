@@ -34,7 +34,7 @@ var fancybox = {
 			}
 			options["beforeShow"] = function(){
 				$('.fancybox-type-ajax.fancybox-wrap').css("visibility", "hidden");			
-				appController.invoke(".fancybox-wrap");
+				
 			};
 					
 			options["afterShow"] = function(){
@@ -51,12 +51,12 @@ var fancybox = {
 					}, 300, function() {
 						// Animation complete.
 					});
-				},10);
+					
+					appController.invoke(".fancybox-wrap");
+				},10);		
 			}
 		}
-		
 		el.fancybox(options);
-		
 	},
 	ajaxBased: function(url, callback){
 		console.log("get fancy");

@@ -11,9 +11,10 @@ var appController = {
 	invoke: function(container){
 		console.log("app invoke");
 
+		
 		$(container).find('[data-role="tabs"]').each(function(){
 			tabs.invoke($(this));
-		});
+		});		
 		
 		$(container).find('[data-role="isotope-user"]').each(function(){
 			isotopeHandler.invoke($(this));		
@@ -74,9 +75,17 @@ var appController = {
 		$(container).find('[data-role="private-message"]').each(function(){
 			privatemessageHandler.invoke(this);
 		});
-
+		
+		$(container).find('[data-role="send-message"]').each(function(){
+			sendmessageHandler.invoke(this);
+		});
+		
 		$(container).find('[data-role="date"]').each(function(){
 			date.init();
+		});
+		
+		$(container).find('[data-validate=true]').each(function(){
+			validateForm.invoke($(this));
 		});
 
 		viewedapp.invoke();
@@ -91,11 +100,12 @@ var appController = {
 			if(index == fancyboxCount - 1){
 				fancybox.invoke($('.fancybox\\.image'));
 			}
-		});		
+		});	
+
+		
 		
 	}
-}
-
+} 
 $(document).ready(function() {
 	appController.invoke(document);
 });

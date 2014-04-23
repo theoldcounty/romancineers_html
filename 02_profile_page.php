@@ -186,23 +186,23 @@
 									
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link followers" href="_followers_lightbox.php">Followers*</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link followers" href="lightbox_followers.php">Followers*</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" data-width="45%" class="fancybox.ajax action-link followme" href="_lightbox_template.html">Follow Me</a>
+										<a href="#">Follow Me^</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" data-width="45%" class="fancybox.ajax action-link messageme" href="_send_private_message_lightbox.php">Message Me</a>
+										<a data-role="fancybox" data-width="45%" class="fancybox.ajax action-link messageme" href="lightbox_send_private_message.php">Message*</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link privatemessage" href="_inbox_private_message_lightbox.php">Private*</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link privatemessage" href="lightbox_inbox_private_message.php">Private*</a>
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link photos" href="_gallery_lightbox.php">Photos*</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link photos" href="lightbox_gallery.php">Photos*</a>
 									</li>
 									
 									<li class="block w0 h0">
@@ -210,7 +210,7 @@
 									</li>
 									
 									<li class="block w0 h0">
-										<a class="action-link whoeisnear" href="throbbingdot.html">Who is near me</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link whoeisnear" href="_whoisnearmethrobbingdot.php">Who is near me</a>
 									</li>
 									
 									<li class="block h1">
@@ -373,6 +373,9 @@
 										<div id="viz"></div>
 									</li>
 									
+									<li class="block">
+										<div class="throbbing" data-role="throbbing" data-width="240" data-height="190" id="throbbing0"></div>
+									</li>
 									
 								</ul>
 

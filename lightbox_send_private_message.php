@@ -1,14 +1,10 @@
 
-<?php 
-	//include "includes/header.php";
-?>
-
 		<div class="sendmessages-container">
 			<style>
 				
   			</style>
 			
-			<form id="sendPrivateMessage" action="sendPrivateMessages" enctype="multipart/form-data" method="post" action="">
+			<form data-role="send-message" data-validate=true id="sendPrivateMessage" action="sendPrivateMessages" enctype="multipart/form-data" method="post" action="">
 						<?php
 							$messages = array
 							(
@@ -26,10 +22,10 @@
 								</div>								
 							</div>
 							<div class="message-data grid-100 mobile-grid-100">
-								<div class="message-subject"><input type="text" name="subject" placeholder="Subject"></div>
+								<div class="message-subject"><input type="text" name="subject" placeholder="Subject" data-required=true data-message-required="We need this!" data-minlength="2" data-message-minlength="More than 2"></div>
 								<div class="message-body-container">
 									<div class="message-body">
-										<textarea name="body" rows="4" cols="50">type your message here...</textarea>
+										<textarea name="body" rows="4" cols="50" data-required=true data-message-required="We need this!" data-minlength="2" data-message-minlength="More than 2">type your message here...</textarea>
 									</div>								
 								</div>
 							</div>
@@ -40,6 +36,7 @@
 								<input type="submit" value="submit" name="submit"/>
 							</div>	
 						</div>					
-				</form>			
+				</form>		
+
 		</div>
 		

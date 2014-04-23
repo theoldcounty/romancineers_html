@@ -11,12 +11,15 @@ var date ={
 
 		var venueId = $("#date").data("venue-id");
 
+		$(".fancybox-wrap").find('[data-role="tabs"]').each(function(){
+			tabs.invoke($(this));
+		});
+
 		console.log("venueId time to go for it", venueId);
 		foursquareApi.exploreVenue(venueId, function(data){
 
 				function setDateWindow(theVenue){
 					console.log("theVenue", theVenue);
-					
 					
 					//set image map
 					var marker = "";//"http://tinyurl.com/2ftvtt6";
@@ -43,7 +46,6 @@ var date ={
 					}
 
 					$('#date .venue-location').html(location);
-					
 					
 					
 					//set rating
