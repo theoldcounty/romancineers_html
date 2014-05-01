@@ -12,13 +12,15 @@ var previewImage = {
 	},
 	previewImage: function(el) {
 		var previewSection = el.find(".previewimage");
+		var oFReader = new FileReader();
 		
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(el.find("input")[0].files[0]);
+		if(oFReader){
+			oFReader.readAsDataURL(el.find("input")[0].files[0]);
 
-		oFReader.onload = function (oFREvent) {
-			previewSection.find("img").attr("src", oFREvent.target.result);
-        };
-		
+			oFReader.onload = function (oFREvent) {
+				previewSection.find("img").attr("src", oFREvent.target.result);
+				galleryFix.invoke(previewSection);
+			};
+		}
     }
 }

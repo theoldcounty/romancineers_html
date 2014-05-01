@@ -16,11 +16,6 @@
 					overflow:hidden;
 				}
 				
-				.register-preview .previewimage img{
-					width: 100px;
-					height: auto;
-				}
-				
 				.mapContainer{
 					overflow:hidden;
 					width: 230px;
@@ -36,6 +31,10 @@
 					height: 230px;
 				}
 				
+				
+				.doughnutWrap select{
+					margin-top: 14px;
+				}
   			</style>
 
 		<div class="register-container">			
@@ -149,7 +148,7 @@
 					
 						<div class="grid-100 mobile-grid-100" data-role="preview-image">
 							<div class="register-preview grid-30 mobile-grid-100">
-								<div class="previewimage"><img id="uploadPreview" src="http://mcdonnell.wustl.edu/wp-content/themes/mcdonnell/images/temp_avatar.png"></div>							
+								<div class="previewimage"><img id="uploadPreview" src="images/avatar.jpg"></div>							
 							</div>
 							<div class="register-photos grid-70 mobile-grid-100">
 								<label>Upload photos</label>
@@ -299,35 +298,35 @@
 									<option value="Football">Football</option>
 									<option value="Baseball">Baseball</option>					
 								</select>
-								<fieldset data-fieldname="interestknobs" id="knob1" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="5" data-width="55" data-height="55"></fieldset>
+								<fieldset data-fieldname="interestknobs" id="knob1" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="5" data-width="65" data-height="65"></fieldset>
 							</fieldset>
 							
 							<fieldset class="doughnutWrap grid-100 mobile-grid-100">
 								<select name="interests" class="grid-80 mobile-grid-100">
 									<option value="Interest 02">Interest 02</option>				
 								</select>
-								<fieldset data-fieldname="interestknobs" id="knob2" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="15" data-width="55" data-height="55"></fieldset>
+								<fieldset data-fieldname="interestknobs" id="knob2" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="15" data-width="65" data-height="65"></fieldset>
 							</fieldset>
 									
 							<fieldset class="doughnutWrap grid-100 mobile-grid-100">	
 								<select name="interests" class="grid-80 mobile-grid-100">
 									<option value="Interest 03">Interest 03</option>				
 								</select>
-								<fieldset data-fieldname="interestknobs" id="knob3" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="45" data-width="55" data-height="55"></fieldset>
+								<fieldset data-fieldname="interestknobs" id="knob3" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="45" data-width="65" data-height="65"></fieldset>
 							</fieldset>
 							
 							<fieldset class="doughnutWrap grid-100 mobile-grid-100">
 								<select name="interests" class="grid-80 mobile-grid-100">
 									<option value="Interest 04">Interest 04</option>				
 								</select>
-								<fieldset data-fieldname="interestknobs" id="knob4" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="85" data-width="55" data-height="55"></fieldset>
+								<fieldset data-fieldname="interestknobs" id="knob4" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="85" data-width="65" data-height="65"></fieldset>
 							</fieldset>		
 										
 							<fieldset class="doughnutWrap grid-100 mobile-grid-100">		
 								<select name="interests" class="grid-80 mobile-grid-100">
 									<option value="Interest 05">Interest 05</option>				
 								</select>
-								<fieldset data-fieldname="interestknobs" id="knob5" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="35" data-width="55" data-height="55"></fieldset>		
+								<fieldset data-fieldname="interestknobs" id="knob5" class="knob grid-20 mobile-grid-100" data-color="#E2B227" data-role="doughnut-knob" data-value="35" data-width="65" data-height="65"></fieldset>		
 							</fieldset>
 						</div>
 							
