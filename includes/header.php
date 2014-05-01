@@ -1,73 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-		
+
 		<title>Responsive Demo - LTR | Unsemantic</title>
 		<meta name="description" content="some description of the site and some bits and pieces" />
 		<meta name="keywords" content="web, keys, digital, movie, phase" />
 		<meta name="author" content="The Old County" />
 		<meta name="robots" content="index, follow" />
 		
-		<!--stylesheets-->
-			<link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
-			<link rel="stylesheet" href="css/jqueryui/jquery-ui.css">
-			<link rel="stylesheet" href="css/mCustomScrollbar/jquery.mCustomScrollbar.css">
+		<script type="text/javascript" src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>		
+		<script type="text/javascript" src="js/libs/jquery.1.10.2.min.js"></script>
+	
+		<script type="text/javascript" src="js/libs/d3.v3.min.js"></script>
+		<script type="text/javascript" src="js/libs/d3.superformula.v0.min.js"></script>
+		<script type="text/javascript" src="js/libs/underscore-min.js"></script>
+		<script type="text/javascript" src="js/libs/backbone-min.js"></script>
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing,places&sensor=false"></script>
+		<script src="http://www.bdcc.co.uk/Gmaps/GDouglasPeuker.js"></script>	
+
+		<script type="text/javascript" src="js/libs/spin.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.spin.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.browser.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.ba-bbq.min.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.knob.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/libs/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.validate.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.isotope.min.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.fancybox.js"></script>
+		<script type="text/javascript" src="js/libs/file-validator.js"></script>
+		<link rel="stylesheet" href="js/libs/filevalidator/filevalidator.css">
 		
-			<link rel="stylesheet" href="css/generic.css">
-			<link rel="stylesheet" href="css/isotope.css">
-			<link rel="stylesheet" href="css/users.css">
-			<link rel="stylesheet" href="css/profile.css">
-			<link rel="stylesheet" href="css/matchmaker.css">
-			<link rel="stylesheet" href="css/scheduledate.css">
-			<link rel="stylesheet" href="css/status.css">
-			<link rel="stylesheet" href="css/swiper.css">
-			<link rel="stylesheet" href="css/date.css">
-			<link rel="stylesheet" href="css/fancybox_override.css">
-			<link rel="stylesheet" href="css/privatemessages.css">
-			
-		
-		
-		<!-- Javascript -->
-			<!-- Libraries  -->
-			<script type="text/javascript" src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>		
-			<script type="text/javascript" src="js/libs/jquery.1.10.2.min.js"></script>
-			<script type="text/javascript" src="js/libs/d3.v3.min.js"></script>
-			<script type="text/javascript" src="js/libs/d3.superformula.v0.min.js"></script>
-			<script type="text/javascript" src="js/libs/jquery.isotope.min.js"></script>
-			<script type="text/javascript" src="js/libs/spin.js"></script>
-			<script type="text/javascript" src="js/libs/jquery.spin.js"></script>
-			<script type="text/javascript" src="js/libs/underscore-min.js"></script>
-			<script type="text/javascript" src="js/libs/backbone-min.js"></script>
-			
-			
-			<script type="text/javascript" src="js/libs/jquery.browser.js"></script>
-			<script type="text/javascript" src="js/libs/jquery.ba-bbq.min.js"></script>
-			<script type="text/javascript" src="js/libs/jquery.easing.1.3.js"></script>
-			<script type="text/javascript" src="js/libs/jquery.knob.js"></script>
-			
-			<script type="text/javascript" src="js/libs/jquery.fancybox.js"></script>
-			<script type="text/javascript" src="js/libs/jquery.mCustomScrollbar.concat.min.js"></script>
-			<script type="text/javascript" src="js/libs/jquery-ui.js"></script>
-			<script type="text/javascript" src="js/libs/jquery.scrollTo.min.js"></script>
-			<script type="text/javascript" src="js/libs/jquery.validate.js"></script>
-			
-			
-			<script type="text/javascript" src="js/libs/colorbrewer/colorbrewer.js"></script>
-			
-			
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing,places&sensor=true"></script>
-			<script src="http://www.bdcc.co.uk/Gmaps/GDouglasPeuker.js"></script>			
+		<script type="text/javascript" src="js/libs/colorbrewer/colorbrewer.js"></script>
+
 	
 		
+		
+
+	
 			<script type="text/javascript" src="js/libs/idangerous.swiper/idangerous.swiper.js"></script>
 			<link rel="stylesheet" href="js/libs/idangerous.swiper/idangerous.swiper.css">
 
 		<!--schedule a date -->
-			<!--<script type="text/javascript" src="js/rom/googlemaps/view.ExpandList.js"></script>-->
 			<script type="text/javascript" src="js/rom/googlemaps/view.VenueOverlay.js"></script>
 			<script type="text/javascript" src="js/rom/googlemaps/infoBox.js"></script>
 			<script type="text/javascript" src="js/rom/googlemaps/googlemaps.js"></script>
@@ -122,41 +104,68 @@
 
 			<!--throbbing circles-->
 			<script type="text/javascript" src="js/rom/d3/throbbing.circles/throbbing.circles.js"></script>
+				
+				
+			<script type="text/javascript" src="js/rom/rom.swiper.js"></script>
+			<script type="text/javascript" src="js/rom/rom.isotope.js"></script>
+			<script type="text/javascript" src="js/rom/rom.tiles.js"></script>		
+			<script type="text/javascript" src="js/rom/rom.status.updates.js"></script>
+			<script type="text/javascript" src="js/rom/rom.matchmaker.js"></script>
+			<script type="text/javascript" src="js/rom/rom.doughnut.knob.js"></script>
+			<script type="text/javascript" src="js/rom/rom.fancybox.js"></script>
+			<script type="text/javascript" src="js/rom/rom.mcustom.scrollbar.js"></script>
+			<script type="text/javascript" src="js/rom/rom.slider.controls.js"></script>
+			<script type="text/javascript" src="js/rom/rom.google.map.search.js"></script>
+			<script type="text/javascript" src="js/rom/rom.google.maper.js"></script>
+			<script type="text/javascript" src="js/rom/rom.tabs.js"></script>
+			<script type="text/javascript" src="js/rom/rom.date.picker.js"></script>
+			<script type="text/javascript" src="js/rom/rom.autocomplete.js"></script>
+			<script type="text/javascript" src="js/rom/rom.gallery.fix.js"></script>
+			<script type="text/javascript" src="js/rom/rom.google.map.form.lock.js"></script>
+			<script type="text/javascript" src="js/rom/rom.private.message.handler.js"></script>
+			<script type="text/javascript" src="js/rom/rom.send.message.handler.js"></script>
+			<script type="text/javascript" src="js/rom/rom.form.validation.js"></script>
+			<script type="text/javascript" src="js/rom/rom.preview.image.js"></script>
+			<script type="text/javascript" src="js/rom/rom.photo.uploader.js"></script>
 			
 			
-		<script type="text/javascript" src="js/rom/rom.swiper.js"></script>
-		<script type="text/javascript" src="js/rom/rom.isotope.js"></script>
-		<script type="text/javascript" src="js/rom/rom.tiles.js"></script>		
-		<script type="text/javascript" src="js/rom/rom.status.updates.js"></script>
-		<script type="text/javascript" src="js/rom/rom.matchmaker.js"></script>
-		<script type="text/javascript" src="js/rom/rom.google.maper.js"></script>
-		<script type="text/javascript" src="js/rom/rom.doughnut.knob.js"></script>
-		<script type="text/javascript" src="js/rom/rom.fancybox.js"></script>
-		<script type="text/javascript" src="js/rom/rom.mcustom.scrollbar.js"></script>
-		<script type="text/javascript" src="js/rom/rom.slider.controls.js"></script>
-		<script type="text/javascript" src="js/rom/rom.google.map.search.js"></script>
-		<script type="text/javascript" src="js/rom/rom.tabs.js"></script>
-		<script type="text/javascript" src="js/rom/rom.date.picker.js"></script>
-		<script type="text/javascript" src="js/rom/rom.autocomplete.js"></script>
-		<script type="text/javascript" src="js/rom/rom.gallery.fix.js"></script>
+			<script type="text/javascript" src="js/rom/rom.controller.js"></script>		
 		
-		<script type="text/javascript" src="js/rom/rom.private.message.handler.js"></script>
-		<script type="text/javascript" src="js/rom/rom.send.message.handler.js"></script>
-		<script type="text/javascript" src="js/rom/rom.form.validation.js"></script>
 		
-		<script type="text/javascript" src="js/rom/rom.controller.js"></script>
+		
+		<!--stylesheets-->
+			<link rel="stylesheet" href="css/normalize.css">
+		
+			<link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
+			<link rel="stylesheet" href="css/jqueryui/jquery-ui.css">
+			<link rel="stylesheet" href="css/mCustomScrollbar/jquery.mCustomScrollbar.css">
+			
+		
+			<link rel="stylesheet" href="css/generic.css">
+			<link rel="stylesheet" href="css/isotope.css">
+			<link rel="stylesheet" href="css/users.css">
+			<link rel="stylesheet" href="css/profile.css">
+			<link rel="stylesheet" href="css/matchmaker.css">
+			<link rel="stylesheet" href="css/scheduledate.css">
+			<link rel="stylesheet" href="css/status.css">
+			<link rel="stylesheet" href="css/swiper.css">
+			<link rel="stylesheet" href="css/date.css">
+			<link rel="stylesheet" href="css/fancybox_override.css">
+			<link rel="stylesheet" href="css/privatemessages.css">
 
-		
-		<!--[if lt IE 9]>
-			<script src="js/html5.js"></script>
-		<![endif]-->
+					
+					
+			<!--[if lt IE 9]>
+			  <script src="js/html5.js"></script>
+			<![endif]-->
 
-		<!--[if (gt IE 8) | (IEMobile)]><!-->
-			<link rel="stylesheet" href="css/grid.css">
-		<!--<![endif]-->
-		<!--[if (lt IE 9) & (!IEMobile)]>
-			<link rel="stylesheet" href="css/grid.css" />
-		<![endif]-->		
+			<!--[if (gt IE 8) | (IEMobile)]><!-->
+			  <link rel="stylesheet" href="css/unsemantic/unsemantic-grid-responsive.css" />
+			<!--<![endif]-->
+			<!--[if (lt IE 9) & (!IEMobile)]>
+			  <link rel="stylesheet" href="css/unsemantic/ie.css" />
+			<![endif]-->
+
 		
 	</head>
 

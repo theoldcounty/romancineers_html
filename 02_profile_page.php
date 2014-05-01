@@ -15,9 +15,7 @@
 									<li class="block" data-role="image-fix">
 										<div class="userimages">
 
-											<div data-role="swiper" data-showpagination=true data-direction="horizontal" data-loop=true data-grabcursor=true data-speed=600 data-paginationclickable=true data-noswiping=false data-initialslide=0>
-												<a class="arrow-left" href="#"></a>
-												<a class="arrow-right" href="#"></a>
+											<div data-role="swiper" data-arrows=true data-showpagination=true data-direction="horizontal" data-loop=true data-grabcursor=true data-speed=600 data-paginationclickable=true data-noswiping=false data-initialslide=0>
 												<div class="swiper-container"><!--swiper-container-->
 													<div class="swiper-wrapper"><!--swiper-wrapper-->
 														<div class="swiper-slide">
@@ -190,7 +188,7 @@
 									</li>
 									
 									<li class="block w0 h0">
-										<a href="#">Follow Me^</a>
+										<a href="#" class="action-link followme">Follow Me^</a>
 									</li>
 									
 									<li class="block w0 h0">
@@ -210,7 +208,7 @@
 									</li>
 									
 									<li class="block w0 h0">
-										<a data-role="fancybox" class="fancybox.ajax action-link whoeisnear" href="_whoisnearmethrobbingdot.php">Who is near me</a>
+										<a data-role="fancybox" class="fancybox.ajax action-link whoeisnear" href="lightbox_who_near.php">Who is near me</a>
 									</li>
 									
 									<li class="block h1">
@@ -302,7 +300,7 @@
 									
 									<li class="block">
 										<!--<div id="canvasMap"></div>-->
-										<div id="canvasMap" data-lat="30"  data-lng="43" data-role="googlemap" data-width=210 data-height=210></div>
+										<div id="canvasMap" data-lat="30"  data-lng="43" data-role="googlemap" data-width=298 data-height=298 data-is-draggable=false></div>
 										<!--googlemap <img src="__temp_images/googlemaps.jpg">-->
 									</li>
 									
@@ -361,8 +359,6 @@
 									</li>
 									
 									
-									
-									
 									<li class="block">
 										<!--stackchart chart <img src="__temp_images/stackchart.jpg">-->
 										<div class="stacked" data-role="stacked" data-width=240 data-height=190></div>
@@ -373,9 +369,10 @@
 										<div id="viz"></div>
 									</li>
 									
+									<!--
 									<li class="block">
 										<div class="throbbing" data-role="throbbing" data-width="240" data-height="190" id="throbbing0"></div>
-									</li>
+									</li>-->
 									
 								</ul>
 

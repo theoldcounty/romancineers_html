@@ -1,0 +1,1 @@
+<div id="previewmap6" data-lat="30"  data-lng="43" data-role="googlemap" data-width=240 data-height=240 data-is-draggable=true></div>

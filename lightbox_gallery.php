@@ -4,10 +4,44 @@
 ?>
 
 
-		<div class="privatemessages-container">
+		<div class="gallery-container">
 			
   			<style>
-  				
+				
+				.gallery-container {
+					height: 550px;
+				}
+				
+				.uploadfooter{
+					position: absolute;
+					bottom:0;
+					width:100%;
+					background: grey;
+					color: #333333;
+					padding-top: 12px;
+					padding-bottom: 8px;
+				}
+				
+				
+				.uploadfooter h3 {
+					display: inline;
+					padding-left: 20px;
+				}
+				
+				.uploadfooter span{
+					float: right;
+					padding-right: 20px;
+				}
+
+				
+				#yourphotos img{
+					width: 100%;
+				}
+				
+				#yourphotos .swiper-container {
+					height: 400px!important;
+					overflow:hidden;
+				}
   			</style>
 			
 			
@@ -17,7 +51,7 @@
 					<li><a href="#yourphotos">Your Photos</a></li>
 					<li><a href="#uploadphotos">Upload Photos</a></li>
 				</ul>
-				<div id="yourphotos" class="privatemessages">
+				<div id="yourphotos" class="photos">
 				
 						<?php
 							$messages = array
@@ -40,9 +74,8 @@
 							);
 						?>
 					
-						<div data-role="swiper" data-showpagination=false data-direction="horizontal" data-loop=true data-grabcursor=true data-speed=600 data-paginationclickable=true data-noswiping="swiper-no-swiping" data-initialslide=0>
-							
-							<div data-role="private-message" class="swiper-container"><!--swiper-container-->
+						<div data-role="swiper" data-arrows=true  data-showpagination=false data-direction="horizontal" data-loop=true data-grabcursor=true data-speed=600 data-paginationclickable=true data-noswiping="swiper-no-swiping" data-initialslide=0>
+							<div class="swiper-container"><!--swiper-container-->
 								<div class="swiper-wrapper"><!--swiper-wrapper-->
 									
 									<?php
@@ -50,9 +83,7 @@
 									?>
 									<div class="swiper-slide">
 										<!--slide 1-->
-
-											<img src="<?php echo $value[1];?>">
-											
+											<img src="<?php echo $value[1];?>">											
 										<!--slide 1-->
 									</div>
 									<?php
@@ -65,23 +96,19 @@
 							</div><!--swiper-container-->
 						</div>
 				</div>
-				<div id="uploadphotos" class="privatemessages">
-						
-						<form id="imageForm" action="uploadimage" method="post" enctype="multipart/form-data">
-							<label>userId</label>
-							<input type="text" name="userId" value="<%=request.getParameter("userId")%>"/>
-						   <br/>
-							<label>image</label>			
-							<input type="file" name="image" />
-							<br/>
-							
-							<input type="hidden" value="submitted" name="submitted"/>
-							<input type="submit" value="submit" name="submit"/>
-						</form>
-													
+				<div id="uploadphotos" class="photos">
+					<form data-validate=true id="imageForm" action="uploadimage" method="post" enctype="multipart/form-data">
+						<label>Upload photos</label>
+						<div class="file_button_container" data-role="photo-uploader">
+							<input type="file" name="image" data-error-message="File needs to be under %" data-placeholder="Select from your computer" data-max-size="2m" data-type="image"/>
+						</div>
+
+						<input type="hidden" name="userId" value="<?php /* <%=request.getParameter("userId")%> */ ?>"/>						
+						<!--<input type="submit" value="submit" name="submit"/>-->
+					</form>
 				</div>
 			</div>
-
+			<div class="uploadfooter"><h3>Upload New Photos</h3> <span>32 photos</span></div>
 		
 		</div>
 		

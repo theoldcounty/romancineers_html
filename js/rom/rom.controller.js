@@ -11,6 +11,7 @@ var appController = {
 	invoke: function(container){
 		console.log("app invoke");
 
+
 		
 		$(container).find('[data-role="tabs"]').each(function(){
 			tabs.invoke($(this));
@@ -60,9 +61,6 @@ var appController = {
 			new sliderControls({el: $(this)});
 		});
 		
-		$(container).find('[data-role="googlemap"]').each(function(){
-			googleMaper.invoke($(this));
-		});
 		
 		$(container).find('[data-role="searchgooglemap"]').each(function(){
 			googleMapApp.invoke();
@@ -102,7 +100,22 @@ var appController = {
 			}
 		});	
 
+
+		$(container).find('[data-role="googlemap"]').each(function(){
+			googleMaper.invoke($(this));
+		});
 		
+		$(container).find('[data-role="google-map-locker"]').each(function() {
+			googleMapFormLock.init($(this));
+		});			
+		
+		$(container).find('[data-role="preview-image"]').each(function() {
+			previewImage.invoke($(this));
+		});
+		
+		$(container).find('[data-role="photo-uploader"]').each(function() {
+			photoHandler.invoke($(this));
+		});
 		
 	}
 } 

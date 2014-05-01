@@ -163,21 +163,88 @@
 			}
 			
 			
-			/*grid*/
-			.batch{
-				overflow: hidden;
+			/*ui tabs*/
+			.ui-tabs{
+				border-radius: 0;
+			}			
+			.ui-tabs .ui-widget-header{
+				border-radius: 0;
+			}
+			.ui-tabs .ui-state-default{
+				border-radius: 0;
+			}
+			.ui-tabs .ui-tabs-nav li a{
+				padding: 10px 40px 10px 20px;
+				outline: none;
 			}
 			
-			/*grid*/
+			
+			/*forms*/
+			input[type="email"],
+			input[type="password"],
+			input[type="text"],
+			textarea,
+			select{
+				border: 1px solid black;
+				padding: 9px;
+				font-size: 12px;
+				color: grey;
+				width: 95%;
+			}
+			
+			form label{
+				font-size: 12px;
+			}
+			
+			form fieldset{
+				margin-bottom: 5px;
+			}
+			
+			fieldset{
+				border: 0;
+				padding: 0;
+				margin: 0;
+				font-size: 12px;
+			}
+			
+			.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{
+				font-size: 12px;
+			}
+			
+			
+			.grouped{
+				overflow:hidden;
+				width: 100%;
+			}
+			.grouped label{
+				float: left;
+				width: 100%;
+			}
+			.grouped fieldset{
+				float:left;
+			}
+			
+			
+			button{
+				border: 1px solid black;
+				padding: 10px;
+				color: grey;
+				background: lightblue;
+			}
 			
 			
 			
-
+			/*
 			img {
 				width: 100%;
 				max-width: 100%;
 			}
-			
+			*/
+
+
+			.batch{
+				overflow: hidden;
+			}
 			
 			
 			
@@ -213,22 +280,13 @@
 				margin-right: 25px;
 				font-size: 12px;
 			}
+						
 			
 			
-			/*ui tabs*/
-			.ui-tabs{
-				border-radius: 0;
-			}			
-			.ui-tabs .ui-widget-header{
-				border-radius: 0;
-			}
-			.ui-tabs .ui-state-default{
-				border-radius: 0;
-			}
-			.ui-tabs .ui-tabs-nav li a{
-				padding: 10px 40px 10px 20px;
-				outline: none;
-			}
+			
+			
+			
+			
 			
 			
 			

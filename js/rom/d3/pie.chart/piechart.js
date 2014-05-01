@@ -167,12 +167,12 @@ $(document).ready(function() {
 							.attr("x", function(d) {
 								var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
 								d.cx = Math.cos(a) * (ir+((r-ir)/2));
-								return d.x = Math.cos(a) * (r + 20);
+								return d.x = Math.cos(a) * (r + 15);
 							})
 							.attr("y", function(d) {
 								var a = d.startAngle + (d.endAngle - d.startAngle)/2 - Math.PI/2;
 								d.cy = Math.sin(a) * (ir+((r-ir)/2));
-								return d.y = Math.sin(a) * (r + 20);
+								return d.y = Math.sin(a) * (r + 15);
 							})
 							.text(function(d) {
 								return d.data.label; 
@@ -344,7 +344,7 @@ $(document).ready(function() {
 			
 			var clone = jQuery.extend(true, {}, dataCharts);
 
-				//__invoke concentric
+				//__invoke pie chart
 				$('[data-role="piechart"]').each(function(index) {
 					var selector = "piechart"+index;
 					

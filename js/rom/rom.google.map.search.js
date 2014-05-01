@@ -383,8 +383,6 @@ var googleMapApp = {
             });            
         });
       
-	
-        
     }
 }
 

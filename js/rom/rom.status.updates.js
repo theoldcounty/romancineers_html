@@ -152,6 +152,46 @@ var data = [
                 "userLink": "#"
             }
         ]
+    },
+    {
+        "stream": [
+            {
+                "userId": "kdsfm324",
+                "userName": "Mel",
+                "userAge":32,
+                "userState": "London",
+                "userCountry": "UK",
+                "userNotificationDate": "26/03/2014 12:02:43",
+                "userNotificationPriority": true,
+                "userNotification": "Just messaged you",
+                "userImage": "http://i.perezhilton.com/wp-content/uploads/2013/07/mel-b-pics-mel-b-14591627-450-680__oPt.jpg",
+                "userLink": "#"
+            },
+            {
+                "userId": "345fdfdf345",
+                "userName": "Kelly",
+                "userAge":32,
+                "userState": "London",
+                "userCountry": "UK",
+                "userNotificationDate": "26/03/2014 12:02:12",
+                "userNotificationPriority": false,
+                "userNotification": "Just viewed your profile",
+                "userImage": "http://how-lovely.org/wp-content/uploads/2013/05/Kelly-Brook-01.jpg",
+                "userLink": "#"
+            },
+            {
+                "userId": "ksdf88324",
+                "userName": "Beyonce",
+                "userAge":31,
+                "userState": "London",
+                "userCountry": "UK",
+                "userNotificationDate": "26/03/2014 12:32:12",
+                "userNotificationPriority": false,
+                "userNotification": "Just came online",
+                "userImage": "http://fashionbombdaily.com/wp-content/uploads/2013/04/Beyonce-as-Mrs-Carter-HM.png",
+                "userLink": "#"
+            }
+        ]
     }
 ]
 
@@ -161,9 +201,128 @@ statusHandler = {
         this.populateIsotope(data[0].stream);
         this.lastData = data[0].stream;
 		this.startIsotope();
-    },
+	},
 	getContainer: function(){
-		return $('#status #isotope');
+		return $('#status #listisotope');
+	},
+	updatePies: function(){
+	
+
+			var dataCharts = [
+				{
+					"data": [
+						{
+							"segments": [
+								{
+									"label": "apple",
+									"value": 53245
+								},
+								{
+									"label": "cherry",
+									"value": 145
+								},
+								{
+									"label": "pear",
+									"value": 2245
+								},
+								{
+									"label": "bananana",
+									"value": 15325
+								}							
+							]
+						}
+					]
+				},
+				{
+					"data": [
+						{
+							"segments": [
+								{
+									"label": "milk",
+									"value": 532
+								},
+								{
+									"label": "cheese",
+									"value": 145
+								},
+								{
+									"label": "grapes",
+									"value": 22
+								}
+							]
+						}
+					]
+				},
+				{
+					"data": [
+						{
+							"segments": [
+								{
+									"label": "pineapple",
+									"value": 1532
+								},
+								{
+									"label": "orange",
+									"value": 1435
+								},
+								{
+									"label": "grapes",
+									"value": 22
+								}				
+							]
+						}
+					]
+				},
+				{
+					"data": [
+						{
+							"segments": [
+								{
+									"label": "lemons",
+									"value": 133
+								},
+								{
+									"label": "mango",
+									"value": 435
+								},
+								{
+									"label": "melon",
+									"value": 2122
+								}				
+							]
+						}
+					]
+				}            
+			];
+			
+		var clone = jQuery.extend(true, {}, dataCharts);	
+
+		
+		//__invoke pie chart
+		$('#status [data-role="piechart"]').each(function(index) {
+			var selector = "interestpiechart"+index;
+			$(this).empty();
+			$(this).attr("id", selector);
+			
+				
+			var min = 0;
+			var max = 3;
+			pos = Math.floor(Math.random() * (max - min + 1)) + min;
+			
+			var options = {
+				data: clone[pos].data,
+				width: $(this).data("width"),
+				height: $(this).data("height"),
+				r: $(this).data("r"),
+				ir: $(this).data("ir"),
+				colors: $(this).data("colors")
+			}
+			
+			$("#"+selector).piechart(options);
+			$("#"+selector).piechart('update', clone[pos].data[0].segments);
+		});
+
+
 	},
 	startIsotope: function(){
 		var that = this;
@@ -203,6 +362,7 @@ statusHandler = {
 			}
 		});
 
+		that.updatePies();
 
 		that.showPriorityItem();
 
@@ -280,6 +440,9 @@ statusHandler = {
         $(template).find(".user-location").text(data.userState+", "+data.userCountry);
         
         $(template).find(".user-description").text(data.userNotification);
+		
+		$(template).find(".piechart").empty();
+		
         
         return $(template);
     },
@@ -311,12 +474,15 @@ statusHandler = {
 				return Math.floor(Math.random() * (max - min + 1)) + min;
 			}
 			
-			var rand = getRandomInt(0, 2);
+			var rand = getRandomInt(0, 3);
 			
 			$container = this.getContainer();
 			
 			var oldDataStream = this.lastData;
 			var newDataStream = data[rand].stream;
+			
+			console.log("rand", rand);
+			console.log("newDataStream", newDataStream);
 			
 			//isolate items to remove - no longer in the new data stream
 			var redundantItems = this.differenceItems(oldDataStream, newDataStream, "old");
@@ -351,7 +517,7 @@ statusHandler = {
 			
 			//modify existing items - changing pictures/notifications etc...
 			
-						
+			that.updatePies();			
 			that.showPriorityItem();
 			
 			

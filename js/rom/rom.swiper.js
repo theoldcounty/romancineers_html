@@ -35,6 +35,7 @@ var swiper = {
 			grabCursor: el.data("grabcursor"),
 			speed: el.data("speed"),
 			showpagination: el.data("showpagination"),
+			arrows: el.data("arrows"),
 			paginationClickable: el.data("paginationclickable"),
 			noSwiping: el.data("noswiping"),
 			initialSlide: el.data("initialslide"),
@@ -44,6 +45,11 @@ var swiper = {
 		if(options["showpagination"]){
 			el.append('<div class="pagination"/>');
 			options["pagination"] = el.find('.pagination')[0];
+		}
+
+		if(options["arrows"]){
+			el.prepend('<a class="arrow-left"/>');
+			el.prepend('<a class="arrow-right"/>');
 		}
 
 		var index = this.swiperstorage.length+1;
