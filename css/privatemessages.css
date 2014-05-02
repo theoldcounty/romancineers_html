@@ -1,4 +1,9 @@
 
+	.privatemessages-container img{
+		width: 100%;
+		height: auto;
+	}
+
 	.message-handler{
 		padding: 15px 40px;
 	}

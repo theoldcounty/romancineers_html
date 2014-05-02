@@ -7,6 +7,11 @@
 		font-size: 13px;
 	}
 	
+	#dating img{
+		width: 100%;
+		height: auto;
+	}
+	
 	#dating .dating-holder{
 		overflow: hidden;
 		font-size: 12px;
